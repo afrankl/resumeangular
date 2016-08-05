@@ -1,0 +1,17 @@
+@import 'sizes';
+@import 'delimeters';
+@import 'types';
+
+@each $name, $size in $sizes {
+	@each $delimeter in $delimeters {
+		@each $prefix, $sides in $types {
+			@each $operation, $symbols in $sides {
+				@each $symbol in $symbols {
+					.#{$prefix}#{$delimeter}#{$symbol}#{$delimeter}#{$name} {
+						#{$operation}: $size; 
+					}
+				}
+			}
+		}
+	}
+}
