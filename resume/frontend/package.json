@@ -10,6 +10,7 @@
     "gulp-minify": "0.0.13",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^2.0.0",
+    "gulp-watch": "^4.3.9",
     "main-bower-files": "^2.13.1"
   },
   "scripts": {

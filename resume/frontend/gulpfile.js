@@ -8,6 +8,7 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var minify = require('gulp-minify');
 var merge = require('merge-stream');
+// var watch = require('gulp-watch');
 
 // Destinations
 // Where all the bower-related JS files be dumped
@@ -52,15 +53,17 @@ gulp.task('bower-css', function() {
 
 // Task to organize and concatenate AngularJS files for the application 
 gulp.task('app-angular', function() {
-    var configPipeline = gulp.src('application/**')
+    var angularSrc = 'angular/**'; // Directories containing AngularJS files
+    // Pipelines
+    var configPipeline = gulp.src(angularSrc)
         .pipe(filter('**/config.js'));
-    var modulePipeline = gulp.src('application/**')
+    var modulePipeline = gulp.src(angularSrc)
         .pipe(filter('**/module.js'));
-    var factoryPipeline = gulp.src('application/**')
+    var factoryPipeline = gulp.src(angularSrc)
         .pipe(filter('**/*.factory.js'));
-    var directivePipeline = gulp.src('application/**')
+    var directivePipeline = gulp.src(angularSrc)
         .pipe(filter('**/*.directive.js'));
-
+    // Final merge
     return merge(configPipeline, modulePipeline, factoryPipeline, directivePipeline)
         .pipe(concat(appAngularJS.file))
         .pipe(gulp.dest(appAngularJS.directory));
@@ -72,11 +75,16 @@ gulp.task('app-js', ['app-angular']);
 // Task to compile all application components
 gulp.task('app', ['app-js']);
 
+// Task to compile all application components on change
+gulp.task('watch', function() {
+    return gulp.watch(['angular/**/*.js'], ['app']);
+})
+
 // Task to compile all bower components
 gulp.task('bower', ['bower-js', 'bower-css']);
 
-// Task that runs all the tasks in the proper order
-gulp.task('all', ['bower', 'app']);
+// Task that runs all the tasks at once
+gulp.task('all', ['bower', 'app', 'watch']);
 
 // Default task
 gulp.task('default', ['bower']);
