@@ -51,6 +51,16 @@ gulp.task('bower-css', function() {
         .pipe(gulp.dest(bowerCSS.directory));
 })
 
+// Task for CSS, SCSS and SASS files for app
+gulp.task('app-css', function() {
+    return gulp.src('styles/**')
+        .pipe(filter('**/*.scss'))
+        .pipe(sass())
+        .pipe(concat(appCSS.file))
+        .pipe(minify())
+        .pipe(gulp.dest(appCSS.directory));
+});
+
 // Task to organize and concatenate AngularJS files for the application 
 gulp.task('app-angular', function() {
     var angularSrc = 'angular/**'; // Directories containing AngularJS files
@@ -73,11 +83,11 @@ gulp.task('app-angular', function() {
 gulp.task('app-js', ['app-angular']);
 
 // Task to compile all application components
-gulp.task('app', ['app-js']);
+gulp.task('app', ['app-js', 'app-css']);
 
 // Task to compile all application components on change
 gulp.task('watch', function() {
-    return gulp.watch(['angular/**/*.js'], ['app']);
+    return gulp.watch(['angular/**/*.js', 'styles/**/*.scss'], ['app']);
 })
 
 // Task to compile all bower components
@@ -87,4 +97,4 @@ gulp.task('bower', ['bower-js', 'bower-css']);
 gulp.task('all', ['bower', 'app', 'watch']);
 
 // Default task
-gulp.task('default', ['bower']);
+gulp.task('default', ['app', 'watch']);

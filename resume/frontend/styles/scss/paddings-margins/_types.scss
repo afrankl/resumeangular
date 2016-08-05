@@ -1,0 +1,26 @@
+$types: (
+	'm': (
+		'margin-top': ('t', 'top'),
+		'margin-bottom': ('b', 'bottom'),
+		'margin-left': ('l', 'left'),
+		'margin-right': ('r', 'right')
+	),
+	'margin': (
+		'margin-top': ('t', 'top'),
+		'margin-bottom': ('b', 'bottom'),
+		'margin-left': ('l', 'left'),
+		'margin-right': ('r', 'right')
+	),
+	'p': (
+		'padding-top': ('t', 'top'),
+		'padding-bottom': ('b', 'bottom'),
+		'padding-left': ('l', 'left'),
+		'padding-right': ('r', 'right')
+	),
+	'padding': (
+		'padding-top': ('t', 'top'),
+		'padding-bottom': ('b', 'bottom'),
+		'padding-left': ('l', 'left'),
+		'padding-right': ('r', 'right')
+	)
+)
