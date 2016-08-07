@@ -1,8 +1,12 @@
 (function() {
+
+    "use-strict";
+
     angular.module('app', [
         'ui.router', 
 
-        'app.sidenav'
+        'app.sidenav',
+        'app.topnav',
         ])
         .config(baseConfig);
 

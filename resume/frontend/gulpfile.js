@@ -8,37 +8,43 @@ var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var minify = require('gulp-minify');
 var merge = require('merge-stream');
-// var watch = require('gulp-watch');
+var flatten = require('gulp-flatten');
 
 // Destinations
+var bowerFonts = {
+    directory: 'static/bower/fonts'
+}
 // Where all the bower-related JS files be dumped
 var bowerJS = {
     file: 'bower.js',
-    directory: 'static/bower'
+    directory: 'static/bower/js'
 }
 // Where all the bower-related CSS/SASS/SCSS files will be dumped
 var bowerCSS = {
     file: 'bower.css',
-    directory: 'static/bower'
+    directory: 'static/bower/css'
 }
 // Where all the app-related AngularJS files will be dumped
 var appAngularJS = {
     file: 'angular.js',
-    directory: 'static/app'
+    directory: 'static/app/js'
 }
 // Where all the app-related CSS/SASS/SCSS files will be dumped
 var appCSS = {
     file: 'app.css',
-    directory: 'static/app'
+    directory: 'static/app/css'
 }
-
+// Where all the app-related HTML files will be dumped
 var appHtml = {
     directory: 'static/app/templates'
 }
 
-gulp.task('app-html', function() {
-    return gulp.src('angular/base/**/*.html')
-        .pipe(gulp.dest(appHtml.directory));
+// Task for Font files from bower packages 
+gulp.task('bower-fonts', function() {
+    return gulp.src('bower_components/**')
+        .pipe(filter('**/*.{woff,eot,svg,ttf,woff2}'))
+        .pipe(flatten({includeParents: 0}))
+        .pipe(gulp.dest(bowerFonts.directory));
 })
 
 // Task for Javascript files from bower packages 
@@ -59,6 +65,12 @@ gulp.task('bower-css', function() {
         .pipe(minify())
         .pipe(gulp.dest(bowerCSS.directory));
 });
+
+// Task for Html files from app packages 
+gulp.task('app-html', function() {
+    return gulp.src('angular/base/**/*.html')
+        .pipe(gulp.dest(appHtml.directory));
+})
 
 // Task for CSS, SCSS and SASS files for app
 gulp.task('app-css', function() {
@@ -96,11 +108,13 @@ gulp.task('app', ['app-js', 'app-css', 'app-html']);
 
 // Task to compile all application components on change
 gulp.task('watch', function() {
-    return gulp.watch(['angular/**/*.js', 'styles/**/*.scss'], ['app']);
+    return gulp.watch(['angular/**/*.js',
+                       'angular/**/*.html',
+                       'styles/**/*.scss'], ['app']);
 })
 
 // Task to compile all bower components
-gulp.task('bower', ['bower-js', 'bower-css']);
+gulp.task('bower', ['bower-js', 'bower-css', 'bower-fonts']);
 
 // Task that runs all the tasks at once
 gulp.task('all', ['bower', 'app', 'watch']);

@@ -1,8 +1,12 @@
 (function() {
+
+    "use-strict";
+
     angular.module('app', [
         'ui.router', 
 
-        'app.sidenav'
+        'app.sidenav',
+        'app.topnav',
         ])
         .config(baseConfig);
 
@@ -20,13 +24,10 @@
 (function (){
     "use-strict";
 
-    console.log('test');
-
-    angular.module('app.sidenav', ['ui.router'])
+    angular.module('app.sidenav', [])
         .directive('resumeSideNav', resumeSideNavDirective);
 
     function resumeSideNavDirective() {
-        console.log('check');
         return {
             restrict: 'EA',
             templateUrl: 'static/app/templates/sidenav/sidenav.directive.html',
@@ -38,9 +39,34 @@
         }
     }
 
-    resumeSideNavController.$inject = ['$state'];
+    resumeSideNavController.$inject = ['$state', '$rootScope'];
 
-    function resumeSideNavController($state) {
+    function resumeSideNavController($state, $rootScope) {
+        var vm = this;
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.topnav', [])
+        .directive('resumeTopNav', resumeTopNavDirective);
+
+    function resumeTopNavDirective(){
+        return {
+            restrict: 'EA',
+            templateUrl: '/static/app/templates/topnav/topnav.directive.html',
+            controllerAs: 'vm',
+            controller: resumeTopNavController,
+            scope: {},
+            bind: {},
+            transclude: true
+        }
+    }
+
+    resumeTopNavController.$inject = ['$state']
+
+    function resumeTopNavController($state) {
         var vm = this;
     }
 })();

@@ -1,13 +1,10 @@
 (function (){
     "use-strict";
 
-    console.log('test');
-
-    angular.module('app.sidenav', ['ui.router'])
+    angular.module('app.sidenav', [])
         .directive('resumeSideNav', resumeSideNavDirective);
 
     function resumeSideNavDirective() {
-        console.log('check');
         return {
             restrict: 'EA',
             templateUrl: 'static/app/templates/sidenav/sidenav.directive.html',
@@ -19,9 +16,9 @@
         }
     }
 
-    resumeSideNavController.$inject = ['$state'];
+    resumeSideNavController.$inject = ['$state', '$rootScope'];
 
-    function resumeSideNavController($state) {
+    function resumeSideNavController($state, $rootScope) {
         var vm = this;
     }
 })();
