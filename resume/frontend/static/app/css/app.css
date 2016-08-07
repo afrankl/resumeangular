@@ -16,6 +16,70 @@
   background-color: red;
   height: 100%; }
 
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
+.font-size-auto {
+  font-size: auto; }
+
+.font-size-xxxs {
+  font-size: 8px; }
+
+.font-size-xxs {
+  font-size: 12px; }
+
+.font-size-xs {
+  font-size: 18px; }
+
+.font-size-sm {
+  font-size: 25px; }
+
+.font-size-md {
+  font-size: 32px; }
+
+.font-size-lg {
+  font-size: 48px; }
+
+.font-size-xl {
+  font-size: 64px; }
+
+.font-size-xxl {
+  font-size: 85px; }
+
+.font-size-xxxl {
+  font-size: 120px; }
+
+.font_size_auto {
+  font-size: auto; }
+
+.font_size_xxxs {
+  font-size: 8px; }
+
+.font_size_xxs {
+  font-size: 12px; }
+
+.font_size_xs {
+  font-size: 18px; }
+
+.font_size_sm {
+  font-size: 25px; }
+
+.font_size_md {
+  font-size: 32px; }
+
+.font_size_lg {
+  font-size: 48px; }
+
+.font_size_xl {
+  font-size: 64px; }
+
+.font_size_xxl {
+  font-size: 85px; }
+
+.font_size_xxxl {
+  font-size: 120px; }
 
 .m-t-auto {
   margin-top: auto; }

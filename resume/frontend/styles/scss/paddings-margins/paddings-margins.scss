@@ -1,13 +1,13 @@
-@import 'sizes';
-@import 'delimeters';
+@import '../_sizes/pm-sizes';
+@import '../_delimiters/delimiters';
 @import 'types';
 
-@each $name, $size in $sizes {
-	@each $delimeter in $delimeters {
+@each $name, $size in $pm-sizes {
+	@each $delimiter in $delimiters {
 		@each $prefix, $sides in $types {
 			@each $operation, $symbols in $sides {
 				@each $symbol in $symbols {
-					.#{$prefix}#{$delimeter}#{$symbol}#{$delimeter}#{$name} {
+					.#{$prefix}#{$delimiter}#{$symbol}#{$delimiter}#{$name} {
 						#{$operation}: $size; 
 					}
 				}
