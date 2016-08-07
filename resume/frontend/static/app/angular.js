@@ -1,21 +1,46 @@
-(function(){
-	angular.module('app', [
-		'ui-router'
-	]);
-})()
-// (function(){
+(function() {
+    angular.module('app', [
+        'ui.router', 
 
-// 	"use-strict";
+        'app.sidenav'
+        ])
+        .config(baseConfig);
 
-// 	angular.module('app')
-// 		.directive('baseDirective', baseDirective)
+    function baseConfig($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/home');
 
-// 	function baseDirective(){
-// 		return {
-// 			restrict: 'EA',
-// 			controllerAs: 'vm',
-// 			controller: baseDirectiveController,
-// 			templateUrl: 
-// 		}
-// 	}
-// })();
+        $stateProvider
+            .state('home', {
+                'url': '/home',
+                'templateUrl': '/static/app/templates/content/home/home.html'
+            })
+    }
+})();
+
+(function (){
+    "use-strict";
+
+    console.log('test');
+
+    angular.module('app.sidenav', ['ui.router'])
+        .directive('resumeSideNav', resumeSideNavDirective);
+
+    function resumeSideNavDirective() {
+        console.log('check');
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/sidenav/sidenav.directive.html',
+            controllerAs: 'vm',
+            controller: resumeSideNavController,
+            scope: {},
+            transclude: true,
+            bind: {}
+        }
+    }
+
+    resumeSideNavController.$inject = ['$state'];
+
+    function resumeSideNavController($state) {
+        var vm = this;
+    }
+})();

@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/angular')
+            os.path.join(BASE_DIR, 'frontend', 'angular')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -71,12 +71,6 @@ TEMPLATES = [
         }
     },
 ]
-
-print BASE_DIR
-
-# TEMPLATE_DIRS = (
-#     os.path.join(BASE_DIR, '/app'),
-# )
 
 WSGI_APPLICATION = 'resume.wsgi.application'
 

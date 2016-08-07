@@ -32,6 +32,15 @@ var appCSS = {
     directory: 'static/app'
 }
 
+var appHtml = {
+    directory: 'static/app/templates'
+}
+
+gulp.task('app-html', function() {
+    return gulp.src('angular/base/**/*.html')
+        .pipe(gulp.dest(appHtml.directory));
+})
+
 // Task for Javascript files from bower packages 
 gulp.task('bower-js', function() {
     return gulp.src(mainBowerFiles())
@@ -49,7 +58,7 @@ gulp.task('bower-css', function() {
         .pipe(concat(bowerCSS.file))
         .pipe(minify())
         .pipe(gulp.dest(bowerCSS.directory));
-})
+});
 
 // Task for CSS, SCSS and SASS files for app
 gulp.task('app-css', function() {
@@ -83,7 +92,7 @@ gulp.task('app-angular', function() {
 gulp.task('app-js', ['app-angular']);
 
 // Task to compile all application components
-gulp.task('app', ['app-js', 'app-css']);
+gulp.task('app', ['app-js', 'app-css', 'app-html']);
 
 // Task to compile all application components on change
 gulp.task('watch', function() {
