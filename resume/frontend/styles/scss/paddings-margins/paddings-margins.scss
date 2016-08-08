@@ -4,6 +4,34 @@
 
 @each $name, $size in $pm-sizes {
 	@each $delimiter in $delimiters {
+		.p#{$delimiter}tb#{$delimiter}#{$name} {
+			padding-top: $size;
+			padding-bottom: $size;
+		}
+		.p#{$delimiter}lr#{$delimiter}#{$name} {
+			padding-left: $size;
+			padding-right: $size;
+		}
+		.p#{$delimiter}all#{$delimiter}#{$name} {
+			padding-left: $size;
+			padding-right: $size;
+			padding-top: $size;
+			padding-bottom: $size;
+		}
+		.m#{$delimiter}tb#{$delimiter}#{$name} {
+			margin-top: $size;
+			margin-bottom: $size;
+		}
+		.m#{$delimiter}lr#{$delimiter}#{$name} {
+			margin-left: $size;
+			margin-right: $size;
+		}
+		.m#{$delimiter}all#{$delimiter}#{$name} {
+			margin-left: $size;
+			margin-right: $size;
+			margin-top: $size;
+			margin-bottom: $size;
+		}
 		@each $prefix, $sides in $types {
 			@each $operation, $symbols in $sides {
 				@each $symbol in $symbols {

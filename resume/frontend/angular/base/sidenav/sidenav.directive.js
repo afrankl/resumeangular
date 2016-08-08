@@ -1,4 +1,5 @@
 (function (){
+
     "use-strict";
 
     angular.module('app.sidenav', [])
@@ -34,29 +35,36 @@
         vm.navItems = [
             [
                 {
-                    title: "Home"
+                    title: "Home",
+                    sref: 'home'
                 }
             ],
             [
                 {
-                    title: "Bio"
+                    title: "Bio",
+                    sref: 'bio'
                 },
                 {
-                    title: "Education"
+                    title: "Education",
+                    sref: 'education'
                 },
                 {
-                    title: "Work Experience"
+                    title: "Work Experience",
+                    sref: 'work'
                 }
             ],
             [
                 {
-                    title: "Programming Languages"
+                    title: "Programming Languages",
+                    sref: 'languages'
                 },
                 {
-                    title: "Other Skills"
+                    title: "Other Skills",
+                    sref: 'skills'
                 },
                 {
-                    title: "Side Projects"
+                    title: "Side Projects",
+                    sref: 'projects'
                 }
             ]
         ]
@@ -64,9 +72,10 @@
         //functions
         vm.setActiveItem = setActiveItem;
 
-        function setActiveItem(sectionIndex, index){
+        function setActiveItem(sectionIndex, index, sref){
             vm.activeSection = sectionIndex;
             vm.activeItem = index;
+            $state.go(sref);
         }
 
     }

@@ -3,7 +3,13 @@
     "use-strict";
 
     angular.module('app.content', [
-        
+            'app.content.bio',
+            'app.content.education',
+            'app.content.skills',
+            'app.content.home',
+            'app.content.languages',
+            'app.content.projects',
+            'app.content.work'
         ])
         .config(contentConfig);
 

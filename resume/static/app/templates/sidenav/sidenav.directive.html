@@ -2,11 +2,11 @@
     <div class="list-group no-border-radius">
         <div ng-repeat="section in vm.navItems track by $index"
              ng-init="sectionIndex=$index;"
-             class="p-t-lg p-b-lg">
+             class="p-tb-sm">
             <a ng-repeat="navItem in section track by $index"
-               class="list-group-item list-group-item-action no-border-radius"
+               class="list-group-item list-group-item-action nav-item"
                ng-class="{'active': vm.activeItem == $index && vm.activeSection == sectionIndex}"
-               ng-click="vm.setActiveItem(sectionIndex, $index)">
+               ng-click="vm.setActiveItem(sectionIndex, $index, navItem.sref)">
                    {{navItem.title}}
             </a>
         </div>
