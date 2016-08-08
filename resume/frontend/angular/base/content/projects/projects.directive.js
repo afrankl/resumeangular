@@ -10,7 +10,7 @@
     function resumeProjectsDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/projects/projects.directive.html',
+            templateUrl: 'static/app/templates/base/content/projects/projects.directive.html',
             controllerAs: 'vm',
             controller: resumeProjectsController,
             scope: {},

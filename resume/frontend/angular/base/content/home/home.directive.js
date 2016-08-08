@@ -10,7 +10,7 @@
     function resumeHomeDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/home/home.directive.html',
+            templateUrl: 'static/app/templates/base/content/home/home.directive.html',
             controllerAs: 'vm',
             controller: resumeHomeController,
             scope: {},

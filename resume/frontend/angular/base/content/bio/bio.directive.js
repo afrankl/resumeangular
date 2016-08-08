@@ -10,7 +10,7 @@
     function resumeBioDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/bio/bio.directive.html',
+            templateUrl: 'static/app/templates/base/content/bio/bio.directive.html',
             controllerAs: 'vm',
             controller: resumeBioController,
             scope: {},

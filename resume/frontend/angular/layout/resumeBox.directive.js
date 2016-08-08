@@ -2,7 +2,7 @@
 
     "use-strict";
 
-    angular.module('app.content.education', [])
+    angular.module('layout', [])
         .directive('resumeEducation', resumeEducationDirective);
 
     resumeEducationDirective.$inject = [];
