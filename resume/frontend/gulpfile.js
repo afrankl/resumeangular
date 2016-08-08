@@ -87,7 +87,7 @@ gulp.task('app-angular', function() {
     var angularSrc = 'angular/**'; // Directories containing AngularJS files
     // Pipelines
     var configPipeline = gulp.src(angularSrc)
-        .pipe(filter('**/config.js'));
+        .pipe(filter('**/app.js'));
     var modulePipeline = gulp.src(angularSrc)
         .pipe(filter('**/module.js'));
     var factoryPipeline = gulp.src(angularSrc)

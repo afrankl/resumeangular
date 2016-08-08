@@ -5,6 +5,7 @@
     angular.module('app.topnav', [])
         .directive('resumeTopNav', resumeTopNavDirective);
 
+
     function resumeTopNavDirective(){
         return {
             restrict: 'EA',
@@ -13,13 +14,19 @@
             controller: resumeTopNavController,
             scope: {},
             bind: {},
-            transclude: true
+            transclude: true,
         }
     }
 
-    resumeTopNavController.$inject = ['$state']
-
-    function resumeTopNavController($state) {
+    resumeTopNavController.$inject = ['$state', '$rootScope']
+    function resumeTopNavController($state, $rootScope) {
         var vm = this;
+
+        //functions
+        vm.menuClicked = menuClicked;
+
+        function menuClicked() {
+            $rootScope.navOpen = !$rootScope.navOpen;
+        }
     }
 })();

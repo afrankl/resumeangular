@@ -4,7 +4,10 @@
     angular.module('app.sidenav', [])
         .directive('resumeSideNav', resumeSideNavDirective);
 
-    function resumeSideNavDirective() {
+    resumeSideNavDirective.$inject = ['$rootScope'];
+
+    function resumeSideNavDirective($rootScope) {
+        console.log('resumeSideNav');
         return {
             restrict: 'EA',
             templateUrl: 'static/app/templates/sidenav/sidenav.directive.html',
@@ -12,7 +15,12 @@
             controller: resumeSideNavController,
             scope: {},
             transclude: true,
-            bind: {}
+            bind: {},
+            link: function(scope, element, attrs, ctrl) {
+                $rootScope.$watch('navOpen', function(newVal, oldVal){
+                    ctrl.navOpen = newVal;
+                });
+            }
         }
     }
 
@@ -20,5 +28,6 @@
 
     function resumeSideNavController($state, $rootScope) {
         var vm = this;
+        vm.navOpen = $rootScope.navOpen;
     }
 })();

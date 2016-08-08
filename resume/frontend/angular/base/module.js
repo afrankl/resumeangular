@@ -2,21 +2,24 @@
 
     "use-strict";
 
-    angular.module('app', [
-        'ui.router', 
+    angular.module('app')
+        .config(statesConfig)
+        .run(navConfig);
 
-        'app.sidenav',
-        'app.topnav',
-        ])
-        .config(baseConfig);
-
-    function baseConfig($stateProvider, $urlRouterProvider) {
+    statesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function statesConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
 
         $stateProvider
             .state('home', {
                 'url': '/home',
                 'templateUrl': '/static/app/templates/content/home/home.html'
-            })
+            });
+    }
+
+    navConfig.$inject = ['$rootScope'];
+
+    function navConfig($rootScope) {
+        $rootScope.navOpen = false;
     }
 })();
