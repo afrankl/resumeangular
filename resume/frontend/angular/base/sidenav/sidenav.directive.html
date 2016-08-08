@@ -1,0 +1,14 @@
+<div class="hide-side-nav" id="sidenav" ng-hide="!vm.navOpen">
+    <div class="list-group no-border-radius">
+        <div ng-repeat="section in vm.navItems track by $index"
+             ng-init="sectionIndex=$index;"
+             class="p-tb-sm">
+            <a ng-repeat="navItem in section track by $index"
+               class="list-group-item list-group-item-action nav-item"
+               ng-class="{'active': vm.activeItem == $index && vm.activeSection == sectionIndex}"
+               ng-click="vm.setActiveItem(sectionIndex, $index, navItem.sref)">
+                   {{navItem.title}}
+            </a>
+        </div>
+    </div>
+</div>

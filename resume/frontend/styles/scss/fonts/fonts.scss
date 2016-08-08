@@ -1,0 +1,10 @@
+@import '../_sizes/font-sizes';
+@import '../_delimiters/delimiters';
+
+@each $delimiter in $delimiters {
+    @each $name, $size in $font-sizes {
+        .font#{$delimiter}size#{$delimiter}#{$name} {
+            font-size: $size;
+        }
+    }
+}

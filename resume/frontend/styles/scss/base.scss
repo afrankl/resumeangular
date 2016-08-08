@@ -1,5 +1,15 @@
-#top-menu {
-    background-color: grey;
-    height: 60px;
+@import '_sizes/base-sizes';
+
+#topnav {
     width: 100%;
+    height: $topnav-height;
+    background-color: black;
+}
+
+#content {
+    height: 200px;
+}
+
+#menu-icon {
+    color: white;
 }
