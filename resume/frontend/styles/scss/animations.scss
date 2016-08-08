@@ -1,0 +1,54 @@
+@import '_sizes/base-sizes';
+
+@mixin add-transition($transition) {
+    -webkit-transition:$transition;
+    -moz-transition:$transition;
+    -o-transition:$transition;
+    transition:$transition;
+}
+
+@mixin add-transform($transform) {
+    -webkit-transform: $transform; /* Safari and Chrome */
+    -moz-transform: $transform;   /* Firefox */
+    -ms-transform: $transform;   /* IE 9 */
+    -o-transform: $transform;   /* Opera */
+    transform: $transform;
+}
+
+$sidenav-transition: all 0.5s ease-in-out;
+$menu-icon-transition: all 0.25s ease-in-out;
+
+.hide-side-nav {
+    @include add-transition($sidenav-transition);
+    position: absolute;
+    left: 0;
+}
+
+.hide-side-nav.ng-hide {
+    left: -$sidenav-width;
+}
+
+.slide-content-left {
+    @include add-transition($sidenav-transition);
+    position: absolute;
+    left: 0px;
+    width: 100%;
+}
+
+.slide-content-right {
+    @include add-transition($sidenav-transition);
+    position: absolute;
+    left: $sidenav-width;
+    width: calc(100% - #{$sidenav-width}) !important;
+}
+
+.menu-icon-selected {
+    @include add-transition($menu-icon-transition);
+    color: orange !important;
+    
+}
+
+.menu-icon-deselected {
+    @include add-transition($menu-icon-transition);
+    color: white;
+}

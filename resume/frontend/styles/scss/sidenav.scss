@@ -1,0 +1,8 @@
+@import '_sizes/base-sizes';
+#sidenav {
+    float: left;
+    width: $sidenav-width;
+    height: 100%;
+    background-color: #ececec;
+    border: 1px solid #333;
+}

@@ -20,6 +20,10 @@
     "bootstrap": "^3.3.7",
     "bootstrap-css": "^3.3.6",
     "angular-ui-router": "1.0.0-beta.1",
-    "jquery": "2.x.x"
+    "jquery": "2.x.x",
+    "angular-bootstrap": "^2.0.1",
+    "animate.css": "^3.5.2",
+    "angular-animate": "^1.5.8",
+    "angular-animate-css": "^0.0.4"
   }
 }

@@ -12,31 +12,31 @@ var flatten = require('gulp-flatten');
 
 // Destinations
 var bowerFonts = {
-    directory: 'static/bower/fonts'
+    directory: '../static/bower/fonts'
 }
 // Where all the bower-related JS files be dumped
 var bowerJS = {
     file: 'bower.js',
-    directory: 'static/bower/js'
+    directory: '../static/bower/js'
 }
 // Where all the bower-related CSS/SASS/SCSS files will be dumped
 var bowerCSS = {
     file: 'bower.css',
-    directory: 'static/bower/css'
+    directory: '../static/bower/css'
 }
 // Where all the app-related AngularJS files will be dumped
 var appAngularJS = {
     file: 'angular.js',
-    directory: 'static/app/js'
+    directory: '../static/app/js'
 }
 // Where all the app-related CSS/SASS/SCSS files will be dumped
 var appCSS = {
     file: 'app.css',
-    directory: 'static/app/css'
+    directory: '../static/app/css'
 }
 // Where all the app-related HTML files will be dumped
 var appHtml = {
-    directory: 'static/app/templates'
+    directory: '../static/app/templates'
 }
 
 // Task for Font files from bower packages 

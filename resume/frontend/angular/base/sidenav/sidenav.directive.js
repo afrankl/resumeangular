@@ -7,7 +7,6 @@
     resumeSideNavDirective.$inject = ['$rootScope'];
 
     function resumeSideNavDirective($rootScope) {
-        console.log('resumeSideNav');
         return {
             restrict: 'EA',
             templateUrl: 'static/app/templates/sidenav/sidenav.directive.html',
@@ -27,7 +26,26 @@
     resumeSideNavController.$inject = ['$state', '$rootScope'];
 
     function resumeSideNavController($state, $rootScope) {
+        //vars
         var vm = this;
         vm.navOpen = $rootScope.navOpen;
+        vm.navItems = [
+            {
+                content: "Some content"
+            },
+            {
+                content: "Some more content"
+            }
+        ]
+        vm.activeItem = 0;
+
+        //functions
+        vm.setActiveItem = setActiveItem;
+
+        function setActiveItem(index){
+            console.log('clicked' + index);
+            vm.activeItem = index;
+        }
+
     }
 })();

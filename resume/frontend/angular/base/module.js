@@ -20,6 +20,6 @@
     navConfig.$inject = ['$rootScope'];
 
     function navConfig($rootScope) {
-        $rootScope.navOpen = false;
+        $rootScope.navOpen = true;
     }
 })();
