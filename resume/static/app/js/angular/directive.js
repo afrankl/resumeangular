@@ -1,6 +1,38 @@
 (function (){
     "use-strict";
 
+    angular.module('app.content')
+        .directive('resumeContent', resumeContentDirective);
+
+    resumeContentDirective.$inject = ['$rootScope'];
+
+    function resumeContentDirective($rootScope) {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/content/content.directive.html',
+            controllerAs: 'vm',
+            controller: resumeContentController,
+            scope: {},
+            transclude: true,
+            bind: {},
+            link: function(scope, element, attrs, ctrl) {
+                    $rootScope.$watch('navOpen', function(newVal, oldVal){
+                        ctrl.navOpen = newVal;
+                    });
+                }
+        };
+    }
+
+    resumeContentController.$inject = ['$state', '$rootScope'];
+    
+    function resumeContentController($state, $rootScope) {
+        var vm = this;
+        vm.navOpen = !$rootScope.navOpen;
+    }
+})();
+(function (){
+    "use-strict";
+
     angular.module('app.sidenav', [])
         .directive('resumeSideNav', resumeSideNavDirective);
 
@@ -69,5 +101,40 @@
             vm.activeItem = index;
         }
 
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.topnav', [])
+        .directive('resumeTopNav', resumeTopNavDirective);
+
+    function resumeTopNavDirective(){
+        return {
+            restrict: 'EA',
+            templateUrl: '/static/app/templates/topnav/topnav.directive.html',
+            controllerAs: 'vm',
+            controller: resumeTopNavController,
+            scope: {},
+            bind: {},
+            transclude: true,
+        }
+    }
+
+    resumeTopNavController.$inject = ['$state', '$rootScope']
+
+    function resumeTopNavController($state, $rootScope) {
+        //vars
+        var vm = this;
+        vm.navOpen = $rootScope.navOpen;
+
+        //functions
+        vm.onMenuClicked = onMenuClicked;
+
+        function onMenuClicked() {
+            vm.navOpen = !$rootScope.navOpen
+            $rootScope.navOpen = vm.navOpen;
+        }
     }
 })();

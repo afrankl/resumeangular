@@ -38,6 +38,26 @@ var appCSS = {
 var appHtml = {
     directory: '../static/app/templates'
 }
+// Where all the angular-related config files will be dumped
+var angularConfig = {
+    file: 'config.js',
+    directory: '../static/app/js/angular'
+}
+// Where all the angular-related module files will be dumped
+var angularModule = {
+    file: 'module.js',
+    directory: '../static/app/js/angular'
+}
+// Where all the angular-related factory files will be dumped
+var angularFactory = {
+    file: 'factory.js',
+    directory: '../static/app/js/angular'
+}
+// Where all the angular-related config files will be dumped
+var angularDirective = {
+    file: 'directive.js',
+    directory: '../static/app/js/angular'
+}
 
 // Task for Font files from bower packages 
 gulp.task('bower-fonts', function() {
@@ -82,23 +102,42 @@ gulp.task('app-css', function() {
         .pipe(gulp.dest(appCSS.directory));
 });
 
+// Creates a task specifically for Angular files.
+function createAngularTask(fileFilter, folderObj) {
+    var angularSrc = 'angular/**';
+    return function() {
+        gulp.src(angularSrc)
+            .pipe(filter(fileFilter))
+            .pipe(concat(folderObj.file))
+            .pipe(gulp.dest(folderObj.directory));
+    }
+}
+
+// Angular tasks (individual)
+gulp.task('angular-config', createAngularTask('**/app.js', angularConfig));
+gulp.task('angular-module', createAngularTask('**/module.js', angularModule));
+gulp.task('angular-factory', createAngularTask('**/*.factory.js', angularFactory));
+gulp.task('angular-directive', createAngularTask('**/*.directive.js', angularDirective));
+// Angular tasks (combined)
+gulp.task('app-angular', ['angular-config', 'angular-module', 'angular-factory', 'angular-directive'])
+
 // Task to organize and concatenate AngularJS files for the application 
-gulp.task('app-angular', function() {
-    var angularSrc = 'angular/**'; // Directories containing AngularJS files
-    // Pipelines
-    var configPipeline = gulp.src(angularSrc)
-        .pipe(filter('**/app.js'));
-    var modulePipeline = gulp.src(angularSrc)
-        .pipe(filter('**/module.js'));
-    var factoryPipeline = gulp.src(angularSrc)
-        .pipe(filter('**/*.factory.js'));
-    var directivePipeline = gulp.src(angularSrc)
-        .pipe(filter('**/*.directive.js'));
-    // Final merge
-    return merge(configPipeline, modulePipeline, factoryPipeline, directivePipeline)
-        .pipe(concat(appAngularJS.file))
-        .pipe(gulp.dest(appAngularJS.directory));
-});
+// gulp.task('app-angular', function() {
+//     var angularSrc = 'angular/**'; // Directories containing AngularJS files
+//     // Pipelines
+//     var configPipeline = gulp.src(angularSrc)
+//         .pipe(filter('**/app.js'));
+//     var modulePipeline = gulp.src(angularSrc)
+//         .pipe(filter('**/module.js'));
+//     var factoryPipeline = gulp.src(angularSrc)
+//         .pipe(filter('**/*.factory.js'));
+//     var directivePipeline = gulp.src(angularSrc)
+//         .pipe(filter('**/*.directive.js'));
+//     // Final merge
+//     return merge(configPipeline, modulePipeline, factoryPipeline, directivePipeline)
+//         .pipe(concat(appAngularJS.file))
+//         .pipe(gulp.dest(appAngularJS.directory));
+// });
 
 // Task to compile all application js
 gulp.task('app-js', ['app-angular']);

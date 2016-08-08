@@ -19,12 +19,6 @@
     statesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
     function statesConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/home');
-
-        $stateProvider
-            .state('home', {
-                'url': '/home',
-                'templateUrl': '/static/app/templates/content/home/home.html'
-            });
     }
 
     navConfig.$inject = ['$rootScope'];
@@ -37,7 +31,7 @@
 (function (){
     "use-strict";
 
-    angular.module('app.content', [])
+    angular.module('app.content')
         .directive('resumeContent', resumeContentDirective);
 
     resumeContentDirective.$inject = ['$rootScope'];
@@ -64,6 +58,46 @@
     function resumeContentController($state, $rootScope) {
         var vm = this;
         vm.navOpen = !$rootScope.navOpen;
+    }
+})();
+(function () {
+    angular.module('app.content', [
+        
+        ])
+        .config(contentConfig);
+
+    contentConfig.$inject = ['$stateProvider'];
+
+    function contentConfig($stateProvider) {
+        $stateProvider
+            .state('home', {
+                'url': '/home',
+                'templateUrl': '/static/app/templates/content/home/home.html'
+            })
+            .state('bio', {
+                'url': '/bio',
+                'templateUrl': '/static/app/templates/content/bio/bio.html'
+            })
+            .state('education', {
+                'url': '/education',
+                'templateUrl': '/static/app/templates/content/education/education.html'
+            })
+            .state('work', {
+                'url': '/work-experience',
+                'templateUrl': '/static/app/templates/content/work/work.html'
+            })
+            .state('languages', {
+                'url': '/programming-languages',
+                'templateUrl': '/static/app/templates/content/languages/languages.html'
+            })
+            .state('skills', {
+                'url': '/other-skills',
+                'templateUrl': '/static/app/templates/content/skills/skills.html'
+            })
+            .state('projects', {
+                'url': '/side-projects',
+                'templateUrl': '/static/app/templates/content/projects/projects.html'
+            })
     }
 })();
 (function (){
@@ -96,22 +130,44 @@
     function resumeSideNavController($state, $rootScope) {
         //vars
         var vm = this;
+        vm.activeSection = 0;
+        vm.activeItem = 0;
         vm.navOpen = $rootScope.navOpen;
         vm.navItems = [
-            {
-                content: "Some content"
-            },
-            {
-                content: "Some more content"
-            }
+            [
+                {
+                    title: "Home"
+                }
+            ],
+            [
+                {
+                    title: "Bio"
+                },
+                {
+                    title: "Education"
+                },
+                {
+                    title: "Work Experience"
+                }
+            ],
+            [
+                {
+                    title: "Programming Languages"
+                },
+                {
+                    title: "Other Skills"
+                },
+                {
+                    title: "Side Projects"
+                }
+            ]
         ]
-        vm.activeItem = 0;
 
         //functions
         vm.setActiveItem = setActiveItem;
 
-        function setActiveItem(index){
-            console.log('clicked' + index);
+        function setActiveItem(sectionIndex, index){
+            vm.activeSection = sectionIndex;
             vm.activeItem = index;
         }
 

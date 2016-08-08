@@ -1,7 +1,7 @@
 (function (){
     "use-strict";
 
-    angular.module('app.content', [])
+    angular.module('app.content')
         .directive('resumeContent', resumeContentDirective);
 
     resumeContentDirective.$inject = ['$rootScope'];
