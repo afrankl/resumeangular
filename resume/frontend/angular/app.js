@@ -3,6 +3,7 @@
         'ui.router',
         'ngAnimate',
 
+        'layout',
         'app.sidenav',
         'app.topnav',
         'app.content'

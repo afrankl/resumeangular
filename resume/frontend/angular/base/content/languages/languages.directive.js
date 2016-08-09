@@ -10,7 +10,7 @@
     function resumeLanguagesDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/languages/languages.directive.html',
+            templateUrl: 'static/app/templates/base/content/languages/languages.directive.html',
             controllerAs: 'vm',
             controller: resumeLanguagesController,
             scope: {},

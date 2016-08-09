@@ -10,7 +10,7 @@
     function resumeWorkDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/work/work.directive.html',
+            templateUrl: 'static/app/templates/base/content/work/work.directive.html',
             controllerAs: 'vm',
             controller: resumeWorkController,
             scope: {},

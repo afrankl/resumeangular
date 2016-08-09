@@ -10,7 +10,7 @@
     function resumeSideNavDirective($rootScope) {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/sidenav/sidenav.directive.html',
+            templateUrl: 'static/app/templates/base/sidenav/sidenav.directive.html',
             controllerAs: 'vm',
             controller: resumeSideNavController,
             scope: {},

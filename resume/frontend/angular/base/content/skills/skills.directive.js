@@ -10,7 +10,7 @@
     function resumeSkillsDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/skills/skills.directive.html',
+            templateUrl: 'static/app/templates/base/content/skills/skills.directive.html',
             controllerAs: 'vm',
             controller: resumeSkillsController,
             scope: {},

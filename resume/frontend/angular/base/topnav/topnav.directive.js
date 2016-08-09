@@ -8,7 +8,7 @@
     function resumeTopNavDirective(){
         return {
             restrict: 'EA',
-            templateUrl: '/static/app/templates/topnav/topnav.directive.html',
+            templateUrl: '/static/app/templates/base/topnav/topnav.directive.html',
             controllerAs: 'vm',
             controller: resumeTopNavController,
             scope: {},

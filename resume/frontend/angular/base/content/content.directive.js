@@ -9,7 +9,7 @@
     function resumeContentDirective($rootScope) {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/content.directive.html',
+            templateUrl: 'static/app/templates/base/content/content.directive.html',
             controllerAs: 'vm',
             controller: resumeContentController,
             scope: {},

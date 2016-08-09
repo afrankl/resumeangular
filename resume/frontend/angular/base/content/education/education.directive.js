@@ -10,7 +10,7 @@
     function resumeEducationDirective() {
         return {
             restrict: 'EA',
-            templateUrl: 'static/app/templates/content/education/education.directive.html',
+            templateUrl: 'static/app/templates/base/content/education/education.directive.html',
             controllerAs: 'vm',
             controller: resumeEducationController,
             scope: {},

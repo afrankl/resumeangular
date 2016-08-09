@@ -88,7 +88,7 @@ gulp.task('bower-css', function() {
 
 // Task for Html files from app packages 
 gulp.task('app-html', function() {
-    return gulp.src('angular/base/**/*.html')
+    return gulp.src('angular/**/*.html')
         .pipe(gulp.dest(appHtml.directory));
 })
 
