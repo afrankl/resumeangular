@@ -1,15 +1,25 @@
 @import '_sizes/base-sizes';
+@import 'colors';
 
 #sidenav {
+    position: absolute;
     float: left;
     width: $sidenav-width;
-    height: 100%;
-    background-color: #ececec;
+    background-color: $mdb-color-lighten-3;
     border-right: 1px solid grey;
     box-shadow: 1px 0px 1em #333;
+    height: 100%;
+}
+
+#nav-group {
+    margin-bottom: 0px !important;
 }
 
 .nav-item {
     cursor: pointer !important;
     border-radius: 0px !important;
+}
+
+#sidenav-header {
+    color: grey;
 }

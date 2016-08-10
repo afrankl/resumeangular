@@ -1,0 +1,12 @@
+@import '_sizes/base-sizes';
+@import 'colors';
+
+#topnav {
+    width: 100%;
+    height: $topnav-height;
+    background-color: $dark-blue;
+}
+
+#menu-icon {
+    color: white;
+}

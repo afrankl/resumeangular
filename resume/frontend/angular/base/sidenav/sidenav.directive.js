@@ -24,9 +24,9 @@
         }
     }
 
-    resumeSideNavController.$inject = ['$state', '$rootScope'];
+    resumeSideNavController.$inject = ['$state', '$rootScope', '$location'];
 
-    function resumeSideNavController($state, $rootScope) {
+    function resumeSideNavController($state, $rootScope, $location) {
         //vars
         var vm = this;
         vm.activeSection = 0;

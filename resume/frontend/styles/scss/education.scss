@@ -1,0 +1,59 @@
+@import 'colors';
+
+#cal-img-outline {
+    width: 100%;
+    padding-top: 0px !important;
+    margin-top: 4px !important;
+}
+
+#cal-img {
+    min-width: 100%;
+}
+
+#education-graduated {
+    padding-top: 5px;
+    background-color: $berkeley-blue;
+    margin-bottom: 0px !important;
+    color: $berkeley-yellow;
+
+    small {
+        color: white;
+    }
+}
+
+@mixin education-box($primary, $secondary, $text, $course, $weight) {
+    background-color: $primary !important;
+    font-weight: $weight;
+    h2 {
+        color: $text;
+    }
+    .course {
+        h3 {
+            font-weight: 900;
+            color: $secondary;
+            small {
+                font-weight: 900;
+                color: $course;
+            }
+        }
+        blockquote {
+            color: $text;
+            border-left: 5px solid $text;
+            strong {
+                font-weight: 900;
+                color: $secondary;
+            }
+        }
+    }
+}
+
+.education-box-primary {
+    @include education-box($berkeley-blue, $berkeley-yellow, white, $berkeley-rose-garden, normal);
+    box-shadow: 0px 5px 5px #888, 0px -5px 5px #888;
+}
+
+.education-box-secondary {
+    @include education-box($berkeley-yellow, $light-blue-darken-4, $berkeley-blue, $light-blue-darken-4, bold);
+    box-shadow: 0px 5px 5px #888, 0px -5px 5px #888;
+
+}
