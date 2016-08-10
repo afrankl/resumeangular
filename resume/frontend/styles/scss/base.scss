@@ -1,15 +1,7 @@
 @import '_sizes/base-sizes';
+@import 'colors';
 
-#topnav {
-    width: 100%;
-    height: $topnav-height;
-    background-color: #455a64;
-}
 
-#content {
-    height: 200px;
-}
-
-#menu-icon {
-    color: white;
+body {
+    background-color: $body-background;
 }

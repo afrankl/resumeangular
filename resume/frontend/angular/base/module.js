@@ -6,9 +6,11 @@
         .config(statesConfig)
         .run(navConfig);
 
-    statesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function statesConfig($stateProvider, $urlRouterProvider) {
+    statesConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+    function statesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         $urlRouterProvider.otherwise('/home');
+        // $locationProvider.html5Mode(true);
+
     }
 
     navConfig.$inject = ['$rootScope'];

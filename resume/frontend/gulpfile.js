@@ -38,6 +38,12 @@ var appCSS = {
 var appHtml = {
     directory: '../static/app/templates'
 }
+
+// Where all the app-related images (and other assets) will be dumped
+var appAssets = {
+    directory: '../static/app/assets'
+}
+
 // Where all the angular-related config files will be dumped
 var angularConfig = {
     file: 'config.js',
@@ -92,6 +98,13 @@ gulp.task('app-html', function() {
         .pipe(gulp.dest(appHtml.directory));
 })
 
+// Task for asset files from app
+gulp.task('app-assets', function() {
+    return gulp.src('assets/**')
+        .pipe(flatten({includeParents: 0}))
+        .pipe(gulp.dest(appAssets.directory));
+})
+
 // Task for CSS, SCSS and SASS files for app
 gulp.task('app-css', function() {
     return gulp.src('styles/**')
@@ -118,32 +131,15 @@ gulp.task('angular-config', createAngularTask('**/app.js', angularConfig));
 gulp.task('angular-module', createAngularTask('**/module.js', angularModule));
 gulp.task('angular-factory', createAngularTask('**/*.factory.js', angularFactory));
 gulp.task('angular-directive', createAngularTask('**/*.directive.js', angularDirective));
+
 // Angular tasks (combined)
 gulp.task('app-angular', ['angular-config', 'angular-module', 'angular-factory', 'angular-directive'])
-
-// Task to organize and concatenate AngularJS files for the application 
-// gulp.task('app-angular', function() {
-//     var angularSrc = 'angular/**'; // Directories containing AngularJS files
-//     // Pipelines
-//     var configPipeline = gulp.src(angularSrc)
-//         .pipe(filter('**/app.js'));
-//     var modulePipeline = gulp.src(angularSrc)
-//         .pipe(filter('**/module.js'));
-//     var factoryPipeline = gulp.src(angularSrc)
-//         .pipe(filter('**/*.factory.js'));
-//     var directivePipeline = gulp.src(angularSrc)
-//         .pipe(filter('**/*.directive.js'));
-//     // Final merge
-//     return merge(configPipeline, modulePipeline, factoryPipeline, directivePipeline)
-//         .pipe(concat(appAngularJS.file))
-//         .pipe(gulp.dest(appAngularJS.directory));
-// });
 
 // Task to compile all application js
 gulp.task('app-js', ['app-angular']);
 
 // Task to compile all application components
-gulp.task('app', ['app-js', 'app-css', 'app-html']);
+gulp.task('app', ['app-js', 'app-css', 'app-html', 'app-assets']);
 
 // Task to compile all application components on change
 gulp.task('watch', function() {
