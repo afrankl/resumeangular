@@ -19,9 +19,15 @@
         };
     }
 
-    resumeEducationController.$inject = [];
+    resumeEducationController.$inject = ['$state'];
     
-    function resumeEducationController() {
+    function resumeEducationController($state) {
         var vm = this;
+
+        vm.redirectToSref = redirectToSref;
+
+        function redirectToSref(stateName) {
+            $state.go(stateName);
+        }
     }
 })();
