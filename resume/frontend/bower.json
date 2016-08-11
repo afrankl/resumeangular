@@ -24,6 +24,9 @@
     "angular-bootstrap": "^2.0.1",
     "animate.css": "^3.5.2",
     "angular-animate": "^1.5.8",
-    "angular-animate-css": "^0.0.4"
+    "angular-animate-css": "^0.0.4",
+    "jspdf": "^1.2.61",
+    "html2canvas": "^0.4.1",
+    "pdfmake": "^0.1.20"
   }
 }

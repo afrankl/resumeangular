@@ -4,6 +4,7 @@
         'ngAnimate',
 
         'layout',
+        'resume',
         'app.sidenav',
         'app.topnav',
         'app.content'

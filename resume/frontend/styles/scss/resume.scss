@@ -1,0 +1,80 @@
+@import 'colors';
+
+#resume-content {
+    position: relative;
+    background-color: white;
+    min-height: 1200px;
+    min-width: 800px;
+    overflow: scroll;
+    margin: 10px;
+    padding-bottom: 10px;
+}
+
+#resume-header {
+    position: relative;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    background-color: $grey-darken-3;
+    h2 {
+        color: white;
+        small {
+            color: $grey-lighten-1;
+        }
+    }
+    h5 {
+        font-size: 13px;
+        small {
+            font-size: 11px;
+            color: $grey-lighten-2;
+            a {
+                color: $grey-lighten-2;
+            }
+        }
+        color: $grey-lighten-4;
+    }
+}
+
+#resume-name-title {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+div.horizontal-line-bottom {
+  position: absolute;
+  overflow: visible;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background-color: $grey-lighten-1;
+  height: 6px;
+  width: 120%;
+}
+
+div.horizontal-line-top {
+  position: absolute;
+  overflow: visible;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background-color: white;
+  height: 10px;
+  width: 200%;
+}
+
+#resume-contact-info {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+#resume-work-experience {
+    h3 {
+        color: $grey-darken-3;
+    }
+    h4 {
+        color: $grey-darken-3;
+    }
+}
