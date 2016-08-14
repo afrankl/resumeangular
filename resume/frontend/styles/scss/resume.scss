@@ -1,80 +1,157 @@
 @import 'colors';
 
-#resume-content {
+#my-content {
     position: relative;
     background-color: white;
     min-height: 1200px;
     min-width: 800px;
     overflow: scroll;
-    margin: 10px;
-    padding-bottom: 10px;
+    
 }
 
-#resume-header {
-    position: relative;
-    margin-left: 0px !important;
-    margin-right: 0px !important;
-    background-color: $grey-darken-3;
-    h2 {
+#my-sidepanel {
+    position: absolute;
+    height: 100%;
+    z-index: 999;
+    width: 350px;
+    background-color: $stylish-color;
+    float: left;
+    h1 {
+        text-align: center;
         color: white;
+        small {
+            color: $grey-lighten-2;
+        }
+    }
+    h3 {
+        color: $grey-lighten-2;
         small {
             color: $grey-lighten-1;
         }
     }
     h5 {
-        font-size: 13px;
+        font-size: 14px;
+        color: $grey-lighten-2;
+        a {
+            color: $light-blue-lighten-4;
+        }
         small {
-            font-size: 11px;
-            color: $grey-lighten-2;
-            a {
-                color: $grey-lighten-2;
+            font-size: 12px;
+            color: $grey-lighten-1;   
+        }
+    }
+}
+
+#my-photo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 200px;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+#my-basic-info {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    width: 100%;
+    background-color: $elegant-color;
+    h1 {
+        padding-top: 10px;
+    }
+}
+
+#my-programming-languages {
+    h3 {
+        position: relative;
+        left: 50px;
+        padding-bottom: 10px;
+        padding-top: 15px;
+    }
+    .skill {
+        height: 30px;
+        padding-left: 18px;
+        padding-right: 30px;
+        display: block;
+        position: relative;
+        h5 {
+            width: 25%;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            display: inline-block;
+            text-align: right;
+            position: relative;
+            top: -2px;
+            margin-top: 0px !important;
+            padding-right: 10px;
+        }
+        .partial {
+            width: 70%;
+            display: inline-block;
+            position: relative;
+            .progress {
+                background-color: $special-color;
+                .progress-bar-info {
+                    background-color: $blue-grey-lighten-1;
+                    // text-shadow: -0.5px 0 $grey-lighten-4, 0 0.5px $grey-lighten-4, 0.5px 0 $grey-lighten-4, 0 -0.5px $grey-lighten-4;
+                    font-weight: 500;
+                    color: $special-color;
+                }
             }
         }
-        color: $grey-lighten-4;
     }
 }
 
-#resume-name-title {
-    position: relative;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
-
-div.horizontal-line-bottom {
-  position: absolute;
-  overflow: visible;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 3px;
-  background-color: $grey-lighten-1;
-  height: 6px;
-  width: 120%;
-}
-
-div.horizontal-line-top {
-  position: absolute;
-  overflow: visible;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 3px;
-  background-color: white;
-  height: 10px;
-  width: 200%;
-}
-
-#resume-contact-info {
+#my-contact-info {
     position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 0px;
+    padding: 10px;
+    background-color: $elegant-color;
+    .col-xs-6 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 
-
-#resume-work-experience {
+#my-main-panel {
+    position: absolute;
+    left: 350px;
+    right: 0px;
+    background-color: $grey-lighten-1-2;
+    bottom: 0px;
+    top: 0px;
     h3 {
-        color: $grey-darken-3;
+        color: $stylish-color;
     }
-    h4 {
-        color: $grey-darken-3;
+}
+
+.resume-box-header {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    overflow: hidden;
+    h5 {
+        margin-top: 0px;
+        font-size: 12px;
+        strong {
+           font-size: 13px;
+           color: $elegant-color; 
+        }
+        color: $grey-darken-1;
+        small {
+            font-size: 11px;
+            color: $grey-darken-2;
+        }
     }
+
+}
+.resume-box-company {
+    position: relative;
+    float: left;
+}
+.resume-box-date {
+    position: relative;
+    float: right;
 }

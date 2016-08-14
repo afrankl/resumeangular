@@ -68,7 +68,7 @@ var angularDirective = {
 // Task for Font files from bower packages 
 gulp.task('bower-fonts', function() {
     return gulp.src('bower_components/**')
-        .pipe(filter('**/*.{woff,eot,svg,ttf,woff2}'))
+        .pipe(filter('**/*.{woff,eot,svg,ttf,woff2,otf}'))
         .pipe(flatten({includeParents: 0}))
         .pipe(gulp.dest(bowerFonts.directory));
 })
@@ -85,7 +85,7 @@ gulp.task('bower-js', function() {
 // Task for CSS, SCSS and SASS files from bower packages
 gulp.task('bower-css', function() {
     return gulp.src(mainBowerFiles())
-        .pipe(filter('**/*.{css, scss, sass}'))
+        .pipe(filter('**/*.{css,scss,sass}'))
         .pipe(sass()) // Compile SASS components
         .pipe(concat(bowerCSS.file))
         .pipe(minify())

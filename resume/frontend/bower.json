@@ -27,6 +27,8 @@
     "angular-animate-css": "^0.0.4",
     "jspdf": "^1.2.61",
     "html2canvas": "^0.4.1",
-    "pdfmake": "^0.1.20"
+    "pdfmake": "^0.1.20",
+    "dom-to-image": "^2.5.1",
+    "font-awesome": "^4.6.3"
   }
 }
