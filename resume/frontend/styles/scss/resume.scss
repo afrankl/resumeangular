@@ -4,7 +4,7 @@
     position: relative;
     background-color: white;
     min-height: 1200px;
-    min-width: 800px;
+    min-width: 850px;
     overflow: scroll;
     
 }
@@ -46,6 +46,8 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    min-height: 200px;
+    min-width: 200px;
     max-height: 200px;
     max-width: 200px;
     border-radius: 50%;
@@ -57,19 +59,36 @@
     padding-bottom: 25px;
     width: 100%;
     background-color: $elegant-color;
+    #my-name {
+        padding-top:10px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
     h1 {
-        padding-top: 10px;
+        padding-top: 0px;
+        margin-top: -12px;
+        small {
+            padding-top: 0px;
+            margin-top: 0px;
+        }
     }
 }
 
 #my-programming-languages {
+    position: relative;
     h3 {
         position: relative;
         left: 50px;
         padding-bottom: 10px;
         padding-top: 15px;
     }
-    .skill {
+    .side-divider {
+        position: relative;
+        height: 0px;
+        margin: 13px;
+    }
+    .skill, .note {
         height: 30px;
         padding-left: 18px;
         padding-right: 30px;
@@ -92,6 +111,7 @@
             display: inline-block;
             position: relative;
             .progress {
+                margin-bottom: 10px;
                 background-color: $special-color;
                 .progress-bar-info {
                     background-color: $blue-grey-lighten-1;
@@ -99,6 +119,24 @@
                     font-weight: 500;
                     color: $special-color;
                 }
+                .progress-bar-success {
+                    background-color: $blue-grey-lighten-3;
+                    font-weight: 500;
+                    color: $special-color;
+                }
+            }
+        }
+    }
+    .note {
+        text-align: left !important;
+        margin-top: 0px !important;
+        h5 {
+            margin-bottom: 5px !important;
+        }
+        .partial {
+            small {
+                float: left !important;
+                text-align: left;
             }
         }
     }
@@ -124,29 +162,42 @@
     top: 0px;
     h3 {
         color: $stylish-color;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .resume-box-light {
+        blockquote {
+            color: $elegant-color;
+            font-size: 12px;
+            ul {
+                padding-top: 5px;
+                color: $grey-darken-1;
+                font-size: 11.5px;
+            }
+        }
+        .resume-box-header {
+            position: relative;
+            width: 100%;
+            padding: 5px;
+            overflow: hidden;
+            h5 {
+                margin-top: 0px;
+                margin-bottom: 2px;
+                font-size: 12px;
+                strong {
+                   font-size: 13px;
+                   color: $elegant-color; 
+                }
+                color: $grey-darken-1;
+                small {
+                    font-size: 10.5px;
+                    color: $grey-darken-2;
+                }
+            }
+        }
     }
 }
 
-.resume-box-header {
-    position: relative;
-    width: 100%;
-    padding: 5px;
-    overflow: hidden;
-    h5 {
-        margin-top: 0px;
-        font-size: 12px;
-        strong {
-           font-size: 13px;
-           color: $elegant-color; 
-        }
-        color: $grey-darken-1;
-        small {
-            font-size: 11px;
-            color: $grey-darken-2;
-        }
-    }
-
-}
 .resume-box-company {
     position: relative;
     float: left;

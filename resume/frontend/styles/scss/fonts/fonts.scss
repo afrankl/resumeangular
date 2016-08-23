@@ -4,7 +4,7 @@
 @each $delimiter in $delimiters {
     @each $name, $size in $font-sizes {
         .font#{$delimiter}size#{$delimiter}#{$name} {
-            font-size: $size;
+            font-size: $size !important;
         }
     }
 }
