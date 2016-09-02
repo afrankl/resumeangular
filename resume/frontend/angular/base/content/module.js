@@ -45,5 +45,9 @@
                 'url': '/side-projects',
                 'templateUrl': '/static/app/templates/base/content/projects/projects.html'
             })
+            .state('resume', {
+                'url': '/resume',
+                'template': '<resume></resume>'
+            })
     }
 })();

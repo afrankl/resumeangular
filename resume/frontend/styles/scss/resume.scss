@@ -1,0 +1,224 @@
+@import 'colors';
+
+#my-content {
+    position: relative;
+    background-color: white;
+    min-height: 1200px;
+    min-width: 850px;
+    overflow: scroll;
+    
+}
+
+#my-sidepanel {
+    position: absolute;
+    height: 100%;
+    z-index: 999;
+    width: 350px;
+    background-color: $stylish-color;
+    float: left;
+    h1 {
+        text-align: center;
+        color: white;
+        small {
+            color: $grey-lighten-2;
+        }
+    }
+    h3 {
+        color: $grey-lighten-2;
+        small {
+            color: $grey-lighten-1;
+        }
+    }
+    h5 {
+        font-size: 14px;
+        color: $grey-lighten-2;
+        a {
+            color: $light-blue-lighten-4;
+        }
+        small {
+            font-size: 12px;
+            color: $grey-lighten-1;   
+        }
+    }
+}
+
+$photo-size: 200px;
+
+#my-photo {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: $photo-size;
+    min-width: $photo-size;
+    max-height: $photo-size;
+    max-width: $photo-size;
+    border-radius: 50%;
+}
+
+#my-basic-info {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    width: 100%;
+    background-color: $elegant-color;
+    #my-name {
+        padding-top:10px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    h1 {
+        padding-top: 0px;
+        margin-top: -12px;
+        small {
+            padding-top: 0px;
+            margin-top: 0px;
+        }
+    }
+}
+
+#my-programming-languages {
+    position: relative;
+    h3 {
+        position: relative;
+        left: 50px;
+        padding-bottom: 10px;
+        padding-top: 15px;
+    }
+    .side-divider {
+        position: relative;
+        height: 0px;
+        margin: 13px;
+    }
+    .skill, .note {
+        height: 30px;
+        padding-left: 18px;
+        padding-right: 30px;
+        display: block;
+        position: relative;
+        h5 {
+            width: 25%;
+            height: 20px;
+            line-height: 20px;
+            vertical-align: middle;
+            display: inline-block;
+            text-align: right;
+            position: relative;
+            top: -2px;
+            margin-top: 0px !important;
+            padding-right: 10px;
+        }
+        .partial {
+            width: 70%;
+            display: inline-block;
+            position: relative;
+            .progress {
+                margin-bottom: 10px;
+                background-color: $special-color;
+                .progress-bar-info {
+                    background-color: $blue-grey-lighten-1;
+                    // text-shadow: -0.5px 0 $grey-lighten-4, 0 0.5px $grey-lighten-4, 0.5px 0 $grey-lighten-4, 0 -0.5px $grey-lighten-4;
+                    font-weight: 500;
+                    color: $special-color;
+                }
+                .progress-bar-success {
+                    background-color: $blue-grey-lighten-3;
+                    font-weight: 500;
+                    color: $special-color;
+                }
+            }
+        }
+    }
+    .note {
+        text-align: left !important;
+        margin-top: 0px !important;
+        h5 {
+            margin-bottom: 5px !important;
+        }
+        .partial {
+            small {
+                float: left !important;
+                text-align: left;
+            }
+        }
+    }
+}
+
+#my-contact-info {
+    position: absolute;
+    bottom: 0px;
+    padding: 10px;
+    background-color: $elegant-color;
+    .col-xs-6 {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+#exposure-note {
+    color: $blue-grey-lighten-4 !important;
+    strong {
+        color: $blue-grey-lighten-5 !important;
+    }
+    text-shadow: -1px 0 $special-color, 0 1px $special-color, 1px 0 $special-color, 0 -1px $special-color;
+
+}
+
+#my-main-panel {
+    position: absolute;
+    left: 350px;
+    right: 0px;
+    background-color: $grey-lighten-1-2;
+    bottom: 0px;
+    top: 0px;
+    h3 {
+        color: $stylish-color;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .resume-box-light {
+        blockquote {
+            color: $grey-darken-3;
+            font-size: 11.5px;
+            strong {
+                // color: $special-color !important;
+                // background-color: #ffff00;
+            }
+            ul {
+                padding-top: 5px;
+                color: $grey-darken-1;
+                font-size: 10.25px;
+                
+            }
+        }
+        .resume-box-header {
+            position: relative;
+            width: 100%;
+            padding: 5px;
+            overflow: hidden;
+            h5 {
+                margin-top: 0px;
+                margin-bottom: 2px;
+                font-size: 12px;
+                strong {
+                   font-size: 13px;
+                   color: $elegant-color; 
+                }
+                color: $grey-darken-1;
+                small {
+                    font-size: 10.5px;
+                    color: $grey-darken-2;
+                }
+            }
+        }
+    }
+}
+
+.resume-box-company {
+    position: relative;
+    float: left;
+}
+.resume-box-date {
+    position: relative;
+    float: right;
+}

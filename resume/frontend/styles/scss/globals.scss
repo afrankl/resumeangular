@@ -14,6 +14,34 @@ blockquote.remove-line {
   transform: translateY(-50%);
 }
 
+.horizontal-center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+div.horizontal-line-bottom {
+  position: absolute;
+  overflow: visible;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background-color: $grey-lighten-1;
+  height: 6px;
+  width: 150%;
+}
+
+div.horizontal-line-top {
+  position: absolute;
+  overflow: visible;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background-color: white;
+  height: 10px;
+  width: 200%;
+}
+
 .no-border-radius {
     border-radius: 0px !important;
 }
@@ -29,4 +57,19 @@ blockquote.remove-line {
 .resume-box {
     box-shadow: 0px 10px 5px #888, 0px -10px 5px #888;
     background-color: white;
+}
+
+.resume-box-light {
+    position: relative;
+    box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
+    background-color: white;
+}
+
+.resume-box, .resume-box-light {
+  ul {
+    padding-left: 10px !important;
+  }
+  blockquote {
+    font-size: 11.6px;
+  }
 }

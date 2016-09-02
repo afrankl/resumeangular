@@ -66,6 +66,12 @@
                     title: "Side Projects",
                     sref: 'projects'
                 }
+            ],
+            [
+                {
+                    title: "Resume",
+                    sref: 'resume'
+                }
             ]
         ]
 
