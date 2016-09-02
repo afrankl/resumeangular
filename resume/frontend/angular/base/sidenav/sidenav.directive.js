@@ -65,6 +65,10 @@
                 {
                     title: "Side Projects",
                     sref: 'projects'
+                },
+                {
+                    title: "Shopify Coupons",
+                    sref: "shopify.coupon"
                 }
             ],
             [

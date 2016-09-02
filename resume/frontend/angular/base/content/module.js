@@ -49,5 +49,9 @@
                 'url': '/resume',
                 'template': '<resume></resume>'
             })
+            .state('shopify.coupon', {
+                'url': '/shopify-coupon',
+                'template': '<shopify-coupon></shopify-coupon>'
+            })
     }
 })();
