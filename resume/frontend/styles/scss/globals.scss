@@ -14,6 +14,12 @@ blockquote.remove-line {
   transform: translateY(-50%);
 }
 
+.horizontal-center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 div.horizontal-line-bottom {
   position: absolute;
   overflow: visible;
