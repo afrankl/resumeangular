@@ -21,10 +21,6 @@ import backend
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', backend.views.home)
+    url(r'^$', backend.views.home),
+    url(r'^static/(?P<path>.*)$', views.serve)
 ]
-
-if not settings.DEBUG:
-    urlpatterns += patterns('',
-        (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )

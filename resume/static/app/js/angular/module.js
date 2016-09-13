@@ -1,9 +1,3 @@
-(function () {
-
-    "use-strict";
-
-    angular.module('layout', []);
-})();
 (function() {
 
     "use-strict";
@@ -26,6 +20,12 @@
     }
 })();
 
+(function () {
+
+    "use-strict";
+
+    angular.module('layout', []);
+})();
 (function () {
 
     "use-strict";
