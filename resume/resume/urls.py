@@ -22,5 +22,5 @@ import backend
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', backend.views.home),
-    url(r'^static/(?P<path>.*)$', views.serve)
+    url(r'^static/(?P<path>.*)$', serve)
 ]
