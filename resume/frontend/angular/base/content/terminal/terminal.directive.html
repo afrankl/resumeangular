@@ -1,0 +1,59 @@
+<h1 class="text-center"> Quizzes </h1>
+
+<div> 
+    <button 
+        ng-click="vm.toggleModes()"> Toggle modes </button>
+    <div> Current mode: {{vm.studentMode ? "Student" : "Teacher"}}</div>
+</div>
+
+<question ng-repeat="q in vm.questions"
+          ng-if="!vm.studentMode"
+          question-object="q">
+</question>
+
+<question 
+    ng-if="vm.studentMode"
+    question-object="vm.questions[currentQuestion]">
+</question>
+
+<div
+    ng-if="vm.studentMode">
+    <button 
+        class="col-xs-4"
+        ng-if="vm.studentMode"
+        ng-click="vm.nextQuestion()"> Next Question </button>
+    <button
+        class="col-xs-4 pull-right" 
+        ng-if="vm.studentMode"
+        ng-click="vm.previousQuestion"> Previous Question </button>
+    <button
+        class="col-xs-12"
+        ng-click="vm.submitQuestions"> Submit </button>
+</div>
+
+<div 
+    ng-if="!vm.studentMode"
+    class="p-tb-lg">
+    <h1> Add a question! </h1>
+    <button 
+        ng-click="vm.toggleQuestionType()"> Change Type
+    </button>
+    <div>
+        Current question type: {{vm.booleanQuestionType}}
+    </div>
+    <div 
+        class="m-tb-sm">
+        <div>
+            <div class="col-xs-4"> Question: </div>
+            <textarea class="col-xs-8"></textarea>
+        </div>
+        <div>
+            <div class="col-xs-4"> Answer: </div>
+            <textarea class="col-xs-8"></textarea>
+        </div>
+    </div>
+    <button 
+        class="col-xs-12"
+        ng-click="vm.addQuestion()"> Add Question
+    </button>
+</div>

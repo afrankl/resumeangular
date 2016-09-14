@@ -1,0 +1,23 @@
+<div
+    ng-if="vm.studentMode" 
+    class="resume-box m-lr-sm m-tb-sm">
+    <div
+        class="col-xs-12">
+        {{vm.questionObject.message}} </div>
+    <textarea ng-model="vm.questionObject.attempt">
+    </textarea>
+</div>
+
+<div
+    ng-if="vm.studentMode"
+    class="resume-box p-lr-xs m-tb-sm">
+    <textarea
+        class="col-xs-12"
+        ng-model="vm.questionObject.attempt">
+    </textarea>
+    <textarea
+        class="col-xs-12 p-t-xs"
+        g-model="vm.questionObject.attempt">
+    </textarea>
+</div>
+
