@@ -1,4 +1,3 @@
-#resume/static/**/*
 resume/static
 resume/staticfiles
 *.pyc
