@@ -1,1 +1,5 @@
-resume/static/**/*
+resume/static
+resume/staticfiles
+*.pyc
+venv
+.env
