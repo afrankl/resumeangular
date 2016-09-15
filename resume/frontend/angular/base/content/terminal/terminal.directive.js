@@ -40,7 +40,7 @@
         vm.submitQuestions = submitQuestions;
 
         vm.questions = []
-        var testQuestion = new Question(false, "This is the first question", "And this is the first answer");
+        var testQuestion = new Question(vm.booleanQuestionType, "This is the first question", "And this is the first answer");
         vm.questions.push(testQuestion);
 
         function addQuestion() {
@@ -79,7 +79,6 @@
                     vm.questionsRight += 1;
                 }
             }
-            console.log('check');
         }
     }
 })();
