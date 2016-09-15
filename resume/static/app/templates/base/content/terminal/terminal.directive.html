@@ -1,0 +1,98 @@
+<h1 class="text-center"> Quizzes </h1>
+
+
+<button
+    class="m-tb-sm horizontal-center btn btn-info"
+    type="button"
+    ng-click="vm.toggleModes()">Change to {{vm.studentMode ? "teacher" : "student"}} mode</button>
+
+<div class="container col-xs-12 p-all-sm">
+    <question 
+        ng-repeat="q in vm.questions"
+        ng-if="!vm.studentMode"
+        question-object="q"
+        student-mode="false">
+    </question>
+</div>
+
+<div
+    ng-if="vm.studentMode"
+    class="col-xs-12 text-center m-t-sm">
+    {{vm.currentQuestion + 1}} of {{vm.questions.length}}
+</div>
+
+<div class="container col-xs-12 p-all-sm">
+    <question
+        class="m-tb-lg"
+        ng-if="vm.studentMode"
+        question-object="vm.questions[vm.currentQuestion]"
+        student-mode="true">
+    </question>
+</div>
+
+<div
+    ng-if="vm.studentMode"
+    class="col-xs-12">
+    <button
+        class="col-xs-4 btn btn-info"
+        type="button" 
+        ng-if="vm.studentMode"
+        ng-click="vm.previousQuestion()"> Previous Question </button>
+    <button 
+        class="col-xs-4 pull-right btn btn-info"
+        type="button"
+        ng-if="vm.studentMode"
+        ng-click="vm.nextQuestion()"> Next Question </button>
+</div>
+
+<div
+    class="col-xs-12 p-lr-sm"
+    ng-if="vm.studentMode && (vm.questions.length - 1) == vm.currentQuestion">
+    <button
+        type="button"
+        class="col-xs-12 m-tb-sm horizontal-center btn btn-info stylish-background" 
+        ng-click="vm.submitQuestions()"> 
+        Submit all answers 
+    </button>
+</div>
+
+
+<div
+    class="col-xs-12"
+    ng-show="vm.questionsRight !== undefined && vm.studentMode">
+        Score: {{vm.questionsRight}}/{{vm.questions.length}} </div>
+
+<div 
+    ng-if="!vm.studentMode"
+    class="m-tb-sm">
+    <h1 class="text-center"> Add a question! </h1>
+    <button
+        type="button"
+        class="horizontal-center m-tb-sm btn btn-info"
+        ng-click="vm.toggleQuestionType()"> Change to a {{vm.booleanQuestionType ? "text" : "true/false"}} answer type
+    </button>
+    <div class="container col-xs-12 p-all-sm">
+        <div class="col-xs-4 col-sm-2"> Question </div>
+        <textarea
+            class="col-xs-8 col-sm-10"
+            ng-model="vm.addMessage"></textarea>
+    </div>
+    <div class="container m-t-md col-xs-12 p-all-sm"> 
+        <div class="col-xs-4 col-sm-2 text-left"> Answer </div>
+        <input 
+            type="checkbox"
+            ng-if="vm.booleanQuestionType"
+            ng-model="vm.addAnswer">
+        <textarea
+            ng-if="!vm.booleanQuestionType"
+            class="col-xs-8 col-sm-10"
+            ng-model="vm.addAnswer"></textarea>
+    </div>
+    <div class="container col-xs-12 p-lr-sm m-tb-lg">
+        <button 
+            class="horizontal-center p-lr-lg btn btn-info stylish-background"
+            type="button"
+            ng-click="vm.addQuestion()"> Add Question
+        </button>
+    </div>
+</div>

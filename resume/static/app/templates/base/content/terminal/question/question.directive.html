@@ -1,0 +1,56 @@
+<div
+    ng-if="vm.studentMode"
+    class="p-lr-xs m-tb-sm container">
+    <div class="container">
+        <div class="col-xs-12 m-t-sm">
+            <strong> Question </strong>
+        </div>
+        <div
+            class="col-xs-12 m-t-xxs"
+            ng-model="vm.questionObject.message">
+            {{vm.questionObject.message}} 
+        </div>
+    </div>
+    <div class="container m-t-sm">
+        <div
+            ng-class="{'col-xs-12': !vm.questionObject.trueFalse, 'col-xs-4': vm.questionObject.trueFalse}">
+            <strong> Answer </strong>
+        </div>
+        <input
+            class="col-xs-12 m-t-xs"
+            ng-if="!vm.questionObject.trueFalse"
+            ng-model="vm.questionObject.attempt">
+        <input 
+            ng-if="vm.questionObject.trueFalse"
+            type="checkbox"
+            ng-model="vm.questionObject.attempt">
+    </div>
+</div>
+
+<div
+    ng-if="!vm.studentMode"
+    class="p-lr-xs m-tb-sm container">
+    <div class="container">
+        <div class="col-xs-12 m-t-sm">
+            <strong> Question </strong>
+        </div>
+        <input
+            class="col-xs-12 m-t-xxs"
+            ng-model="vm.questionObject.message">
+    </div>
+    <div class="container m-t-sm">
+        <div
+            ng-class="{'col-xs-12': !vm.questionObject.trueFalse, 'col-xs-4': vm.questionObject.trueFalse}">
+            <strong> Answer </strong>   
+        </div>
+        <input
+            class="col-xs-12 m-t-xs"
+            ng-if="!vm.questionObject.trueFalse"
+            ng-model="vm.questionObject.answer">
+        <input 
+            ng-if="vm.questionObject.trueFalse"
+            type="checkbox"
+            ng-model="vm.questionObject.answer">
+    </div>
+</div>
+
