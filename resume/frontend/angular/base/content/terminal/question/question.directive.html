@@ -1,23 +1,18 @@
 <div
-    ng-if="vm.studentMode" 
-    class="resume-box m-lr-sm m-tb-sm">
-    <div
-        class="col-xs-12">
-        {{vm.questionObject.message}} </div>
-    <textarea ng-model="vm.questionObject.attempt">
-    </textarea>
+    ng-if="vm.studentMode"
+    class="m-lr-sm m-tb-sm container">
+    <div class="col-xs-12"> {{vm.questionObject.message}} </div>
+    <input class="col-xs-12" ng-model="vm.questionObject.attempt">
 </div>
 
 <div
-    ng-if="vm.studentMode"
-    class="resume-box p-lr-xs m-tb-sm">
-    <textarea
+    ng-if="!vm.studentMode"
+    class="p-lr-xs m-tb-sm container">
+    <input
         class="col-xs-12"
-        ng-model="vm.questionObject.attempt">
-    </textarea>
-    <textarea
+        ng-model="vm.questionObject.message">
+    <input
         class="col-xs-12 p-t-xs"
-        g-model="vm.questionObject.attempt">
-    </textarea>
+        ng-model="vm.questionObject.answer">
 </div>
 

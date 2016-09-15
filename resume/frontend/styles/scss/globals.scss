@@ -20,6 +20,11 @@ blockquote.remove-line {
   transform: translateX(-50%);
 }
 
+.container {
+  display: block;
+  overflow: auto;
+}
+
 div.horizontal-line-bottom {
   position: absolute;
   overflow: visible;

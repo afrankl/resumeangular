@@ -15,9 +15,10 @@
             controller: questionController,
             scope: {},
             bindToController: {
-                questionObject: '='
+                questionObject: '=',
+                studentMode: '='
             },
-            transclude: true,
+            transclude: false,
         };
     }
 

@@ -37,13 +37,16 @@
         vm.addQuestion = addQuestion;
         vm.booleanQuestionType = false;
         vm.toggleQuestionType = toggleQuestionType;
+        vm.submitQuestions = submitQuestions;
 
         vm.questions = []
         var testQuestion = new Question(false, "This is the first question", "And this is the first answer");
         vm.questions.push(testQuestion);
 
         function addQuestion() {
-            vm.questions 
+            var q = new Question(vm.booleanQuestionType, vm.addMessage, vm.addAnswer);
+            vm.questions.push(q);
+
         }
 
         function toggleModes() {
@@ -52,7 +55,7 @@
 
         function nextQuestion() {
             vm.currentQuestion++;
-            if (vm.currentQuestion > vm.questions.length) {
+            if (vm.currentQuestion >= vm.questions.length) {
                 vm.currentQuestion = 0;
             }
         }
@@ -66,6 +69,17 @@
 
         function toggleQuestionType() {
             vm.booleanQuestionType = !vm.booleanQuestionType;
+        }
+
+        function submitQuestions() {
+            vm.questionsRight = 0;
+            for (var i in vm.questions) {
+                var q = vm.questions[i];
+                if (q.attempt === q.answer) {
+                    vm.questionsRight += 1;
+                }
+            }
+            console.log('check');
         }
     }
 })();
