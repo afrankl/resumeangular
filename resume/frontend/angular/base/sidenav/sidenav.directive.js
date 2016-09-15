@@ -72,6 +72,12 @@
                     title: "Resume",
                     sref: 'resume'
                 }
+            ],
+            [
+                {
+                    title: "Terminal",
+                    sref: 'terminal'
+                }
             ]
         ]
 

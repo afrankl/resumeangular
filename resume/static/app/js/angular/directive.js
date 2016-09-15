@@ -36,6 +36,33 @@
         })
     }
 })();
+(function () {
+
+    "use-strict";
+
+    angular.module('layout')
+        .directive('resumeBox', resumeBoxDirective);
+
+    resumeBoxDirective.$inject = [];
+
+    function resumeBoxDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/layout/resumeBox/resumeBox.directive.html',
+            controllerAs: 'vm',
+            controller: resumeBoxController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeBoxController.$inject = [];
+    
+    function resumeBoxController() {
+        var vm = this;
+    }
+})();
 (function (){
     "use-strict";
 
@@ -142,6 +169,12 @@
                     title: "Resume",
                     sref: 'resume'
                 }
+            ],
+            [
+                {
+                    title: "Terminal",
+                    sref: 'terminal'
+                }
             ]
         ]
 
@@ -189,33 +222,6 @@
             vm.navOpen = !$rootScope.navOpen
             $rootScope.navOpen = vm.navOpen;
         }
-    }
-})();
-(function () {
-
-    "use-strict";
-
-    angular.module('layout')
-        .directive('resumeBox', resumeBoxDirective);
-
-    resumeBoxDirective.$inject = [];
-
-    function resumeBoxDirective() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'static/app/templates/layout/resumeBox/resumeBox.directive.html',
-            controllerAs: 'vm',
-            controller: resumeBoxController,
-            scope: {},
-            transclude: true,
-            bind: {},
-        };
-    }
-
-    resumeBoxController.$inject = [];
-    
-    function resumeBoxController() {
-        var vm = this;
     }
 })();
 (function () {
@@ -425,13 +431,16 @@
         vm.addQuestion = addQuestion;
         vm.booleanQuestionType = false;
         vm.toggleQuestionType = toggleQuestionType;
+        vm.submitQuestions = submitQuestions;
 
         vm.questions = []
-        var testQuestion = new Question(false, "This is the first question", "And this is the first answer");
+        var testQuestion = new Question(vm.booleanQuestionType, "This is the first question", "And this is the first answer");
         vm.questions.push(testQuestion);
 
         function addQuestion() {
-            vm.questions 
+            var q = new Question(vm.booleanQuestionType, vm.addMessage, vm.addAnswer);
+            vm.questions.push(q);
+
         }
 
         function toggleModes() {
@@ -440,7 +449,7 @@
 
         function nextQuestion() {
             vm.currentQuestion++;
-            if (vm.currentQuestion > vm.questions.length) {
+            if (vm.currentQuestion >= vm.questions.length) {
                 vm.currentQuestion = 0;
             }
         }
@@ -454,6 +463,16 @@
 
         function toggleQuestionType() {
             vm.booleanQuestionType = !vm.booleanQuestionType;
+        }
+
+        function submitQuestions() {
+            vm.questionsRight = 0;
+            for (var i in vm.questions) {
+                var q = vm.questions[i];
+                if (q.attempt === q.answer) {
+                    vm.questionsRight += 1;
+                }
+            }
         }
     }
 })();
@@ -501,9 +520,10 @@
             controller: questionController,
             scope: {},
             bindToController: {
-                questionObject: '='
+                questionObject: '=',
+                studentMode: '='
             },
-            transclude: true,
+            transclude: false,
         };
     }
 

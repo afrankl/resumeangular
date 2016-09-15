@@ -1,3 +1,9 @@
+(function () {
+
+    "use-strict";
+
+    angular.module('layout', []);
+})();
 (function() {
 
     "use-strict";
@@ -24,12 +30,6 @@
 
     "use-strict";
 
-    angular.module('layout', []);
-})();
-(function () {
-
-    "use-strict";
-
     angular.module('app.content', [
             'app.content.bio',
             'app.content.education',
@@ -37,7 +37,8 @@
             'app.content.home',
             'app.content.languages',
             'app.content.projects',
-            'app.content.work'
+            'app.content.work',
+            'app.content.terminal'
         ])
         .config(contentConfig);
 
@@ -76,6 +77,10 @@
             .state('resume', {
                 'url': '/resume',
                 'template': '<resume></resume>'
+            })
+            .state('terminal', {
+                'url': '/terminal',
+                'template': '<terminal></terminal>'
             })
     }
 })();

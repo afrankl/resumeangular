@@ -121,6 +121,10 @@ blockquote.remove-line {
   left: 50%;
   transform: translateX(-50%); }
 
+.container {
+  display: block;
+  overflow: auto; }
+
 div.horizontal-line-bottom {
   position: absolute;
   overflow: visible;
