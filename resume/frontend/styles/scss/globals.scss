@@ -20,9 +20,16 @@ blockquote.remove-line {
   transform: translateX(-50%);
 }
 
+.stylish-background {
+  background-color: $stylish-color;
+  color: white;
+  border-color: $stylish-color !important; 
+}
+
 .container {
   display: block;
   overflow: auto;
+  width: 100%;
 }
 
 div.horizontal-line-bottom {

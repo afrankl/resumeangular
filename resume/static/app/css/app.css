@@ -121,9 +121,15 @@ blockquote.remove-line {
   left: 50%;
   transform: translateX(-50%); }
 
+.stylish-background {
+  background-color: #4B515D;
+  color: white;
+  border-color: #4B515D !important; }
+
 .container {
   display: block;
-  overflow: auto; }
+  overflow: auto;
+  width: 100%; }
 
 div.horizontal-line-bottom {
   position: absolute;
