@@ -3,7 +3,7 @@
 
 
 body {
-    background-color: $body-background;
+    background-color: $grey-lighten-2;
 }
 
 a {
@@ -13,4 +13,6 @@ a {
 #content {
     height: calc(100% - #{$topnav-height});
     overflow: scroll;
+    margin: 10px;
+    box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
 }

@@ -32,14 +32,16 @@ $menu-icon-transition: all 0.25s ease-in-out;
     @include add-transition($sidenav-transition);
     position: absolute;
     left: 0px;
-    width: 100%;
+    margin: 10px;
+    width: calc(100% - 2 * #{$content-margin});
 }
 
 .slide-content-right {
     @include add-transition($sidenav-transition);
     position: absolute;
     left: $sidenav-width;
-    width: calc(100% - #{$sidenav-width}) !important;
+    margin: $content-margin;
+    width: calc(100% - #{$sidenav-width} - 2 * #{$content-margin}) !important;
 }
 
 .menu-icon-selected {

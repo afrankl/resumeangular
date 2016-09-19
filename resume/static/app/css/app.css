@@ -7,7 +7,7 @@
   left: 0; }
 
 .hide-side-nav.ng-hide {
-  left: -250px; }
+  left: -350px; }
 
 .slide-content-left {
   -webkit-transition: all 0.3s ease-in-out;
@@ -16,7 +16,8 @@
   transition: all 0.3s ease-in-out;
   position: absolute;
   left: 0px;
-  width: 100%; }
+  margin: 10px;
+  width: calc(100% - 2 * 10px); }
 
 .slide-content-right {
   -webkit-transition: all 0.3s ease-in-out;
@@ -24,8 +25,9 @@
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   position: absolute;
-  left: 250px;
-  width: calc(100% - 250px) !important; }
+  left: 350px;
+  margin: 10px;
+  width: calc(100% - 350px - 2 * 10px) !important; }
 
 .menu-icon-selected {
   -webkit-transition: all 0.25s ease-in-out;
@@ -42,25 +44,26 @@
   color: white; }
 
 body {
-  background-color: #f3f3f3; }
+  background-color: #e0e0e0; }
 
 a {
   cursor: pointer; }
 
 #content {
-  height: calc(100% - 60px);
-  overflow: scroll; }
+  height: calc(100% - 70px);
+  overflow: scroll;
+  margin: 10px;
+  box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888; }
 
 #cal-img-outline {
   width: 100%;
   padding-top: 0px !important;
-  margin-top: 4px !important; }
+  margin-top: 0px !important; }
 
 #cal-img {
   min-width: 100%; }
 
 #education-graduated {
-  padding-top: 5px;
   background-color: #041E41;
   margin-bottom: 0px !important;
   color: #F6B91C; }
@@ -151,25 +154,138 @@ div.horizontal-line-top {
   margin-top: 0px !important; }
 
 .resume-box {
-  box-shadow: 0px 10px 5px #888, 0px -10px 5px #888;
-  background-color: white; }
-
-.resume-box-light {
   position: relative;
   box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
   background-color: white; }
+  .resume-box ul {
+    padding-left: 10px !important; }
+  .resume-box blockquote {
+    color: #424242;
+    font-size: 12.5px; }
+    .resume-box blockquote ul {
+      padding-top: 5px;
+      color: #757575;
+      font-size: 10.5px; }
+  .resume-box .resume-box-header {
+    position: relative;
+    width: 100%;
+    padding: 5px 3px 10px;
+    overflow: hidden; }
+    .resume-box .resume-box-header h5 {
+      margin-top: 0px;
+      margin-bottom: 2px;
+      font-size: 13px;
+      color: #757575; }
+      .resume-box .resume-box-header h5 strong {
+        font-size: 13px;
+        color: #37474F; }
+      .resume-box .resume-box-header h5 small {
+        padding-left: 5px;
+        font-size: 10.5px;
+        color: #616161; }
+    .resume-box .resume-box-header .resume-box-title {
+      position: relative;
+      width: 30%;
+      float: left;
+      display: inline-block; }
+    .resume-box .resume-box-header .resume-box-title-wide {
+      position: relative;
+      width: 60%;
+      float: left;
+      display: inline-block; }
+    .resume-box .resume-box-header .resume-box-company {
+      position: relative;
+      width: 40%;
+      text-align: center;
+      display: inline-block; }
+    .resume-box .resume-box-header .resume-box-date {
+      position: relative;
+      width: 30%;
+      padding-right: 3px;
+      text-align: right;
+      float: right;
+      display: inline-block; }
+      .resume-box .resume-box-header .resume-box-date .glyphicon {
+        margin-right: 1px; }
+    .resume-box .resume-box-header .resume-box-date-wide {
+      position: relative;
+      width: 40%;
+      padding-right: 3px;
+      text-align: right;
+      float: right;
+      display: inline-block; }
+      .resume-box .resume-box-header .resume-box-date-wide .glyphicon {
+        margin-right: 2px; }
 
-.resume-box ul, .resume-box-light ul {
-  padding-left: 10px !important; }
-
-.resume-box blockquote, .resume-box-light blockquote {
-  font-size: 11.6px; }
+.resume-box {
+  position: relative;
+  box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
+  background-color: white; }
+  .resume-box ul {
+    padding-left: 10px !important; }
+  .resume-box blockquote {
+    color: #424242;
+    font-size: 12.5px; }
+    .resume-box blockquote ul {
+      padding-top: 5px;
+      color: #757575;
+      font-size: 10.5px; }
+  .resume-box .resume-box-header {
+    position: relative;
+    width: 100%;
+    padding: 5px 3px 10px;
+    overflow: hidden; }
+    .resume-box .resume-box-header h5 {
+      margin-top: 0px;
+      margin-bottom: 2px;
+      font-size: 13px;
+      color: #757575; }
+      .resume-box .resume-box-header h5 strong {
+        font-size: 13px;
+        color: #37474F; }
+      .resume-box .resume-box-header h5 small {
+        padding-left: 5px;
+        font-size: 10.5px;
+        color: #616161; }
+    .resume-box .resume-box-header .resume-box-title {
+      position: relative;
+      width: 30%;
+      float: left;
+      display: inline-block; }
+    .resume-box .resume-box-header .resume-box-title-wide {
+      position: relative;
+      width: 60%;
+      float: left;
+      display: inline-block; }
+    .resume-box .resume-box-header .resume-box-company {
+      position: relative;
+      width: 40%;
+      text-align: center;
+      display: inline-block; }
+    .resume-box .resume-box-header .resume-box-date {
+      position: relative;
+      width: 30%;
+      padding-right: 3px;
+      text-align: right;
+      float: right;
+      display: inline-block; }
+      .resume-box .resume-box-header .resume-box-date .glyphicon {
+        margin-right: 1px; }
+    .resume-box .resume-box-header .resume-box-date-wide {
+      position: relative;
+      width: 40%;
+      padding-right: 3px;
+      text-align: right;
+      float: right;
+      display: inline-block; }
+      .resume-box .resume-box-header .resume-box-date-wide .glyphicon {
+        margin-right: 2px; }
 
 #my-content {
   position: relative;
   background-color: white;
-  min-height: 1200px;
-  min-width: 850px;
+  min-height: 1210px;
+  min-width: 935px;
   overflow: scroll; }
 
 #my-sidepanel {
@@ -246,6 +362,7 @@ div.horizontal-line-top {
       width: 25%;
       height: 20px;
       line-height: 20px;
+      transform: translateY(-50%);
       vertical-align: middle;
       display: inline-block;
       text-align: right;
@@ -303,60 +420,43 @@ div.horizontal-line-top {
     color: #4B515D;
     margin-bottom: 0px;
     margin-top: 10px; }
-  #my-main-panel .resume-box-light blockquote {
-    color: #424242;
-    font-size: 11.5px; }
-    #my-main-panel .resume-box-light blockquote ul {
-      padding-top: 5px;
-      color: #757575;
-      font-size: 10.25px; }
-  #my-main-panel .resume-box-light .resume-box-header {
-    position: relative;
-    width: 100%;
-    padding: 5px;
-    overflow: hidden; }
-    #my-main-panel .resume-box-light .resume-box-header h5 {
-      margin-top: 0px;
-      margin-bottom: 2px;
-      font-size: 12px;
-      color: #757575; }
-      #my-main-panel .resume-box-light .resume-box-header h5 strong {
-        font-size: 13px;
-        color: #2E2E2E; }
-      #my-main-panel .resume-box-light .resume-box-header h5 small {
-        font-size: 10.5px;
-        color: #616161; }
-
-.resume-box-company {
-  position: relative;
-  float: left; }
-
-.resume-box-date {
-  position: relative;
-  float: right; }
 
 #sidenav {
   position: absolute;
   float: left;
-  width: 250px;
-  background-color: #b0bec5;
-  border-right: 1px solid grey;
+  width: 350px;
+  background-color: #2E2E2E;
+  border-right: 1px solid #2E2E2E;
   box-shadow: 1px 0px 1em #333;
   height: 100%; }
 
 #nav-group {
   margin-bottom: 0px !important; }
 
+#panel-head {
+  position: relative; }
+  #panel-head img {
+    border-radius: 50%;
+    min-height: 50px;
+    min-width: 50px;
+    max-height: 50px;
+    max-width: 50px; }
+
 .nav-item {
   cursor: pointer !important;
-  border-radius: 0px !important; }
+  border: 0px solid #2E2E2E !important;
+  background-color: #2E2E2E;
+  color: white !important; }
+
+.nav-item:hover {
+  color: #2E2E2E !important; }
 
 #sidenav-header {
   color: grey; }
 
 #topnav {
   width: 100%;
-  height: 60px;
+  height: 70px;
   background-color: #455a64; }
 
 #menu-icon {

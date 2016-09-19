@@ -25,15 +25,49 @@
         var vm = this;
 
         vm.redirectToSref = redirectToSref;
+        vm.rating = 5;
+        vm.max = 5;
 
         function redirectToSref(stateName) {
             $state.go(stateName);
         }
 
-        var form = document.getElementById('my-content');
-        domtoimage.toPng(form).then(function(dataurl) {
-            window.open(dataurl);
-        })
+        // var form = document.getElementById('my-content');
+        // domtoimage.toPng(form).then(function(dataurl) {
+        //     window.open(dataurl);
+        // })
+    }
+})();
+(function (){
+    "use-strict";
+
+    angular.module('app.content')
+        .directive('resumeContent', resumeContentDirective);
+
+    resumeContentDirective.$inject = ['$rootScope'];
+
+    function resumeContentDirective($rootScope) {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/content.directive.html',
+            controllerAs: 'vm',
+            controller: resumeContentController,
+            scope: {},
+            transclude: true,
+            bind: {},
+            link: function(scope, element, attrs, ctrl) {
+                    $rootScope.$watch('navOpen', function(newVal, oldVal){
+                        ctrl.navOpen = newVal;
+                    });
+                }
+        };
+    }
+
+    resumeContentController.$inject = ['$state', '$rootScope'];
+    
+    function resumeContentController($state, $rootScope) {
+        var vm = this;
+        vm.navOpen = !$rootScope.navOpen;
     }
 })();
 (function (){
@@ -157,38 +191,6 @@
             vm.navOpen = !$rootScope.navOpen
             $rootScope.navOpen = vm.navOpen;
         }
-    }
-})();
-(function (){
-    "use-strict";
-
-    angular.module('app.content')
-        .directive('resumeContent', resumeContentDirective);
-
-    resumeContentDirective.$inject = ['$rootScope'];
-
-    function resumeContentDirective($rootScope) {
-        return {
-            restrict: 'EA',
-            templateUrl: 'static/app/templates/base/content/content.directive.html',
-            controllerAs: 'vm',
-            controller: resumeContentController,
-            scope: {},
-            transclude: true,
-            bind: {},
-            link: function(scope, element, attrs, ctrl) {
-                    $rootScope.$watch('navOpen', function(newVal, oldVal){
-                        ctrl.navOpen = newVal;
-                    });
-                }
-        };
-    }
-
-    resumeContentController.$inject = ['$state', '$rootScope'];
-    
-    function resumeContentController($state, $rootScope) {
-        var vm = this;
-        vm.navOpen = !$rootScope.navOpen;
     }
 })();
 (function () {

@@ -1,12 +1,16 @@
 @import '_sizes/base-sizes';
 @import 'colors';
 
+$nav-item-color: $elegant-color;
+$side-nav-background-color: $elegant-color;
+$photo-size: 50px;
+
 #sidenav {
     position: absolute;
     float: left;
     width: $sidenav-width;
-    background-color: $mdb-color-lighten-3;
-    border-right: 1px solid grey;
+    background-color: $elegant-color;
+    border-right: 1px solid $elegant-color;
     box-shadow: 1px 0px 1em #333;
     height: 100%;
 }
@@ -15,9 +19,26 @@
     margin-bottom: 0px !important;
 }
 
+#panel-head {
+    position: relative;
+    img {
+        border-radius: 50%;
+        min-height: $photo-size;
+        min-width: $photo-size;
+        max-height: $photo-size;
+        max-width: $photo-size;
+    }
+}
+
 .nav-item {
     cursor: pointer !important;
-    border-radius: 0px !important;
+    border: 0px solid $nav-item-color !important;
+    background-color: $nav-item-color;
+    color: white !important;
+}
+
+.nav-item:hover {
+    color: $elegant-color !important;
 }
 
 #sidenav-header {

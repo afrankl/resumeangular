@@ -1,5 +1,5 @@
-<div id="my-content"> <!-- class="m-all-sm resume-box-light" -->
-    <div id="my-sidepanel" class="resume-box-light">
+<div id="my-content"> <!-- class="m-all-sm resume-box" -->
+    <div id="my-sidepanel" class="resume-box">
         <div id="my-basic-info">
             <img id="my-photo" src="/static/app/assets/me_5_200x200.jpg">
             <h1 id="my-name"> 
@@ -227,10 +227,21 @@
             </div>
         </div>
         <div id="my-contact-info">
+            <div class="col-xs-12">
+                <h5 class="col-xs-4 text-left margin-top-xxs margin-bottom-xxxs">
+                    <small>Links</small>
+                </h5>
+                <h5 class="col-xs-4 text-center margin-top-xxs margin-bottom-xxxs">
+                    More Info
+                </h5>
+                <h5 class="col-xs-4 text-right margin-top-xxs margin-bottom-xxxs">
+                    <small>Contact</small>
+                </h5>
+            </div>
             <div class="col-xs-6">
                 <h5>
                     <i class="fa fa-globe"></i>
-                    <a>http://avifrankl.me</a>
+                    <a>http://avifrankl.<br>herokuapp.com</a>
                 </h5>
                 <h5>
                     <i class="fa fa-github"></i> 
@@ -256,37 +267,31 @@
                     2728 Haste Street <i class="fa fa-map-marker pull-right"></i><br>Berkeley California, 94704
                 </h5>
             </div>
-            <h5 class="margin-top-xxs margin-bottom-xxxs">
-                <small style="width: 70%; position: relative; left: 2px;">
-                    Resume created using HTML/CSS
-                </small>
-                <small style="width: 30%;" class="pull-right text-right">
-                    <i class="fa fa-copyright"></i> 2016 
-                    afrankl
-                </small>
-            </h5>
         </div>
     </div>
     <div id="my-main-panel">
         <div class="p-lr-sm m-b-sm">
             <h3><strong>Education</strong></h3>
-            <div class="resume-box-light m-lr-sm m-tb-sm">
+            <div class="resume-box m-lr-sm m-tb-sm">
                 <div class="resume-box-header">
-                    <h5 class="resume-box-company">
+                    <h5 class="resume-box-title-wide">
                         <strong>University of California Berkeley</strong> <br><small>Bachelors Degree, Computer Science</small>
                     </h5>
-                    <h5 class="resume-box-date">
+                    <h5 class="resume-box-date-wide">
                         <small><span class="glyphicon glyphicon-calendar"></span> Graduated May 13th, 2016</small>
                     </h5>
                 </div>
             </div>
         </div>
-        <div class="p-lr-sm">
+        <div class="p-lr-sm m-t-md">
             <h3><strong>Work Experience</strong></h3>
-            <div class="resume-box-light m-lr-sm m-tb-sm">
+            <div class="resume-box m-lr-sm m-tb-sm">
                 <div class="resume-box-header">
+                    <h5 class="resume-box-title">
+                        <small>Assoc Software Engineer</small>
+                    </h5>
                     <h5 class="resume-box-company">
-                        <strong>Track Revenue</strong> Web<br><small>Associate Software Engineer</small>
+                        <strong>Track Revenue</strong><br>
                     </h5>
                     <h5 class="resume-box-date">
                         <small>
@@ -306,11 +311,13 @@
                     </ul>
                 </blockquote>
             </div>
-            <div class="resume-box-light m-lr-sm m-tb-sm">
+            <div class="resume-box m-lr-sm m-tb-sm">
                 <div class="resume-box-header">
+                    <h5 class="resume-box-title">
+                        <small>Consultant, Programmer</small>
+                    </h5>
                     <h5 class="resume-box-company">
-                        <strong>College Track</strong> Web<br>
-                        <small>Software Engineer Consultant, Programmer</small>
+                        <strong>College Track</strong><br>
                     </h5>
                     <h5 class="resume-box-date">
                         <small><span class="glyphicon glyphicon-calendar"></span> Feb - May 2016</small>
@@ -326,10 +333,11 @@
                     </ul>
                 </blockquote>
             </div>
-            <div class="resume-box-light m-lr-sm m-b-sm">
+            <div class="resume-box m-lr-sm m-b-sm">
                 <div class="resume-box-header">
+                    <h5 class="resume-box-title"><small>Software Engineering Intern</small></h5>
                     <h5 class="resume-box-company">
-                        <strong>Lawrence Berkeley National Labs</strong> iOS, C<br><small>Software Engineer Intern</small>
+                        <strong>Lawrence Berkeley Labs</strong><br>
                     </h5>
                     <h5 class="resume-box-date">
                         <small>
@@ -356,12 +364,15 @@
                 </blockquote>
             </div>
         </div>
-        <div class="p-lr-sm">
+        <div class="p-lr-sm m-t-md">
             <h3><strong>Applications</strong></h3>
-            <div class="resume-box-light m-lr-sm m-tb-sm">
+            <div class="resume-box m-lr-sm m-tb-sm">
                 <div class="resume-box-header">
+                    <h5 class="resume-box-title">
+                        <small>Co-Founder</small>
+                    </h5>
                     <h5 class="resume-box-company">
-                        <strong>Social</strong> iOS<br><small>Co-Founder</small>
+                        <strong>Social</strong>
                     </h5>
                     <h5 class="resume-box-date">
                         <small><span class="glyphicon glyphicon-calendar"></span> 2015 - Present </small>
@@ -371,14 +382,18 @@
                     Created instagram-like application in <strong>Swift</strong> specifically geared towards daily and recurring events 
                     <ul>
                         <li>Utilizes multiple iOS tools - <strong>Autolayout</strong>, <strong>UIKit</strong>, <strong>MapKit</strong>, <strong>Core Animation</strong>, <strong>Core Graphics</strong>, and custom-made frameworks. </li>
+                        <li> Created login page, main menu, events page, and personal profile.</li>
                         <li>Ongoing development and business plan</li>
                     </ul>
                 </blockquote>
             </div>
-            <div class="resume-box-light m-lr-sm m-b-none">
+            <div class="resume-box m-lr-sm m-b-none">
                 <div class="resume-box-header">
+                    <h5 class="resume-box-title">
+                        <small>Co-Founder</small>
+                    </h5>
                     <h5 class="resume-box-company">
-                        <strong>BACTracker</strong> Android<br><small>Co-Founder</small>
+                        <strong>BACTracker</strong>
                     </h5>
                     <h5 class="resume-box-date">
                         <small><span class="glyphicon glyphicon-calendar"></span> June - Aug 2015</small>
