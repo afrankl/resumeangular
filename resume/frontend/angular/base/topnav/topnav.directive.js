@@ -43,8 +43,11 @@
             // console.log(content);
             $state.go('resume');
             var content = $('#my-content')[0];
+            var header = $('#my-content h1#adjusted-header');
+            header.css('margin-top', '-9px');
             domtoimage.toBlob(content).then(function(blob) {
                 saveAs(blob, "Avi-Frankl-Resume.png");
+                header.css('margin-top', '0px');
             }).catch(function (error) {
                 console.log(error);
             })

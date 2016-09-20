@@ -3,7 +3,7 @@
 
 $nav-item-color: $elegant-color;
 $side-nav-background-color: $elegant-color;
-$photo-size: 50px;
+$photo-size: 100px;
 
 #sidenav {
     position: absolute;
@@ -13,6 +13,7 @@ $photo-size: 50px;
     border-right: 1px solid $elegant-color;
     box-shadow: 1px 0px 1em #333;
     height: 100%;
+    z-index: 99999;
 }
 
 #nav-group {
@@ -21,12 +22,18 @@ $photo-size: 50px;
 
 #panel-head {
     position: relative;
+    margin: 20px 10px 0px;
     img {
         border-radius: 50%;
         min-height: $photo-size;
         min-width: $photo-size;
         max-height: $photo-size;
         max-width: $photo-size;
+    }
+    h4 {
+        position: relative;
+        padding: 10px 10px 10px;
+        margin: 0px;
     }
 }
 
@@ -35,6 +42,7 @@ $photo-size: 50px;
     border: 0px solid $nav-item-color !important;
     background-color: $nav-item-color;
     color: white !important;
+    font-size: 17px;
 }
 
 .nav-item:hover {

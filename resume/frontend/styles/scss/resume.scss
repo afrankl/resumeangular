@@ -18,8 +18,11 @@
     float: left;
     h1 {
         text-align: center;
+        font-size: 30px;
+        text-transform: uppercase;
         color: white;
         small {
+            font-size: 20px;
             color: $grey-lighten-2;
         }
     }
@@ -69,7 +72,7 @@ $photo-size: 200px;
     }
     h1 {
         padding-top: 0px;
-        margin-top: -12px;
+        margin: 0px;
         small {
             padding-top: 0px;
             margin-top: 0px;
