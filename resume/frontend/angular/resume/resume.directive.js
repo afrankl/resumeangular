@@ -31,10 +31,5 @@
         function redirectToSref(stateName) {
             $state.go(stateName);
         }
-
-        // var form = document.getElementById('my-content');
-        // domtoimage.toPng(form).then(function(dataurl) {
-        //     window.open(dataurl);
-        // })
     }
 })();

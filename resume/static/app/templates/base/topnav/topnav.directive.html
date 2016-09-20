@@ -1,12 +1,15 @@
 <div id="topnav">
-    <div class="col-xs-4 pull-right vertical-center">
-        <span id="menu-icon"
-            class="p-xs-r pull-right glyphicon glyphicon-menu-hamburger font-size-lg"
-            ng-class="{'menu-icon-selected': vm.navOpen, 'menu-icon-deselected': !vm.navOpen}"
-            ng-click="vm.onMenuClicked()">    
-        </span>
-        <div class="col-xs-8 col-sm-6 pull-right">
-            <span class="pull-right p-t-xxxs" style="color:white;"> Item 1 </span> 
-        </div>
+    <span id="menu-icon"
+        class="p-all-md pull-right glyphicon glyphicon-menu-hamburger font-size-lg"
+        ng-class="{'menu-icon-selected': vm.navOpen, 'menu-icon-deselected': !vm.navOpen}"
+        ng-click="vm.onMenuClicked()">    
+    </span>
+    <div id="downloads"
+        class="pull-right p-r-md text-center">
+        <span> Downloads </span>
+        <div id="downloads-dropdown"
+            >
+            <div ng-click="vm.onDownloadResumeClicked()"> Resume.png </div>
+        </div> 
     </div>
 </div>

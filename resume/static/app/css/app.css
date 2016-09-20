@@ -50,10 +50,9 @@ a {
   cursor: pointer; }
 
 #content {
-  height: calc(100% - 70px);
+  height: calc(100% - 70px - 2 * 10px);
   overflow: scroll;
-  margin: 10px;
-  box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888; }
+  margin: 10px; }
 
 #cal-img-outline {
   width: 100%;
@@ -457,7 +456,45 @@ div.horizontal-line-top {
 #topnav {
   width: 100%;
   height: 70px;
-  background-color: #455a64; }
+  background-color: #4B515D; }
+
+#downloads {
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  width: 150px;
+  position: relative; }
+  #downloads span {
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 20px;
+    right: 10px;
+    display: inline-block;
+    font-weight: 900; }
+  #downloads #downloads-dropdown {
+    position: absolute;
+    display: none;
+    top: 70px;
+    z-index: 9999;
+    background-color: #2E2E2E;
+    right: 0px;
+    width: 150px;
+    padding: 10px 30px 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 2px solid #4B515D;
+    border-right: 2px solid #4B515D;
+    border-bottom: 2px solid #4B515D; }
+    #downloads #downloads-dropdown div:hover {
+      color: orange; }
+
+#downloads:hover {
+  color: orange; }
+  #downloads:hover #downloads-dropdown {
+    display: block;
+    color: white; }
 
 #menu-icon {
   color: white; }
