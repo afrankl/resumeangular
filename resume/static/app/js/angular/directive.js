@@ -172,9 +172,9 @@
         }
     }
 
-    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope', '$timeout']
+    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope']
 
-    function resumeTopNavController($state, $rootScope, $compile, $scope, $timeout) {
+    function resumeTopNavController($state, $rootScope, $compile, $scope) {
         //vars
         var vm = this;
         vm.navOpen = $rootScope.navOpen;
@@ -190,37 +190,31 @@
         }
 
         function onDownloadResumeClicked() {
-            resumeToPng(vm.resumeElement, downloadResume);
+            resumeToPng(vm.resumeElement);
         }
 
-        function resumeToPng(resumeElement, onDataUrlFunc) {
-            // var content = resumeElement.childNodes[0];
-            // console.log(content);
-            $state.go('resume');
-            var content = $('#my-content')[0];
+        function resumeToPng(resumeElement) {
+            var resumeContent = resumeElement[0].childNodes[0];
+            var content = document.getElementById('content');
+            var exists = true;
+            if ($('#my-content').length == 0) {
+                content.appendChild(resumeContent);
+                exists = false;
+            } else {
+                resumeContent = document.getElementById('my-content');
+            }
             var header = $('#my-content h1#adjusted-header');
             header.css('margin-top', '-9px');
-            domtoimage.toBlob(content).then(function(blob) {
+            domtoimage.toBlob(resumeContent).then(function(blob) {
                 saveAs(blob, "Avi-Frankl-Resume.png");
                 header.css('margin-top', '0px');
+                if (!exists) {
+                    content.removeChild(resumeContent); 
+                }
+                vm.resumeElement = $compile('<resume></resume>')($scope);
             }).catch(function (error) {
                 console.log(error);
             })
-        }
-
-        function dataURItoBlob(dataURI) {
-            var binary = atob(dataURI.split(',')[1]);
-            var array = [];
-            for(var i = 0; i < binary.length; i++) {
-                array.push(binary.charCodeAt(i));
-            }
-            return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
-        }
-
-        function downloadResume(dataurl) {
-            console.log('tried to save');
-            saveAs(dataURItoBlob(dataurl), "AviResume.png");
-            
         }
     }
 })();

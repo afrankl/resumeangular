@@ -9,6 +9,7 @@ var sass = require('gulp-sass');
 var minify = require('gulp-minify');
 var merge = require('merge-stream');
 var flatten = require('gulp-flatten');
+var print = require('gulp-print');
 
 // Destinations
 var bowerFonts = {
@@ -76,9 +77,10 @@ gulp.task('bower-fonts', function() {
 // Task for Javascript files from bower packages 
 gulp.task('bower-js', function() {
     return gulp.src(mainBowerFiles())
-        .pipe(filter('**/*.js'))
+        // .pipe(print())
+        .pipe(filter(['**/*.js', '!**/ui-bootstrap/index.js']))
         .pipe(concat(bowerJS.file))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(bowerJS.directory));
 })
 
