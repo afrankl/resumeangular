@@ -23,5 +23,10 @@
     
     function resumeHomeController() {
         var vm = this;
+        vm.redirectToSref = redirectToSref;
+
+        function redirectToSref(stateName) {
+            $state.go(stateName);
+        }
     }
 })();

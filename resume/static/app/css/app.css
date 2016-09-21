@@ -44,7 +44,7 @@
   color: white; }
 
 body {
-  background-color: #e0e0e0; }
+  background-color: #f5f5f5; }
 
 a {
   cursor: pointer; }
@@ -109,6 +109,34 @@ a {
 
 .dark-blue {
   color: #455a64; }
+
+ul.no-dot li {
+  list-style-type: none; }
+
+.sref-dark {
+  cursor: pointer;
+  color: #607d8b;
+  text-decoration: none; }
+
+.sref-dark:hover {
+  color: #2E2E2E; }
+
+.sref-light {
+  cursor: pointer;
+  color: #b0bec5;
+  text-decoration: none; }
+
+.sref-light:hover {
+  color: #78909c; }
+
+.sref-light {
+  cursor: pointer;
+  color: #b0bec5;
+  text-decoration: none; }
+
+.full-width {
+  position: relative;
+  width: 100%; }
 
 blockquote.remove-line {
   border-left: none !important; }

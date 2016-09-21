@@ -4,6 +4,43 @@
     color: $dark-blue;
 }
 
+ul.no-dot {
+  li {
+    list-style-type: none;
+  }
+}
+
+.sref-dark {
+  cursor: pointer;
+  color: $mdb-color;
+  text-decoration: none;
+}
+
+.sref-dark:hover {
+  color: $elegant-color;
+}
+
+.sref-light {
+  cursor: pointer;
+  color: $mdb-color-lighten-3;
+  text-decoration: none;
+}
+
+.sref-light:hover {
+  color: $mdb-color-lighten-1;
+}
+
+.sref-light {
+  cursor: pointer;
+  color: $mdb-color-lighten-3;
+  text-decoration: none;
+}
+
+.full-width {
+  position: relative;
+  width: 100%;
+}
+
 blockquote.remove-line {
     border-left: none !important;
 }
