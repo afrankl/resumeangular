@@ -44,7 +44,8 @@
   color: white; }
 
 body {
-  background-color: #f5f5f5; }
+  background-color: #f5f5f5;
+  overflow: hidden; }
 
 a {
   cursor: pointer; }
@@ -459,7 +460,8 @@ div.horizontal-line-top {
   border-right: 1px solid #2E2E2E;
   box-shadow: 1px 0px 1em #333;
   height: 100%;
-  z-index: 99999; }
+  z-index: 99999;
+  overflow: scroll; }
 
 #nav-group {
   margin-bottom: 0px !important; }
@@ -496,21 +498,23 @@ div.horizontal-line-top {
   height: 70px;
   background-color: #4B515D; }
 
-#downloads {
+.topbar-item {
   color: white;
   cursor: pointer;
   height: 100%;
   position: relative; }
-  #downloads span {
+  .topbar-item span {
     position: relative;
     top: 50%;
+    transform: translateY(-50%);
     text-align: center;
     width: 100%;
-    padding-bottom: 20px;
     right: 10px;
+    padding-top: 8px;
     display: inline-block;
     font-weight: 900; }
-  #downloads #downloads-dropdown {
+  .topbar-item .topbar-dropdown {
+    text-align: right;
     position: absolute;
     display: none;
     top: 70px;
@@ -523,77 +527,20 @@ div.horizontal-line-top {
     border-left: 2px solid #4B515D;
     border-right: 2px solid #4B515D;
     border-bottom: 2px solid #4B515D; }
-    #downloads #downloads-dropdown div:hover {
-      color: orange; }
+    .topbar-item .topbar-dropdown div:hover, .topbar-item .topbar-dropdown div:hover a {
+      color: orange !important; }
+    .topbar-item .topbar-dropdown div a {
+      color: white !important;
+      text-decoration: none !important; }
 
-#downloads:hover {
+.topbar-item:hover {
   color: orange; }
-  #downloads:hover #downloads-dropdown {
+  .topbar-item:hover .topbar-dropdown {
     display: block;
     color: white; }
 
 #menu-icon {
   color: white; }
-
-.font-size-auto {
-  font-size: auto !important; }
-
-.font-size-xxxs {
-  font-size: 6px !important; }
-
-.font-size-xxs {
-  font-size: 8px !important; }
-
-.font-size-xs {
-  font-size: 10px !important; }
-
-.font-size-sm {
-  font-size: 12px !important; }
-
-.font-size-md {
-  font-size: 16px !important; }
-
-.font-size-lg {
-  font-size: 24px !important; }
-
-.font-size-xl {
-  font-size: 36px !important; }
-
-.font-size-xxl {
-  font-size: 48px !important; }
-
-.font-size-xxxl {
-  font-size: 64px !important; }
-
-.font_size_auto {
-  font-size: auto !important; }
-
-.font_size_xxxs {
-  font-size: 6px !important; }
-
-.font_size_xxs {
-  font-size: 8px !important; }
-
-.font_size_xs {
-  font-size: 10px !important; }
-
-.font_size_sm {
-  font-size: 12px !important; }
-
-.font_size_md {
-  font-size: 16px !important; }
-
-.font_size_lg {
-  font-size: 24px !important; }
-
-.font_size_xl {
-  font-size: 36px !important; }
-
-.font_size_xxl {
-  font-size: 48px !important; }
-
-.font_size_xxxl {
-  font-size: 64px !important; }
 
 .p-tb-auto {
   padding-top: auto;
@@ -3322,3 +3269,63 @@ div.horizontal-line-top {
 
 .padding_right_xxxl {
   padding-right: 96px; }
+
+.font-size-auto {
+  font-size: auto !important; }
+
+.font-size-xxxs {
+  font-size: 6px !important; }
+
+.font-size-xxs {
+  font-size: 8px !important; }
+
+.font-size-xs {
+  font-size: 10px !important; }
+
+.font-size-sm {
+  font-size: 12px !important; }
+
+.font-size-md {
+  font-size: 16px !important; }
+
+.font-size-lg {
+  font-size: 24px !important; }
+
+.font-size-xl {
+  font-size: 36px !important; }
+
+.font-size-xxl {
+  font-size: 48px !important; }
+
+.font-size-xxxl {
+  font-size: 64px !important; }
+
+.font_size_auto {
+  font-size: auto !important; }
+
+.font_size_xxxs {
+  font-size: 6px !important; }
+
+.font_size_xxs {
+  font-size: 8px !important; }
+
+.font_size_xs {
+  font-size: 10px !important; }
+
+.font_size_sm {
+  font-size: 12px !important; }
+
+.font_size_md {
+  font-size: 16px !important; }
+
+.font_size_lg {
+  font-size: 24px !important; }
+
+.font_size_xl {
+  font-size: 36px !important; }
+
+.font_size_xxl {
+  font-size: 48px !important; }
+
+.font_size_xxxl {
+  font-size: 64px !important; }

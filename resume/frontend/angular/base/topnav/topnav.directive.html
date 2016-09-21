@@ -4,12 +4,26 @@
         ng-class="{'menu-icon-selected': vm.navOpen, 'menu-icon-deselected': !vm.navOpen}"
         ng-click="vm.onMenuClicked()">    
     </span>
-    <div id="downloads"
-        class="pull-right p-lr-sm text-center">
+    <div 
+        class="pull-right p-lr-sm text-center topbar-item"> <!-- id="downloads" -->
         <span> Downloads </span>
-        <div id="downloads-dropdown"
-            >
+        <div class="topbar-dropdown"
+            > <!-- id="downloads-dropdown" -->
             <div ng-click="vm.onDownloadResumeClicked()"> Resume.png </div>
         </div> 
+    </div>
+    <div
+        class="pull-right p-lr-sm text-center topbar-item">
+        <span> Links </span>
+        <div class="topbar-dropdown">
+            <div >
+                <a href="https://www.github.com/afrankl">Github</a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/afrankl">
+                    Linkedin
+                </a>
+            </div>
+        </div>
     </div>
 </div>

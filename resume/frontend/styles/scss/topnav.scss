@@ -8,7 +8,7 @@ $dropdown-border-color: $stylish-color;
     background-color: $stylish-color;
 }
 
-#downloads {
+.topbar-item {
     color: white;
     cursor: pointer;
     height: 100%;
@@ -16,14 +16,16 @@ $dropdown-border-color: $stylish-color;
     span {
         position: relative;
         top: 50%;
+        transform: translateY(-50%);
         text-align: center;
         width: 100%;
-        padding-bottom: 20px;
         right: 10px;
+        padding-top: 8px;
         display: inline-block;
         font-weight: 900;
     }
-    #downloads-dropdown {
+    .topbar-dropdown {
+        text-align: right;
         position: absolute;
         display: none;
         top: $topnav-height;
@@ -36,21 +38,23 @@ $dropdown-border-color: $stylish-color;
         border-left: 2px solid $dropdown-border-color;
         border-right: 2px solid $dropdown-border-color;
         border-bottom: 2px solid $dropdown-border-color;
-        div:hover {
-            color: orange;
+        div:hover, div:hover a {
+            color: orange !important;
+        }
+        div a{
+            color: white !important;
+            text-decoration: none !important;
         }
     }
 }
 
-#downloads:hover {
-    #downloads-dropdown {
+.topbar-item:hover {
+    .topbar-dropdown {
         display: block;
         color: white;
     }
     color: orange;
 }
-
-
 
 #menu-icon {
     color: white;
