@@ -3,8 +3,8 @@
 #my-content {
     position: relative;
     background-color: white;
-    min-height: 1200px;
-    min-width: 850px;
+    min-height: 1210px;
+    min-width: 935px;
     overflow: scroll;
     
 }
@@ -18,8 +18,11 @@
     float: left;
     h1 {
         text-align: center;
+        font-size: 30px;
+        text-transform: uppercase;
         color: white;
         small {
+            font-size: 20px;
             color: $grey-lighten-2;
         }
     }
@@ -69,7 +72,7 @@ $photo-size: 200px;
     }
     h1 {
         padding-top: 0px;
-        margin-top: -12px;
+        margin: 0px;
         small {
             padding-top: 0px;
             margin-top: 0px;
@@ -100,6 +103,7 @@ $photo-size: 200px;
             width: 25%;
             height: 20px;
             line-height: 20px;
+            transform: translateY(-50%);
             vertical-align: middle;
             display: inline-block;
             text-align: right;
@@ -176,49 +180,4 @@ $photo-size: 200px;
         margin-bottom: 0px;
         margin-top: 10px;
     }
-    .resume-box-light {
-        blockquote {
-            color: $grey-darken-3;
-            font-size: 11.5px;
-            strong {
-                // color: $special-color !important;
-                // background-color: #ffff00;
-            }
-            ul {
-                padding-top: 5px;
-                color: $grey-darken-1;
-                font-size: 10.25px;
-                
-            }
-        }
-        .resume-box-header {
-            position: relative;
-            width: 100%;
-            padding: 5px;
-            overflow: hidden;
-            h5 {
-                margin-top: 0px;
-                margin-bottom: 2px;
-                font-size: 12px;
-                strong {
-                   font-size: 13px;
-                   color: $elegant-color; 
-                }
-                color: $grey-darken-1;
-                small {
-                    font-size: 10.5px;
-                    color: $grey-darken-2;
-                }
-            }
-        }
-    }
-}
-
-.resume-box-company {
-    position: relative;
-    float: left;
-}
-.resume-box-date {
-    position: relative;
-    float: right;
 }

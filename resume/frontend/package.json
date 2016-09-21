@@ -5,6 +5,7 @@
   "main": "main.js",
   "dependencies": {},
   "devDependencies": {
+    "gulp-bower-files": "^0.2.7",
     "gulp-concat": "^2.6.0",
     "gulp-filter": "^4.0.0",
     "gulp-flatten": "^0.3.0",

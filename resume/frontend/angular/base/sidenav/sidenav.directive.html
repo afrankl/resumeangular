@@ -1,5 +1,12 @@
 <div class="hide-side-nav" id="sidenav" ng-hide="!vm.navOpen">
-    <h5 id="sidenav-header" class="text-center"> Panel </h5>
+    <div id="panel-head">
+        <img class="horizontal-center"
+        src="/static/app/assets/me_5_200x200.jpg">
+        <h4 
+            class="text-center">
+            <small>My goal is to improve my skills as a Software Engineer.  I am specifically interested in web or mobile development.</small>
+        </h4>
+    </div>
     <div class="list-group no-border-radius remove-margin-bottom">
         <div ng-repeat="section in vm.navItems track by $index"
              ng-init="sectionIndex=$index;"

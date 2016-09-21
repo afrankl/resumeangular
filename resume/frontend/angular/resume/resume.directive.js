@@ -25,14 +25,11 @@
         var vm = this;
 
         vm.redirectToSref = redirectToSref;
+        vm.rating = 5;
+        vm.max = 5;
 
         function redirectToSref(stateName) {
             $state.go(stateName);
         }
-
-        var form = document.getElementById('my-content');
-        domtoimage.toPng(form).then(function(dataurl) {
-            window.open(dataurl);
-        })
     }
 })();
