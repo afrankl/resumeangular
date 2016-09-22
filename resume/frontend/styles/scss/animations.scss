@@ -28,8 +28,11 @@ $menu-icon-transition: all 0.25s ease-in-out;
     left: -$sidenav-width;
 }
 
-.slide-content-left {
+.slide-content-left-add {
     @include add-transition($sidenav-transition);
+}
+
+.slide-content-left {
     position: absolute;
     left: 0px;
     margin: 10px;
@@ -37,11 +40,14 @@ $menu-icon-transition: all 0.25s ease-in-out;
 }
 
 .slide-content-right {
-    @include add-transition($sidenav-transition);
     position: absolute;
     left: $sidenav-width;
     margin: $content-margin;
     width: calc(100% - #{$sidenav-width} - 2 * #{$content-margin}) !important;
+}
+
+.slide-content-right-add {
+    @include add-transition($sidenav-transition);
 }
 
 .menu-icon-selected {

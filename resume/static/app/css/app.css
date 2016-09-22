@@ -9,25 +9,29 @@
 .hide-side-nav.ng-hide {
   left: -350px; }
 
-.slide-content-left {
+.slide-content-left-add {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+.slide-content-left {
   position: absolute;
   left: 0px;
   margin: 10px;
   width: calc(100% - 2 * 10px); }
 
 .slide-content-right {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   position: absolute;
   left: 350px;
   margin: 10px;
   width: calc(100% - 350px - 2 * 10px) !important; }
+
+.slide-content-right-add {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 .menu-icon-selected {
   -webkit-transition: all 0.25s ease-in-out;
@@ -541,6 +545,66 @@ div.horizontal-line-top {
 
 #menu-icon {
   color: white; }
+
+.font-size-auto {
+  font-size: auto !important; }
+
+.font-size-xxxs {
+  font-size: 6px !important; }
+
+.font-size-xxs {
+  font-size: 8px !important; }
+
+.font-size-xs {
+  font-size: 10px !important; }
+
+.font-size-sm {
+  font-size: 12px !important; }
+
+.font-size-md {
+  font-size: 16px !important; }
+
+.font-size-lg {
+  font-size: 24px !important; }
+
+.font-size-xl {
+  font-size: 36px !important; }
+
+.font-size-xxl {
+  font-size: 48px !important; }
+
+.font-size-xxxl {
+  font-size: 64px !important; }
+
+.font_size_auto {
+  font-size: auto !important; }
+
+.font_size_xxxs {
+  font-size: 6px !important; }
+
+.font_size_xxs {
+  font-size: 8px !important; }
+
+.font_size_xs {
+  font-size: 10px !important; }
+
+.font_size_sm {
+  font-size: 12px !important; }
+
+.font_size_md {
+  font-size: 16px !important; }
+
+.font_size_lg {
+  font-size: 24px !important; }
+
+.font_size_xl {
+  font-size: 36px !important; }
+
+.font_size_xxl {
+  font-size: 48px !important; }
+
+.font_size_xxxl {
+  font-size: 64px !important; }
 
 .p-tb-auto {
   padding-top: auto;
@@ -3269,63 +3333,3 @@ div.horizontal-line-top {
 
 .padding_right_xxxl {
   padding-right: 96px; }
-
-.font-size-auto {
-  font-size: auto !important; }
-
-.font-size-xxxs {
-  font-size: 6px !important; }
-
-.font-size-xxs {
-  font-size: 8px !important; }
-
-.font-size-xs {
-  font-size: 10px !important; }
-
-.font-size-sm {
-  font-size: 12px !important; }
-
-.font-size-md {
-  font-size: 16px !important; }
-
-.font-size-lg {
-  font-size: 24px !important; }
-
-.font-size-xl {
-  font-size: 36px !important; }
-
-.font-size-xxl {
-  font-size: 48px !important; }
-
-.font-size-xxxl {
-  font-size: 64px !important; }
-
-.font_size_auto {
-  font-size: auto !important; }
-
-.font_size_xxxs {
-  font-size: 6px !important; }
-
-.font_size_xxs {
-  font-size: 8px !important; }
-
-.font_size_xs {
-  font-size: 10px !important; }
-
-.font_size_sm {
-  font-size: 12px !important; }
-
-.font_size_md {
-  font-size: 16px !important; }
-
-.font_size_lg {
-  font-size: 24px !important; }
-
-.font_size_xl {
-  font-size: 36px !important; }
-
-.font_size_xxl {
-  font-size: 48px !important; }
-
-.font_size_xxxl {
-  font-size: 64px !important; }

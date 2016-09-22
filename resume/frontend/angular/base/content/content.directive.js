@@ -16,10 +16,10 @@
             transclude: true,
             bind: {},
             link: function(scope, element, attrs, ctrl) {
-                    $rootScope.$watch('navOpen', function(newVal, oldVal){
-                        ctrl.navOpen = newVal;
-                    });
-                }
+                $rootScope.$watch('navOpen', function(newVal, oldVal){
+                    ctrl.navOpen = newVal;
+                });
+            }
         };
     }
 
@@ -27,6 +27,7 @@
     
     function resumeContentController($state, $rootScope) {
         var vm = this;
+        vm.loading = false;
         vm.navOpen = !$rootScope.navOpen;
     }
 })();
