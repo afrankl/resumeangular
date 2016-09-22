@@ -61,6 +61,29 @@ $stylish-color-dark: #3E4551;
 $elegant-color: #2E2E2E;
 $default-color: #2BBBAD;
 
+.stylish-bg {
+    background-color: $stylish-color !important;
+}
+
+.stylish-dark-bg {
+    background-color: $stylish-color-dark !important;
+}
+
+.special-bg {
+    background-color: $special-color !important;
+}
+
+.special-dark-bg {
+    background-color: $special-color-dark !important;
+}
+
+.mdb-lighten-2-bg {
+    background-color: $mdb-color-lighten-2;
+}
+.mdb-lighten-3-bg {
+    background-color: $mdb-color-lighten-3;
+}
+
 
 $body-background-color: $grey-lighten-4;
 $content-background-color: $body-background-color;

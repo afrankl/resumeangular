@@ -1,0 +1,27 @@
+@import '_sizes/base-sizes';
+@import 'colors';
+
+#content {
+    height: calc(100% - #{$topnav-height} - 2 * #{$content-margin});
+    overflow: scroll;
+    margin: 10px;
+}
+
+#content-spinner-container {
+    height: calc(100% - #{$topnav-height});
+    overflow: hidden;
+}
+
+#content-spinner {
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    -webkit-transform: inherit rotate(45deg);
+    top: 50%;
+}
+
+
+.stylish {
+    background-color: $stylish-color !important;
+}
+

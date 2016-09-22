@@ -47,6 +47,24 @@
   transition: all 0.25s ease-in-out;
   color: white; }
 
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
+
 body {
   background-color: #f5f5f5;
   overflow: hidden; }
@@ -54,10 +72,60 @@ body {
 a {
   cursor: pointer; }
 
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
+
 #content {
   height: calc(100% - 70px - 2 * 10px);
   overflow: scroll;
   margin: 10px; }
+
+#content-spinner-container {
+  height: calc(100% - 70px);
+  overflow: hidden; }
+
+#content-spinner {
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  -webkit-transform: inherit rotate(45deg);
+  top: 50%; }
+
+.stylish {
+  background-color: #4B515D !important; }
+
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
 
 #cal-img-outline {
   width: 100%;
@@ -111,6 +179,24 @@ a {
     .education-box-secondary .course blockquote strong {
       font-weight: 900;
       color: #01579b; }
+
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
 
 .dark-blue {
   color: #455a64; }
@@ -249,6 +335,24 @@ div.horizontal-line-top {
       .resume-box .resume-box-header .resume-box-date-wide .glyphicon {
         margin-right: 2px; }
 
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
+
 .resume-box {
   position: relative;
   box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
@@ -312,6 +416,24 @@ div.horizontal-line-top {
       display: inline-block; }
       .resume-box .resume-box-header .resume-box-date-wide .glyphicon {
         margin-right: 2px; }
+
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
 
 #my-content {
   position: relative;
@@ -456,6 +578,24 @@ div.horizontal-line-top {
     margin-bottom: 0px;
     margin-top: 10px; }
 
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
+
 #sidenav {
   position: absolute;
   float: left;
@@ -496,6 +636,24 @@ div.horizontal-line-top {
 
 #sidenav-header {
   color: grey; }
+
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
 
 #topnav {
   width: 100%;
