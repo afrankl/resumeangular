@@ -39,9 +39,9 @@
     angular.module('app.content')
         .directive('resumeContent', resumeContentDirective);
 
-    resumeContentDirective.$inject = ['$rootScope'];
+    resumeContentDirective.$inject = ['$rootScope', '$window', 'navigation'];
 
-    function resumeContentDirective($rootScope) {
+    function resumeContentDirective($rootScope, $window, navigation) {
         return {
             restrict: 'EA',
             templateUrl: 'static/app/templates/base/content/content.directive.html',
@@ -49,21 +49,16 @@
             controller: resumeContentController,
             scope: {},
             transclude: true,
-            bind: {},
-            link: function(scope, element, attrs, ctrl) {
-                $rootScope.$watch('navOpen', function(newVal, oldVal){
-                    ctrl.navOpen = newVal;
-                });
-            }
+            bind: {}
         };
     }
 
-    resumeContentController.$inject = ['$state', '$rootScope'];
+    resumeContentController.$inject = ['$state', '$rootScope', 'navigation'];
     
-    function resumeContentController($state, $rootScope) {
+    function resumeContentController($state, $rootScope, navigation) {
         var vm = this;
         vm.loading = false;
-        vm.navOpen = !$rootScope.navOpen;
+        vm.navigation = navigation;
     }
 })();
 (function (){
@@ -73,9 +68,9 @@
     angular.module('app.sidenav', [])
         .directive('resumeSideNav', resumeSideNavDirective);
 
-    resumeSideNavDirective.$inject = ['$rootScope'];
+    resumeSideNavDirective.$inject = ['$rootScope', '$window'];
 
-    function resumeSideNavDirective($rootScope) {
+    function resumeSideNavDirective($rootScope, $window) {
         return {
             restrict: 'EA',
             templateUrl: 'static/app/templates/base/sidenav/sidenav.directive.html',
@@ -84,22 +79,17 @@
             scope: {},
             transclude: true,
             bind: {},
-            link: function(scope, element, attrs, ctrl) {
-                $rootScope.$watch('navOpen', function(newVal, oldVal){
-                    ctrl.navOpen = newVal;
-                });
-            }
         }
     }
 
-    resumeSideNavController.$inject = ['$state', '$rootScope', '$location'];
+    resumeSideNavController.$inject = ['$state', '$rootScope', '$location', 'navigation'];
 
-    function resumeSideNavController($state, $rootScope, $location) {
+    function resumeSideNavController($state, $rootScope, $location, navigation) {
         //vars
         var vm = this;
+        vm.navigation = navigation;
         vm.activeSection = 0;
         vm.activeItem = 0;
-        vm.navOpen = $rootScope.navOpen;
         vm.navItems = [
             [
                 {
@@ -161,7 +151,9 @@
     angular.module('app.topnav', [])
         .directive('resumeTopNav', resumeTopNavDirective);
 
-    function resumeTopNavDirective(){
+    resumeTopNavDirective.$inject = ['$rootScope', '$window'];
+
+    function resumeTopNavDirective($rootScope, $window){
         return {
             restrict: 'EA',
             templateUrl: '/static/app/templates/base/topnav/topnav.directive.html',
@@ -170,24 +162,31 @@
             scope: {},
             bind: {},
             transclude: true,
+            link: function(scope, element, attrs, ctl) {
+                scope.check = 'test';
+                angular.element($window).bind('resize', function(){
+                    scope.check = $window.innerWidth;
+                    scope.$apply();
+                })
+            }
         }
     }
 
-    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope']
+    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope',
+                                      'navigation']
 
-    function resumeTopNavController($state, $rootScope, $compile, $scope) {
+    function resumeTopNavController($state, $rootScope, $compile, $scope,
+                                    navigation) {
         //vars
         var vm = this;
-        vm.navOpen = $rootScope.navOpen;
-
         //functions
         vm.onMenuClicked = onMenuClicked;
         vm.onDownloadResumeClicked = onDownloadResumeClicked;
-        vm.resumeElement = $compile('<resume></resume>')($scope);
+        vm.navigation = navigation;
+        // vm.resumeElement = $compile('<resume></resume>')($scope);
 
         function onMenuClicked() {
-            vm.navOpen = !$rootScope.navOpen
-            $rootScope.navOpen = vm.navOpen;
+            navigation.side.toggle();
         }
 
         function onDownloadResumeClicked() {

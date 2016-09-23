@@ -6,6 +6,7 @@
 
         'layout',
         'resume',
+        'services',
         'app.sidenav',
         'app.topnav',
         'app.content'

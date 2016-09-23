@@ -1,14 +1,14 @@
 <div id="topnav">
     <span id="menu-icon"
         class="p-all-md pull-right glyphicon glyphicon-menu-hamburger font-size-lg"
-        ng-class="{'menu-icon-selected': vm.navOpen, 'menu-icon-deselected': !vm.navOpen}"
+        ng-class="{'menu-icon-selected': vm.navigation.side.isVisible(), 'menu-icon-deselected': !vm.navigation.side.isVisible()}"
         ng-click="vm.onMenuClicked()">    
     </span>
     <div 
-        class="pull-right p-lr-sm text-center topbar-item"> <!-- id="downloads" -->
+        class="pull-right p-lr-sm text-center topbar-item"> 
         <span> Downloads </span>
         <div class="topbar-dropdown"
-            > <!-- id="downloads-dropdown" -->
+            > 
             <div ng-click="vm.onDownloadResumeClicked()"> Resume.png </div>
         </div> 
     </div>
@@ -25,5 +25,9 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div
+        class="pull-right p-lr-sm text-center topbar-item">
+        <span> {{check}} </span>
     </div>
 </div>

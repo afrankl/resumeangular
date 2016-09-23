@@ -5,16 +5,26 @@ $nav-item-color: $elegant-color;
 $side-nav-background-color: $elegant-color;
 $photo-size: 100px;
 
-#sidenav {
+@mixin create-sidenav($width) {
     position: absolute;
     float: left;
-    width: $sidenav-width;
+    width: $width;
     background-color: $elegant-color;
     border-right: 1px solid $elegant-color;
     box-shadow: 1px 0px 1em #333;
     height: 100%;
     z-index: 99999;
     overflow: scroll;
+}
+
+#sidenav {
+    @include create-sidenav($sidenav-width-lg);
+}
+
+@media (max-width: $sidenav-max-media) {
+    #sidenav {
+        @include create-sidenav($sidenav-width-sm);
+    }
 }
 
 #nav-group {

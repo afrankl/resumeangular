@@ -1,32 +1,11 @@
-(function() {
-
-    "use-strict";
-
-    angular.module('app')
-        .config(statesConfig)
-        .run(navConfig);
-
-    statesConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
-    function statesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/home');
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
-    }
-
-    navConfig.$inject = ['$rootScope'];
-
-    function navConfig($rootScope) {
-        $rootScope.navOpen = true;
-    }
-})();
-
 (function () {
 
     "use-strict";
 
     angular.module('layout', []);
+})();
+(function() {
+    angular.module('services', []);
 })();
 (function () {
 

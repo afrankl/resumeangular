@@ -45,11 +45,18 @@ var appAssets = {
     directory: '../static/app/assets'
 }
 
+// Where the main module will be dumped
+var angularAppFile = {
+    file: 'app.js',
+    directory: '../static/app/js/angular'
+}
+
 // Where all the angular-related config files will be dumped
 var angularConfig = {
     file: 'config.js',
     directory: '../static/app/js/angular'
 }
+
 // Where all the angular-related module files will be dumped
 var angularModule = {
     file: 'module.js',
@@ -129,13 +136,14 @@ function createAngularTask(fileFilter, folderObj) {
 }
 
 // Angular tasks (individual)
-gulp.task('angular-config', createAngularTask('**/app.js', angularConfig));
+gulp.task('angular-app-file', createAngularTask('**/app.js', angularAppFile));
+gulp.task('angular-config', createAngularTask('**/config.js', angularConfig));
 gulp.task('angular-module', createAngularTask('**/module.js', angularModule));
 gulp.task('angular-factory', createAngularTask('**/*.factory.js', angularFactory));
 gulp.task('angular-directive', createAngularTask('**/*.directive.js', angularDirective));
 
 // Angular tasks (combined)
-gulp.task('app-angular', ['angular-config', 'angular-module', 'angular-factory', 'angular-directive'])
+gulp.task('app-angular', ['angular-app-file', 'angular-config', 'angular-module', 'angular-factory', 'angular-directive'])
 
 // Task to compile all application js
 gulp.task('app-js', ['app-angular']);
