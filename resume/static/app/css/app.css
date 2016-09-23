@@ -81,9 +81,16 @@
 .mdb-lighten-3-bg {
   background-color: #b0bec5; }
 
+.dark-blue {
+  color: #455a64; }
+
+.stylish {
+  color: #4B515D; }
+
 body {
   background-color: #f5f5f5;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 17px; }
 
 a {
   cursor: pointer; }
@@ -106,6 +113,12 @@ a {
 .mdb-lighten-3-bg {
   background-color: #b0bec5; }
 
+.dark-blue {
+  color: #455a64; }
+
+.stylish {
+  color: #4B515D; }
+
 #content {
   height: calc(100% - 70px - 2 * 10px);
   overflow: scroll;
@@ -121,9 +134,6 @@ a {
   margin-top: -20px;
   -webkit-transform: inherit rotate(45deg);
   top: 50%; }
-
-.stylish {
-  background-color: #4B515D !important; }
 
 .stylish-bg {
   background-color: #4B515D !important; }
@@ -143,39 +153,43 @@ a {
 .mdb-lighten-3-bg {
   background-color: #b0bec5; }
 
+.dark-blue {
+  color: #455a64; }
+
+.stylish {
+  color: #4B515D; }
+
 #cal-img-outline {
   width: 100%;
   padding-top: 0px !important;
   margin-top: 0px !important; }
 
 #cal-img {
-  min-width: 100%; }
+  min-width: 100%;
+  max-width: 100%; }
 
 #education-graduated {
-  background-color: #041E41;
   margin-bottom: 0px !important;
-  color: #F6B91C; }
-  #education-graduated small {
-    color: white; }
+  color: #4B515D; }
 
 .education-box-primary {
-  background-color: #041E41 !important;
+  background-color: #eceff1 !important;
   font-weight: normal;
   box-shadow: 0px 5px 5px #888, 0px -5px 5px #888; }
   .education-box-primary h2 {
-    color: white; }
-  .education-box-primary .course h3 {
+    color: #041E41; }
+  .education-box-primary .course h4 {
     font-weight: 900;
-    color: #F6B91C; }
-    .education-box-primary .course h3 small {
+    color: #827717; }
+    .education-box-primary .course h4 small {
       font-weight: 900;
-      color: #E96A53; }
+      color: #827717; }
   .education-box-primary .course blockquote {
-    color: white;
-    border-left: 5px solid white; }
+    color: #041E41;
+    border-left: 5px solid #041E41; }
     .education-box-primary .course blockquote strong {
       font-weight: 900;
-      color: #F6B91C; }
+      color: #827717; }
 
 .education-box-secondary {
   background-color: #F6B91C !important;
@@ -183,10 +197,10 @@ a {
   box-shadow: 0px 5px 5px #888, 0px -5px 5px #888; }
   .education-box-secondary h2 {
     color: #041E41; }
-  .education-box-secondary .course h3 {
+  .education-box-secondary .course h4 {
     font-weight: 900;
     color: #01579b; }
-    .education-box-secondary .course h3 small {
+    .education-box-secondary .course h4 small {
       font-weight: 900;
       color: #01579b; }
   .education-box-secondary .course blockquote {
@@ -217,8 +231,14 @@ a {
 .dark-blue {
   color: #455a64; }
 
+.stylish {
+  color: #4B515D; }
+
 ul.no-dot li {
   list-style-type: none; }
+
+.inline-block {
+  display: inline-block !important; }
 
 .sref-dark {
   cursor: pointer;
@@ -287,6 +307,58 @@ div.horizontal-line-top {
 .remove-top-margin {
   margin-top: 0px !important; }
 
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
+
+.dark-blue {
+  color: #455a64; }
+
+.stylish {
+  color: #4B515D; }
+
+#home-work-experience blockquote {
+  border-left-color: #4B515D !important;
+  padding-left: 20px; }
+
+.stylish-bg {
+  background-color: #4B515D !important; }
+
+.stylish-dark-bg {
+  background-color: #3E4551 !important; }
+
+.special-bg {
+  background-color: #37474F !important; }
+
+.special-dark-bg {
+  background-color: #263238 !important; }
+
+.mdb-lighten-2-bg {
+  background-color: #90a4ae; }
+
+.mdb-lighten-3-bg {
+  background-color: #b0bec5; }
+
+.dark-blue {
+  color: #455a64; }
+
+.stylish {
+  color: #4B515D; }
+
 .resume-box {
   position: relative;
   box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
@@ -369,87 +441,11 @@ div.horizontal-line-top {
 .mdb-lighten-3-bg {
   background-color: #b0bec5; }
 
-.resume-box {
-  position: relative;
-  box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
-  background-color: white; }
-  .resume-box ul {
-    padding-left: 10px !important; }
-  .resume-box blockquote {
-    color: #424242;
-    font-size: 12.5px; }
-    .resume-box blockquote ul {
-      padding-top: 5px;
-      color: #757575;
-      font-size: 10.5px; }
-  .resume-box .resume-box-header {
-    position: relative;
-    width: 100%;
-    padding: 5px 3px 10px;
-    overflow: hidden; }
-    .resume-box .resume-box-header h5 {
-      margin-top: 0px;
-      margin-bottom: 2px;
-      font-size: 13px;
-      color: #757575; }
-      .resume-box .resume-box-header h5 strong {
-        font-size: 13px;
-        color: #37474F; }
-      .resume-box .resume-box-header h5 small {
-        padding-left: 5px;
-        font-size: 10.5px;
-        color: #616161; }
-    .resume-box .resume-box-header .resume-box-title {
-      position: relative;
-      width: 30%;
-      float: left;
-      display: inline-block; }
-    .resume-box .resume-box-header .resume-box-title-wide {
-      position: relative;
-      width: 60%;
-      float: left;
-      display: inline-block; }
-    .resume-box .resume-box-header .resume-box-company {
-      position: relative;
-      width: 40%;
-      text-align: center;
-      display: inline-block; }
-    .resume-box .resume-box-header .resume-box-date {
-      position: relative;
-      width: 30%;
-      padding-right: 3px;
-      text-align: right;
-      float: right;
-      display: inline-block; }
-      .resume-box .resume-box-header .resume-box-date .glyphicon {
-        margin-right: 1px; }
-    .resume-box .resume-box-header .resume-box-date-wide {
-      position: relative;
-      width: 40%;
-      padding-right: 3px;
-      text-align: right;
-      float: right;
-      display: inline-block; }
-      .resume-box .resume-box-header .resume-box-date-wide .glyphicon {
-        margin-right: 2px; }
+.dark-blue {
+  color: #455a64; }
 
-.stylish-bg {
-  background-color: #4B515D !important; }
-
-.stylish-dark-bg {
-  background-color: #3E4551 !important; }
-
-.special-bg {
-  background-color: #37474F !important; }
-
-.special-dark-bg {
-  background-color: #263238 !important; }
-
-.mdb-lighten-2-bg {
-  background-color: #90a4ae; }
-
-.mdb-lighten-3-bg {
-  background-color: #b0bec5; }
+.stylish {
+  color: #4B515D; }
 
 #my-content {
   position: relative;
@@ -612,6 +608,12 @@ div.horizontal-line-top {
 .mdb-lighten-3-bg {
   background-color: #b0bec5; }
 
+.dark-blue {
+  color: #455a64; }
+
+.stylish {
+  color: #4B515D; }
+
 #sidenav {
   position: absolute;
   float: left;
@@ -683,6 +685,12 @@ div.horizontal-line-top {
 .mdb-lighten-3-bg {
   background-color: #b0bec5; }
 
+.dark-blue {
+  color: #455a64; }
+
+.stylish {
+  color: #4B515D; }
+
 #topnav {
   width: 100%;
   height: 70px;
@@ -731,66 +739,6 @@ div.horizontal-line-top {
 
 #menu-icon {
   color: white; }
-
-.font-size-auto {
-  font-size: auto !important; }
-
-.font-size-xxxs {
-  font-size: 6px !important; }
-
-.font-size-xxs {
-  font-size: 8px !important; }
-
-.font-size-xs {
-  font-size: 10px !important; }
-
-.font-size-sm {
-  font-size: 12px !important; }
-
-.font-size-md {
-  font-size: 16px !important; }
-
-.font-size-lg {
-  font-size: 24px !important; }
-
-.font-size-xl {
-  font-size: 36px !important; }
-
-.font-size-xxl {
-  font-size: 48px !important; }
-
-.font-size-xxxl {
-  font-size: 64px !important; }
-
-.font_size_auto {
-  font-size: auto !important; }
-
-.font_size_xxxs {
-  font-size: 6px !important; }
-
-.font_size_xxs {
-  font-size: 8px !important; }
-
-.font_size_xs {
-  font-size: 10px !important; }
-
-.font_size_sm {
-  font-size: 12px !important; }
-
-.font_size_md {
-  font-size: 16px !important; }
-
-.font_size_lg {
-  font-size: 24px !important; }
-
-.font_size_xl {
-  font-size: 36px !important; }
-
-.font_size_xxl {
-  font-size: 48px !important; }
-
-.font_size_xxxl {
-  font-size: 64px !important; }
 
 .p-tb-auto {
   padding-top: auto;
@@ -3519,3 +3467,63 @@ div.horizontal-line-top {
 
 .padding_right_xxxl {
   padding-right: 96px; }
+
+.font-auto {
+  font-size: auto !important; }
+
+.font-xxxs {
+  font-size: 6px !important; }
+
+.font-xxs {
+  font-size: 8px !important; }
+
+.font-xs {
+  font-size: 10px !important; }
+
+.font-sm {
+  font-size: 12px !important; }
+
+.font-md {
+  font-size: 17px !important; }
+
+.font-lg {
+  font-size: 24px !important; }
+
+.font-xl {
+  font-size: 36px !important; }
+
+.font-xxl {
+  font-size: 48px !important; }
+
+.font-xxxl {
+  font-size: 64px !important; }
+
+.font_auto {
+  font-size: auto !important; }
+
+.font_xxxs {
+  font-size: 6px !important; }
+
+.font_xxs {
+  font-size: 8px !important; }
+
+.font_xs {
+  font-size: 10px !important; }
+
+.font_sm {
+  font-size: 12px !important; }
+
+.font_md {
+  font-size: 17px !important; }
+
+.font_lg {
+  font-size: 24px !important; }
+
+.font_xl {
+  font-size: 36px !important; }
+
+.font_xxl {
+  font-size: 48px !important; }
+
+.font_xxxl {
+  font-size: 64px !important; }

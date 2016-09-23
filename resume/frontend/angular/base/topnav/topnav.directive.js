@@ -15,14 +15,7 @@
             controller: resumeTopNavController,
             scope: {},
             bind: {},
-            transclude: true,
-            link: function(scope, element, attrs, ctl) {
-                scope.check = 'test';
-                angular.element($window).bind('resize', function(){
-                    scope.check = $window.innerWidth;
-                    scope.$apply();
-                })
-            }
+            transclude: true
         }
     }
 
@@ -37,10 +30,11 @@
         vm.onMenuClicked = onMenuClicked;
         vm.onDownloadResumeClicked = onDownloadResumeClicked;
         vm.navigation = navigation;
-        // vm.resumeElement = $compile('<resume></resume>')($scope);
+        vm.resumeElement = $compile('<resume></resume>')($scope);
 
         function onMenuClicked() {
             navigation.side.toggle();
+            console.log(navigation.side.hidden);
         }
 
         function onDownloadResumeClicked() {
