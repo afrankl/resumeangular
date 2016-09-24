@@ -19,7 +19,7 @@
         $stateProvider
             .state('home', {
                 'url': '/home',
-                'templateUrl': '/static/app/templates/base/content/home/home.html'
+                'template': '<resume-home></resume-home>'
             })
             .state('bio', {
                 'url': '/bio',
@@ -27,7 +27,7 @@
             })
             .state('education', {
                 'url': '/education',
-                'templateUrl': '/static/app/templates/base/content/education/education.html'
+                'template': '<resume-education></resume-education>'
             })
             .state('work', {
                 'url': '/work-experience',

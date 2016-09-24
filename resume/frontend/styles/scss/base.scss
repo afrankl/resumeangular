@@ -4,6 +4,8 @@
 
 body {
     background-color: $body-background-color;
+    overflow: hidden;
+    font-size: 17px;
     // font-family: Verdana, Geneva, sans-serif;
 }
 
@@ -11,9 +13,4 @@ a {
     cursor: pointer;
 }
 
-#content {
-    height: calc(100% - #{$topnav-height} - 2 * #{$content-margin});
-    overflow: scroll;
-    margin: 10px;
-    // box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
-}
+

@@ -1,7 +1,44 @@
 @import 'colors';
 
-.dark-blue {
-    color: $dark-blue;
+ul.no-dot {
+  li {
+    list-style-type: none;
+  }
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+.sref-dark {
+  cursor: pointer;
+  color: $mdb-color;
+  text-decoration: none;
+}
+
+.sref-dark:hover {
+  color: $elegant-color;
+}
+
+.sref-light {
+  cursor: pointer;
+  color: $mdb-color-lighten-3;
+  text-decoration: none;
+}
+
+.sref-light:hover {
+  color: $mdb-color-lighten-1;
+}
+
+.sref-light {
+  cursor: pointer;
+  color: $mdb-color-lighten-3;
+  text-decoration: none;
+}
+
+.full-width {
+  position: relative;
+  width: 100%;
 }
 
 blockquote.remove-line {
@@ -52,91 +89,4 @@ div.horizontal-line-top {
 
 .remove-top-margin {
     margin-top: 0px !important;
-}
-
-.resume-box {
-    position: relative;
-    box-shadow: 0px 3px 5px #888, 0px -3px 5px #888, -3px 0px 5px #888, 3px 0px 5px #888;
-    background-color: white;
-    ul {
-      padding-left: 10px !important;
-    }
-    blockquote {
-        color: $grey-darken-3;
-        font-size: 12.5px;
-        strong {
-            // color: $special-color !important;
-            // background-color: #ffff00;
-        }
-        ul {
-            padding-top: 5px;
-            color: $grey-darken-1;
-            font-size: 10.5px;
-            
-        }
-    }  
-    .resume-box-header {
-        position: relative;
-        width: 100%;
-        padding: 5px 3px 10px;
-        overflow: hidden;
-        h5 {
-            margin-top: 0px;
-            margin-bottom: 2px;
-            font-size: 13px;
-            strong {
-               font-size: 13px;
-               color: $special-color; 
-            }
-            color: $grey-darken-1;
-            small {
-                padding-left: 5px;
-                font-size: 10.5px;
-                color: $grey-darken-2;
-            }
-        }
-        .resume-box-title {
-            position: relative;
-            width: 30%;
-            float: left;
-            display: inline-block;
-        }
-
-        .resume-box-title-wide {
-            position: relative;
-            width: 60%;
-            float: left;
-            display: inline-block;
-        }
-
-        .resume-box-company {
-            position: relative;
-            width: 40%;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .resume-box-date {
-            position: relative;
-            width: 30%;
-            padding-right: 3px;
-            text-align: right;
-            float: right;
-            display: inline-block;
-            .glyphicon {
-                margin-right: 1px;
-            }
-        }
-        .resume-box-date-wide {
-            position: relative;
-            width: 40%;
-            padding-right: 3px;
-            text-align: right;
-            float: right;
-            display: inline-block;
-            .glyphicon {
-                margin-right: 2px;
-            }
-        }
-    }
 }

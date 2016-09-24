@@ -1,30 +1,11 @@
-(function() {
-
-    "use-strict";
-
-    angular.module('app')
-        .config(statesConfig)
-        .run(navConfig);
-
-    statesConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
-    function statesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
-        $urlRouterProvider.otherwise('/home');
-        // $locationProvider.html5Mode(true);
-
-    }
-
-    navConfig.$inject = ['$rootScope'];
-
-    function navConfig($rootScope) {
-        $rootScope.navOpen = true;
-    }
-})();
-
 (function () {
 
     "use-strict";
 
     angular.module('layout', []);
+})();
+(function() {
+    angular.module('services', []);
 })();
 (function () {
 
@@ -47,7 +28,7 @@
         $stateProvider
             .state('home', {
                 'url': '/home',
-                'templateUrl': '/static/app/templates/base/content/home/home.html'
+                'template': '<resume-home></resume-home>'
             })
             .state('bio', {
                 'url': '/bio',
@@ -55,7 +36,7 @@
             })
             .state('education', {
                 'url': '/education',
-                'templateUrl': '/static/app/templates/base/content/education/education.html'
+                'template': '<resume-education></resume-education>'
             })
             .state('work', {
                 'url': '/work-experience',

@@ -15,6 +15,13 @@
     transform: $transform;
 }
 
+@mixin slide-content($left-position) {
+    position: absolute;
+    left: $left-position;
+    margin: $content-margin;
+    right: 0px;
+}
+
 $sidenav-transition: all 0.3s ease-in-out;
 $menu-icon-transition: all 0.25s ease-in-out;
 
@@ -25,23 +32,39 @@ $menu-icon-transition: all 0.25s ease-in-out;
 }
 
 .hide-side-nav.ng-hide {
-    left: -$sidenav-width;
-}
-
-.slide-content-left {
-    @include add-transition($sidenav-transition);
-    position: absolute;
-    left: 0px;
-    margin: 10px;
-    width: calc(100% - 2 * #{$content-margin});
+    left: -$sidenav-width-sm;
 }
 
 .slide-content-right {
+    @include slide-content($sidenav-width-sm);
+}
+
+@media (min-width: 375px) {
+    .hide-sid-nav.ng-hide {
+        left: -$sidenav-width-lg;
+    }
+    .slide-content-right {
+        @include slide-content($sidenav-width-lg);
+    }
+}
+
+
+.slide-content-left-add {
     @include add-transition($sidenav-transition);
-    position: absolute;
-    left: $sidenav-width;
-    margin: $content-margin;
-    width: calc(100% - #{$sidenav-width} - 2 * #{$content-margin}) !important;
+}
+
+.slide-content-left {
+    @include slide-content(0px);
+}
+
+
+.slide-content-right-add {
+    @include add-transition($sidenav-transition);
+} 
+@media (max-width: $content-max-media) {
+    .slide-content-right {
+        @include slide-content(0px);
+    }
 }
 
 .menu-icon-selected {

@@ -1,19 +1,14 @@
 {
   "name": "angular-ui-router",
-  "description": "State-based routing for AngularJS",
-  "license": "MIT",
+  "version": "0.3.1",
+  "license" : "MIT",
   "main": "./release/angular-ui-router.js",
   "dependencies": {
-    "angular": ">= 1.2.0"
+    "angular": "^1.0.8"
   },
   "ignore": [
     "**/.*",
-    "**/tsconfig.json",
-    "**/webpack.config.js",
-    "**/node_modules",
-    "**/ng2*",
-    "**/typings",
-    "commonjs",
+    "node_modules",
     "bower_components",
     "component.json",
     "package.json",
@@ -25,7 +20,5 @@
     "ngdoc_assets",
     "Gruntfile.js",
     "files.js"
-  ],
-  "version": "1.0.0-beta.1",
-  "homepage": "https://ui-router.github.io"
+  ]
 }

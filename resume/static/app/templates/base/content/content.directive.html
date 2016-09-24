@@ -1,4 +1,16 @@
 <div id="content" 
-     ui-view 
-     ng-class="{'slide-content-left': !vm.navOpen, 'slide-content-right': vm.navOpen}">
+     ui-view
+     ng-class="{'slide-content-left': !vm.navigation.side.isVisible(), 'slide-content-right': vm.navigation.side.isVisible()}"
+     ng-show="!vm.loading"> 
+</div>
+<div id="content-spinner-container"
+    ng-show="vm.loading"
+    ng-class="{'slide-content-left': !vm.navigation.side.isVisible(), 'slide-content-right': vm.navigation.side.isVisible()}">
+    <div id="content-spinner"
+        class="sk-folding-cube">
+        <div class="sk-cube1 sk-cube mdb-lighten-2-bg"></div>
+        <div class="sk-cube2 sk-cube mdb-lighten-3-bg"></div>
+        <div class="sk-cube4 sk-cube mdb-lighten-2-bg"></div>
+        <div class="sk-cube3 sk-cube mdb-lighten-3-bg"></div>
+    </div>
 </div>

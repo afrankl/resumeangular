@@ -4,9 +4,9 @@
     angular.module('app.content')
         .directive('resumeContent', resumeContentDirective);
 
-    resumeContentDirective.$inject = ['$rootScope'];
+    resumeContentDirective.$inject = ['$rootScope', '$window', 'navigation'];
 
-    function resumeContentDirective($rootScope) {
+    function resumeContentDirective($rootScope, $window, navigation) {
         return {
             restrict: 'EA',
             templateUrl: 'static/app/templates/base/content/content.directive.html',
@@ -14,19 +14,15 @@
             controller: resumeContentController,
             scope: {},
             transclude: true,
-            bind: {},
-            link: function(scope, element, attrs, ctrl) {
-                    $rootScope.$watch('navOpen', function(newVal, oldVal){
-                        ctrl.navOpen = newVal;
-                    });
-                }
+            bind: {}
         };
     }
 
-    resumeContentController.$inject = ['$state', '$rootScope'];
+    resumeContentController.$inject = ['$state', '$rootScope', 'navigation'];
     
-    function resumeContentController($state, $rootScope) {
+    function resumeContentController($state, $rootScope, navigation) {
         var vm = this;
-        vm.navOpen = !$rootScope.navOpen;
+        vm.loading = false;
+        vm.navigation = navigation;
     }
 })();

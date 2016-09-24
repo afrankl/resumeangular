@@ -1,4 +1,4 @@
-<div class="hide-side-nav" id="sidenav" ng-hide="!vm.navOpen">
+<div class="hide-side-nav" id="sidenav" ng-hide="!vm.navigation.side.isVisible()">
     <div id="panel-head">
         <img class="horizontal-center"
         src="/static/app/assets/me_5_200x200.jpg">
@@ -14,7 +14,9 @@
             <a ng-repeat="navItem in section track by $index"
                class="list-group-item list-group-item-action nav-item"
                ng-class="{'active': vm.activeItem == $index && vm.activeSection == sectionIndex}"
-               ng-click="vm.setActiveItem(sectionIndex, $index, navItem.sref)">
+               ng-click="vm.setActiveItem(sectionIndex, $index, navItem.sref)"
+               href="#/{{navItem.sref}}"
+               ui-sref="{{navItem.sref}}">
                    {{navItem.title}}
             </a>
         </div>

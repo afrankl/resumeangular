@@ -8,16 +8,12 @@
 
 #cal-img {
     min-width: 100%;
+    max-width: 100%;
 }
 
 #education-graduated {
-    background-color: $berkeley-blue;
     margin-bottom: 0px !important;
-    color: $berkeley-yellow;
-
-    small {
-        color: white;
-    }
+    color: $stylish-color;
 }
 
 @mixin education-box($primary, $secondary, $text, $course, $weight) {
@@ -27,7 +23,7 @@
         color: $text;
     }
     .course {
-        h3 {
+        h4 {
             font-weight: 900;
             color: $secondary;
             small {
@@ -47,7 +43,7 @@
 }
 
 .education-box-primary {
-    @include education-box($berkeley-blue, $berkeley-yellow, white, $berkeley-rose-garden, normal);
+    @include education-box($blue-grey-lighten-5, $lime-darken-4, $berkeley-blue, $lime-darken-4, normal);
     box-shadow: 0px 5px 5px #888, 0px -5px 5px #888;
 }
 

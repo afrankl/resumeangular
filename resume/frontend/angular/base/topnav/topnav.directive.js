@@ -5,7 +5,9 @@
     angular.module('app.topnav', [])
         .directive('resumeTopNav', resumeTopNavDirective);
 
-    function resumeTopNavDirective(){
+    resumeTopNavDirective.$inject = ['$rootScope', '$window'];
+
+    function resumeTopNavDirective($rootScope, $window){
         return {
             restrict: 'EA',
             templateUrl: '/static/app/templates/base/topnav/topnav.directive.html',
@@ -13,25 +15,25 @@
             controller: resumeTopNavController,
             scope: {},
             bind: {},
-            transclude: true,
+            transclude: true
         }
     }
 
-    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope']
+    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope',
+                                      'navigation']
 
-    function resumeTopNavController($state, $rootScope, $compile, $scope) {
+    function resumeTopNavController($state, $rootScope, $compile, $scope,
+                                    navigation) {
         //vars
         var vm = this;
-        vm.navOpen = $rootScope.navOpen;
-
         //functions
         vm.onMenuClicked = onMenuClicked;
         vm.onDownloadResumeClicked = onDownloadResumeClicked;
+        vm.navigation = navigation;
         vm.resumeElement = $compile('<resume></resume>')($scope);
 
         function onMenuClicked() {
-            vm.navOpen = !$rootScope.navOpen
-            $rootScope.navOpen = vm.navOpen;
+            navigation.side.toggle();
         }
 
         function onDownloadResumeClicked() {
