@@ -33,129 +33,6 @@
         }
     }
 })();
-(function () {
-
-    "use-strict";
-
-    angular.module('layout')
-        .directive('resumeBox', resumeBoxDirective);
-
-    resumeBoxDirective.$inject = [];
-
-    function resumeBoxDirective() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'static/app/templates/layout/resumeBox/resumeBox.directive.html',
-            controllerAs: 'vm',
-            controller: resumeBoxController,
-            scope: {},
-            transclude: true,
-            bind: {},
-        };
-    }
-
-    resumeBoxController.$inject = [];
-    
-    function resumeBoxController() {
-        var vm = this;
-    }
-})();
-(function (){
-    "use-strict";
-
-    angular.module('app.content')
-        .directive('resumeContent', resumeContentDirective);
-
-    resumeContentDirective.$inject = ['$rootScope', '$window', 'navigation'];
-
-    function resumeContentDirective($rootScope, $window, navigation) {
-        return {
-            restrict: 'EA',
-            templateUrl: 'static/app/templates/base/content/content.directive.html',
-            controllerAs: 'vm',
-            controller: resumeContentController,
-            scope: {},
-            transclude: true,
-            bind: {}
-        };
-    }
-
-    resumeContentController.$inject = ['$state', '$rootScope', 'navigation'];
-    
-    function resumeContentController($state, $rootScope, navigation) {
-        var vm = this;
-        vm.loading = false;
-        vm.navigation = navigation;
-    }
-})();
-(function () {
-
-    "use-strict";
-
-    angular.module('app.topnav', [])
-        .directive('resumeTopNav', resumeTopNavDirective);
-
-    resumeTopNavDirective.$inject = ['$rootScope', '$window'];
-
-    function resumeTopNavDirective($rootScope, $window){
-        return {
-            restrict: 'EA',
-            templateUrl: '/static/app/templates/base/topnav/topnav.directive.html',
-            controllerAs: 'vm',
-            controller: resumeTopNavController,
-            scope: {},
-            bind: {},
-            transclude: true
-        }
-    }
-
-    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope',
-                                      'navigation']
-
-    function resumeTopNavController($state, $rootScope, $compile, $scope,
-                                    navigation) {
-        //vars
-        var vm = this;
-        //functions
-        vm.onMenuClicked = onMenuClicked;
-        vm.onDownloadResumeClicked = onDownloadResumeClicked;
-        vm.navigation = navigation;
-        vm.resumeElement = $compile('<resume></resume>')($scope);
-
-        function onMenuClicked() {
-            navigation.side.toggle();
-            console.log(navigation.side.hidden);
-        }
-
-        function onDownloadResumeClicked() {
-            resumeToPng(vm.resumeElement);
-        }
-
-        function resumeToPng(resumeElement) {
-            var resumeContent = resumeElement[0].childNodes[0];
-            var content = document.getElementById('content');
-            var exists = true;
-            if ($('#my-content').length == 0) {
-                content.appendChild(resumeContent);
-                exists = false;
-            } else {
-                resumeContent = document.getElementById('my-content');
-            }
-            var header = $('#my-content h1#adjusted-header');
-            header.css('margin-top', '-9px');
-            domtoimage.toBlob(resumeContent).then(function(blob) {
-                saveAs(blob, "Avi-Frankl-Resume.png");
-                header.css('margin-top', '0px');
-                if (!exists) {
-                    content.removeChild(resumeContent); 
-                }
-                vm.resumeElement = $compile('<resume></resume>')($scope);
-            }).catch(function (error) {
-                console.log(error);
-            })
-        }
-    }
-})();
 (function (){
 
     "use-strict";
@@ -239,6 +116,128 @@
 
     }
 })();
+(function (){
+    "use-strict";
+
+    angular.module('app.content')
+        .directive('resumeContent', resumeContentDirective);
+
+    resumeContentDirective.$inject = ['$rootScope', '$window', 'navigation'];
+
+    function resumeContentDirective($rootScope, $window, navigation) {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/content.directive.html',
+            controllerAs: 'vm',
+            controller: resumeContentController,
+            scope: {},
+            transclude: true,
+            bind: {}
+        };
+    }
+
+    resumeContentController.$inject = ['$state', '$rootScope', 'navigation'];
+    
+    function resumeContentController($state, $rootScope, navigation) {
+        var vm = this;
+        vm.loading = false;
+        vm.navigation = navigation;
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.topnav', [])
+        .directive('resumeTopNav', resumeTopNavDirective);
+
+    resumeTopNavDirective.$inject = ['$rootScope', '$window'];
+
+    function resumeTopNavDirective($rootScope, $window){
+        return {
+            restrict: 'EA',
+            templateUrl: '/static/app/templates/base/topnav/topnav.directive.html',
+            controllerAs: 'vm',
+            controller: resumeTopNavController,
+            scope: {},
+            bind: {},
+            transclude: true
+        }
+    }
+
+    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope',
+                                      'navigation']
+
+    function resumeTopNavController($state, $rootScope, $compile, $scope,
+                                    navigation) {
+        //vars
+        var vm = this;
+        //functions
+        vm.onMenuClicked = onMenuClicked;
+        vm.onDownloadResumeClicked = onDownloadResumeClicked;
+        vm.navigation = navigation;
+        vm.resumeElement = $compile('<resume></resume>')($scope);
+
+        function onMenuClicked() {
+            navigation.side.toggle();
+        }
+
+        function onDownloadResumeClicked() {
+            resumeToPng(vm.resumeElement);
+        }
+
+        function resumeToPng(resumeElement) {
+            var resumeContent = resumeElement[0].childNodes[0];
+            var content = document.getElementById('content');
+            var exists = true;
+            if ($('#my-content').length == 0) {
+                content.appendChild(resumeContent);
+                exists = false;
+            } else {
+                resumeContent = document.getElementById('my-content');
+            }
+            var header = $('#my-content h1#adjusted-header');
+            header.css('margin-top', '-9px');
+            domtoimage.toBlob(resumeContent).then(function(blob) {
+                saveAs(blob, "Avi-Frankl-Resume.png");
+                header.css('margin-top', '0px');
+                if (!exists) {
+                    content.removeChild(resumeContent); 
+                }
+                vm.resumeElement = $compile('<resume></resume>')($scope);
+            }).catch(function (error) {
+                console.log(error);
+            })
+        }
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('layout')
+        .directive('resumeBox', resumeBoxDirective);
+
+    resumeBoxDirective.$inject = [];
+
+    function resumeBoxDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/layout/resumeBox/resumeBox.directive.html',
+            controllerAs: 'vm',
+            controller: resumeBoxController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeBoxController.$inject = [];
+    
+    function resumeBoxController() {
+        var vm = this;
+    }
+})();
 (function () {
 
     "use-strict";
@@ -303,33 +302,6 @@
 
     "use-strict";
 
-    angular.module('app.content.languages', [])
-        .directive('resumeLanguages', resumeLanguagesDirective);
-
-    resumeLanguagesDirective.$inject = [];
-
-    function resumeLanguagesDirective() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'static/app/templates/base/content/languages/languages.directive.html',
-            controllerAs: 'vm',
-            controller: resumeLanguagesController,
-            scope: {},
-            transclude: true,
-            bind: {},
-        };
-    }
-
-    resumeLanguagesController.$inject = [];
-    
-    function resumeLanguagesController() {
-        var vm = this;
-    }
-})();
-(function () {
-
-    "use-strict";
-
     angular.module('app.content.home', [])
         .directive('resumeHome', resumeHomeDirective);
 
@@ -356,6 +328,33 @@
         function redirectToSref(stateName) {
             $state.go(stateName);
         }
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.languages', [])
+        .directive('resumeLanguages', resumeLanguagesDirective);
+
+    resumeLanguagesDirective.$inject = [];
+
+    function resumeLanguagesDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/languages/languages.directive.html',
+            controllerAs: 'vm',
+            controller: resumeLanguagesController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeLanguagesController.$inject = [];
+    
+    function resumeLanguagesController() {
+        var vm = this;
     }
 })();
 (function () {

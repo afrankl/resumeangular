@@ -1,7 +1,9 @@
 @import 'colors';
 #home-work-experience {
-    blockquote {
-        border-left-color: $stylish-color !important;
-        padding-left: 20px;
+    .resume-box {
+        li {
+            font-size: 17px;
+            color: $dark-blue;
+        } 
     }
 }

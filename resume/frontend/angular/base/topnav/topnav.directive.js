@@ -34,7 +34,6 @@
 
         function onMenuClicked() {
             navigation.side.toggle();
-            console.log(navigation.side.hidden);
         }
 
         function onDownloadResumeClicked() {

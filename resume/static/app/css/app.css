@@ -331,9 +331,9 @@ div.horizontal-line-top {
 .stylish {
   color: #4B515D; }
 
-#home-work-experience blockquote {
-  border-left-color: #4B515D !important;
-  padding-left: 20px; }
+#home-work-experience .resume-box li {
+  font-size: 17px;
+  color: #455a64; }
 
 .stylish-bg {
   background-color: #4B515D !important; }
@@ -739,6 +739,66 @@ div.horizontal-line-top {
 
 #menu-icon {
   color: white; }
+
+.font-auto {
+  font-size: auto !important; }
+
+.font-xxxs {
+  font-size: 6px !important; }
+
+.font-xxs {
+  font-size: 8px !important; }
+
+.font-xs {
+  font-size: 10px !important; }
+
+.font-sm {
+  font-size: 12px !important; }
+
+.font-md {
+  font-size: 17px !important; }
+
+.font-lg {
+  font-size: 24px !important; }
+
+.font-xl {
+  font-size: 36px !important; }
+
+.font-xxl {
+  font-size: 48px !important; }
+
+.font-xxxl {
+  font-size: 64px !important; }
+
+.font_auto {
+  font-size: auto !important; }
+
+.font_xxxs {
+  font-size: 6px !important; }
+
+.font_xxs {
+  font-size: 8px !important; }
+
+.font_xs {
+  font-size: 10px !important; }
+
+.font_sm {
+  font-size: 12px !important; }
+
+.font_md {
+  font-size: 17px !important; }
+
+.font_lg {
+  font-size: 24px !important; }
+
+.font_xl {
+  font-size: 36px !important; }
+
+.font_xxl {
+  font-size: 48px !important; }
+
+.font_xxxl {
+  font-size: 64px !important; }
 
 .p-tb-auto {
   padding-top: auto;
@@ -3467,63 +3527,3 @@ div.horizontal-line-top {
 
 .padding_right_xxxl {
   padding-right: 96px; }
-
-.font-auto {
-  font-size: auto !important; }
-
-.font-xxxs {
-  font-size: 6px !important; }
-
-.font-xxs {
-  font-size: 8px !important; }
-
-.font-xs {
-  font-size: 10px !important; }
-
-.font-sm {
-  font-size: 12px !important; }
-
-.font-md {
-  font-size: 17px !important; }
-
-.font-lg {
-  font-size: 24px !important; }
-
-.font-xl {
-  font-size: 36px !important; }
-
-.font-xxl {
-  font-size: 48px !important; }
-
-.font-xxxl {
-  font-size: 64px !important; }
-
-.font_auto {
-  font-size: auto !important; }
-
-.font_xxxs {
-  font-size: 6px !important; }
-
-.font_xxs {
-  font-size: 8px !important; }
-
-.font_xs {
-  font-size: 10px !important; }
-
-.font_sm {
-  font-size: 12px !important; }
-
-.font_md {
-  font-size: 17px !important; }
-
-.font_lg {
-  font-size: 24px !important; }
-
-.font_xl {
-  font-size: 36px !important; }
-
-.font_xxl {
-  font-size: 48px !important; }
-
-.font_xxxl {
-  font-size: 64px !important; }
