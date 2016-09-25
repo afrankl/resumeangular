@@ -23,7 +23,7 @@
             })
             .state('bio', {
                 'url': '/bio',
-                'templateUrl': '/static/app/templates/base/content/bio/bio.html'
+                'template': '<resume-bio></resume-bio>'
             })
             .state('education', {
                 'url': '/education',
@@ -31,7 +31,7 @@
             })
             .state('work', {
                 'url': '/work-experience',
-                'templateUrl': '/static/app/templates/base/content/work/work.html'
+                'template': '<resume-work></resume-work>'
             })
             .state('languages', {
                 'url': '/programming-languages',

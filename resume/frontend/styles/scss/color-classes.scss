@@ -1,0 +1,32 @@
+@import 'colors';
+
+.stylish-bg {
+    background-color: $stylish-color !important;
+}
+
+.stylish-dark-bg {
+    background-color: $stylish-color-dark !important;
+}
+
+.special-bg {
+    background-color: $special-color !important;
+}
+
+.special-dark-bg {
+    background-color: $special-color-dark !important;
+}
+
+.mdb-lighten-2-bg {
+    background-color: $mdb-color-lighten-2;
+}
+.mdb-lighten-3-bg {
+    background-color: $mdb-color-lighten-3;
+}
+
+.dark-blue {
+    color: $dark-blue;
+}
+
+.stylish {
+    color: $stylish-color;
+}

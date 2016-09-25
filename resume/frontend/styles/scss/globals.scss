@@ -6,6 +6,10 @@ ul.no-dot {
   }
 }
 
+.block {
+  display: block !important;
+}
+
 .inline-block {
   display: inline-block !important;
 }
@@ -39,6 +43,11 @@ ul.no-dot {
 .full-width {
   position: relative;
   width: 100%;
+}
+
+.fill-width {
+    min-width: 100%;
+    max-width: 100%;
 }
 
 blockquote.remove-line {
