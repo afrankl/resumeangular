@@ -88,7 +88,7 @@ gulp.task('bower-js', function() {
         // .pipe(print())
         .pipe(filter(['**/*.js', '!**/ui-bootstrap/index.js']))
         .pipe(concat(bowerJS.file))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest(bowerJS.directory));
 })
 
