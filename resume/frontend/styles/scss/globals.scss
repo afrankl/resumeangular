@@ -88,6 +88,14 @@ div.horizontal-line-top {
   width: 200%;
 }
 
+.clear-both {
+  clear: both !important;
+}
+
+.clear-right {
+  clear: right !important;
+}
+
 .no-border-radius {
     border-radius: 0px !important;
 }
@@ -98,4 +106,8 @@ div.horizontal-line-top {
 
 .remove-top-margin {
     margin-top: 0px !important;
+}
+
+.break-word {
+  word-wrap: break-word;
 }

@@ -71,8 +71,6 @@
             ]
         ]
 
-
-
         //functions
         vm.setActiveItem = setActiveItem;
         initActiveItem();

@@ -110,16 +110,22 @@ a {
   background-color: #263238 !important; }
 
 .mdb-lighten-2-bg {
-  background-color: #90a4ae; }
+  background-color: #90a4ae !important; }
 
 .mdb-lighten-3-bg {
-  background-color: #b0bec5; }
+  background-color: #b0bec5 !important; }
+
+.light-blue-lighten-4-bg {
+  background-color: #b3e5fc !important; }
+
+.blue-grey-lighten-5-bg {
+  background-color: #eceff1 !important; }
 
 .dark-blue {
-  color: #455a64; }
+  color: #455a64 !important; }
 
 .stylish {
-  color: #4B515D; }
+  color: #4B515D !important; }
 
 #content {
   height: calc(100% - 70px - 2 * 10px);
@@ -259,6 +265,12 @@ div.horizontal-line-top {
   height: 10px;
   width: 200%; }
 
+.clear-both {
+  clear: both !important; }
+
+.clear-right {
+  clear: right !important; }
+
 .no-border-radius {
   border-radius: 0px !important; }
 
@@ -268,9 +280,23 @@ div.horizontal-line-top {
 .remove-top-margin {
   margin-top: 0px !important; }
 
+.break-word {
+  word-wrap: break-word; }
+
 #home-work-experience .resume-box li {
   font-size: 17px;
   color: #455a64; }
+
+.home-course-name {
+  text-align: left;
+  width: 65%;
+  display: inline-block !important; }
+
+.home-course-number {
+  text-align: right;
+  float: right;
+  width: 30%;
+  display: inline-block !important; }
 
 .resume-box {
   position: relative;
@@ -580,6 +606,23 @@ div.horizontal-line-top {
 
 #menu-icon {
   color: white; }
+
+#track-revenue-work-image {
+  border-radius: 10%; }
+
+#college-track-work-image {
+  border-radius: 50%; }
+
+#lbnl-work-image {
+  border-radius: 10%; }
+
+.work-image {
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
+  float: left;
+  clear: both; }
 
 .font-auto {
   font-size: auto !important; }

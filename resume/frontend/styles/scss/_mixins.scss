@@ -1,0 +1,6 @@
+@mixin img-dimensions($width, $height) {
+    min-width: $width;
+    max-width: $width;
+    min-height: $height;
+    max-height: $height;
+}

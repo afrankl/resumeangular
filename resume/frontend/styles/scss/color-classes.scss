@@ -17,16 +17,24 @@
 }
 
 .mdb-lighten-2-bg {
-    background-color: $mdb-color-lighten-2;
+    background-color: $mdb-color-lighten-2 !important;
 }
 .mdb-lighten-3-bg {
-    background-color: $mdb-color-lighten-3;
+    background-color: $mdb-color-lighten-3 !important;
+}
+
+.light-blue-lighten-4-bg {
+    background-color: $light-blue-lighten-4 !important;
+}
+
+.blue-grey-lighten-5-bg {
+    background-color: $blue-grey-lighten-5 !important;
 }
 
 .dark-blue {
-    color: $dark-blue;
+    color: $dark-blue !important;
 }
 
 .stylish {
-    color: $stylish-color;
+    color: $stylish-color !important;
 }
