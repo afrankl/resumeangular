@@ -14,7 +14,9 @@ $photo-size: 100px;
     box-shadow: 1px 0px 1em #333;
     height: 100%;
     z-index: 99999;
-    overflow: scroll;
+    overflow: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
+
 }
 
 #sidenav {

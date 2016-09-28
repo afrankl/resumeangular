@@ -1,1 +1,36 @@
-!function(){"use-strict";function e(e,i,n){i.otherwise("/home"),n.html5Mode({enabled:!0,requireBase:!1})}function i(e,i,n){e.currentWidth=i.innerWidth,e.currentWidth>=768?n.side.expand():n.side.collapse(),angular.element(i).bind("resize",function(){var t=i.innerWidth,r=n.side.isVisible();(t<768&&r||t>=768&&!r)&&(n.side.setVisibility(!r),e.$apply())})}angular.module("app").config(e).run(i),e.$inject=["$stateProvider","$urlRouterProvider","$locationProvider"],i.$inject=["$rootScope","$window","navigation"]}();
+(function() {
+
+    "use-strict";
+
+    angular.module('app')
+        .config(statesConfig)
+        .run(navConfig);
+
+    statesConfig.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
+    function statesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
+        $urlRouterProvider.otherwise('/home');
+        $locationProvider.html5Mode({
+            enabled: true,
+            requireBase: false
+        });
+    }
+
+    navConfig.$inject = ['$rootScope', '$window', 'navigation'];
+
+    function navConfig($rootScope, $window, navigation) {
+        $rootScope.currentWidth = $window.innerWidth;
+        if ($rootScope.currentWidth >= 768) {
+            navigation.side.expand();
+        } else {
+            navigation.side.collapse();
+        }
+        angular.element($window).bind('resize', function() {
+            var width = $window.innerWidth;
+            var visible = navigation.side.isVisible();
+            if (width < 768 && visible || width >= 768 && !visible) {
+                navigation.side.setVisibility(!visible);
+                $rootScope.$apply();
+            }
+        })
+    }
+})();

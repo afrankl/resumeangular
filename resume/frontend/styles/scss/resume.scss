@@ -5,8 +5,8 @@
     background-color: white;
     min-height: 1210px;
     min-width: 935px;
-    overflow: scroll;
-    
+    overflow: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
 }
 
 #my-sidepanel {

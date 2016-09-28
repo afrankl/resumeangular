@@ -88,7 +88,7 @@ gulp.task('bower-js', function() {
         // .pipe(print())
         .pipe(filter(['**/*.js', '!**/ui-bootstrap/index.js']))
         .pipe(concat(bowerJS.file))
-        .pipe(uglify())
+        // .pipe(uglify())
         .pipe(gulp.dest(bowerJS.directory));
 })
 
@@ -132,7 +132,7 @@ function createAngularTask(fileFilter, folderObj) {
         pump([
                 gulp.src(angularSrc),
                 filter(fileFilter),
-                uglify(),
+                // uglify(),
                 concat(folderObj.file),
                 gulp.dest(folderObj.directory)
             ], cb);

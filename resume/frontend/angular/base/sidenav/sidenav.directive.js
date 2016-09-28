@@ -91,7 +91,6 @@
         function setActiveItem(sectionIndex, index, sref){
             vm.activeSection = sectionIndex;
             vm.activeItem = index;
-            // $state.go(sref);
         }
 
     }

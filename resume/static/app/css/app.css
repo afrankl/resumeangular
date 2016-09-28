@@ -63,7 +63,7 @@
   transition: all 0.25s ease-in-out;
   color: white; }
 
-body {
+body, html {
   background-color: #f5f5f5;
   overflow: hidden;
   font-size: 17px; }
@@ -129,7 +129,8 @@ a {
 
 #content {
   height: calc(100% - 70px - 2 * 10px);
-  overflow: scroll;
+  overflow: auto !important;
+  -webkit-overflow-scrolling: touch !important;
   margin: 10px; }
 
 #content-spinner-container {
@@ -367,7 +368,8 @@ div.horizontal-line-top {
   background-color: white;
   min-height: 1210px;
   min-width: 935px;
-  overflow: scroll; }
+  overflow: scroll !important;
+  -webkit-overflow-scrolling: touch !important; }
 
 #my-sidepanel {
   position: absolute;
@@ -514,7 +516,8 @@ div.horizontal-line-top {
   box-shadow: 1px 0px 1em #333;
   height: 100%;
   z-index: 99999;
-  overflow: scroll; }
+  overflow: scroll !important;
+  -webkit-overflow-scrolling: touch !important; }
 
 @media (max-width: 375px) {
   #sidenav {
@@ -526,7 +529,8 @@ div.horizontal-line-top {
     box-shadow: 1px 0px 1em #333;
     height: 100%;
     z-index: 99999;
-    overflow: scroll; } }
+    overflow: scroll !important;
+    -webkit-overflow-scrolling: touch !important; } }
 
 #nav-group {
   margin-bottom: 0px !important; }
@@ -623,6 +627,9 @@ div.horizontal-line-top {
   max-height: 100px;
   float: left;
   clear: both; }
+
+.work-experience-box {
+  box-shadow: 0px 5px 5px #888, 0px -5px 5px #888 !important; }
 
 .font-auto {
   font-size: auto !important; }
