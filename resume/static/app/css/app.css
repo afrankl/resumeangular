@@ -626,10 +626,24 @@ div.horizontal-line-top {
   min-height: 100px;
   max-height: 100px;
   float: left;
-  clear: both; }
+  clear: both;
+  margin-bottom: 24px; }
 
 .work-experience-box {
   box-shadow: 0px 5px 5px #888, 0px -5px 5px #888 !important; }
+  .work-experience-box p {
+    padding-left: 24px !important;
+    padding-right: 24px !important; }
+  .work-experience-box .resume-box h4 {
+    margin-bottom: 0px !important; }
+  .work-experience-box .resume-box .work-occupation-name {
+    width: 45%;
+    display: inline-block; }
+  .work-experience-box .resume-box .work-occupation-date {
+    width: 45%;
+    display: inline-block;
+    text-align: right;
+    float: right; }
 
 .font-auto {
   font-size: auto !important; }

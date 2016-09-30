@@ -36,9 +36,6 @@ if not DEBUG:
     X_FRAME_OPTIONS = 'DENY'
     ALLOWED_HOSTS = ['*']
 
-
-
-
 # Application definition
 
 INSTALLED_APPS = [

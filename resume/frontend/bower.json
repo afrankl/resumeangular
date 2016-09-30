@@ -28,7 +28,8 @@
     "font-awesome": "^4.6.3",
     "ui-bootstrap": "^2.0.2",
     "SpinKit": "spinkit#^1.2.5",
-    "inobounce": "^0.1.3"
+    "inobounce": "^0.1.3",
+    "file-saver": "^1.3.2"
   },
   "devDependencies": {
     "angular-bootstrap": "^2.1.3",
