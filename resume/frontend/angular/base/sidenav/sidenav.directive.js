@@ -49,20 +49,20 @@
                     sref: 'work'
                 }
             ],
-            [
-                {
-                    title: "Programming Languages",
-                    sref: 'languages'
-                },
-                {
-                    title: "Other Skills",
-                    sref: 'skills'
-                },
-                {
-                    title: "Side Projects",
-                    sref: 'projects'
-                }
-            ],
+            // [
+            //     {
+            //         title: "Programming Languages",
+            //         sref: 'languages'
+            //     },
+            //     {
+            //         title: "Other Skills",
+            //         sref: 'skills'
+            //     },
+            //     {
+            //         title: "Side Projects",
+            //         sref: 'projects'
+            //     }
+            // ],
             [
                 {
                     title: "Resume",

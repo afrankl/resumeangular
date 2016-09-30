@@ -33,18 +33,18 @@
                 'url': '/work-experience',
                 'template': '<resume-work></resume-work>'
             })
-            .state('languages', {
-                'url': '/programming-languages',
-                'templateUrl': '/static/app/templates/base/content/languages/languages.html'
-            })
-            .state('skills', {
-                'url': '/other-skills',
-                'templateUrl': '/static/app/templates/base/content/skills/skills.html'
-            })
-            .state('projects', {
-                'url': '/side-projects',
-                'templateUrl': '/static/app/templates/base/content/projects/projects.html'
-            })
+            // .state('languages', {
+            //     'url': '/programming-languages',
+            //     'templateUrl': '/static/app/templates/base/content/languages/languages.html'
+            // })
+            // .state('skills', {
+            //     'url': '/other-skills',
+            //     'templateUrl': '/static/app/templates/base/content/skills/skills.html'
+            // })
+            // .state('projects', {
+            //     'url': '/side-projects',
+            //     'templateUrl': '/static/app/templates/base/content/projects/projects.html'
+            // })
             .state('resume', {
                 'url': '/resume',
                 'template': '<resume></resume>'
