@@ -1,11 +1,11 @@
+(function() {
+    angular.module('services', []);
+})();
 (function () {
 
     "use-strict";
 
     angular.module('layout', []);
-})();
-(function() {
-    angular.module('services', []);
 })();
 (function () {
 
