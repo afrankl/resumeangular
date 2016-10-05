@@ -10,6 +10,7 @@ var minify = require('gulp-minify');
 var merge = require('merge-stream');
 var flatten = require('gulp-flatten');
 var print = require('gulp-print');
+var pump = require('pump');
 
 // Destinations
 var bowerFonts = {
@@ -87,7 +88,8 @@ gulp.task('bower-js', function() {
         // .pipe(print())
         .pipe(filter(['**/*.js', '!**/ui-bootstrap/index.js']))
         .pipe(concat(bowerJS.file))
-        // .pipe(uglify())
+        .pipe(uglify())
+        // .pipe(minify())
         .pipe(gulp.dest(bowerJS.directory));
 })
 
@@ -127,11 +129,15 @@ gulp.task('app-css', function() {
 // Creates a task specifically for Angular files.
 function createAngularTask(fileFilter, folderObj) {
     var angularSrc = 'angular/**';
-    return function() {
-        gulp.src(angularSrc)
-            .pipe(filter(fileFilter))
-            .pipe(concat(folderObj.file))
-            .pipe(gulp.dest(folderObj.directory));
+    return function(cb) {
+        pump([
+                gulp.src(angularSrc),
+                filter(fileFilter),
+                // uglify(),
+                // minify(),
+                concat(folderObj.file),
+                gulp.dest(folderObj.directory)
+            ], cb);
     }
 }
 

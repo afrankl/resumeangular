@@ -1,11 +1,11 @@
+(function() {
+    angular.module('services', []);
+})();
 (function () {
 
     "use-strict";
 
     angular.module('layout', []);
-})();
-(function() {
-    angular.module('services', []);
 })();
 (function () {
 
@@ -32,7 +32,7 @@
             })
             .state('bio', {
                 'url': '/bio',
-                'templateUrl': '/static/app/templates/base/content/bio/bio.html'
+                'template': '<resume-bio></resume-bio>'
             })
             .state('education', {
                 'url': '/education',
@@ -40,20 +40,20 @@
             })
             .state('work', {
                 'url': '/work-experience',
-                'templateUrl': '/static/app/templates/base/content/work/work.html'
+                'template': '<resume-work></resume-work>'
             })
-            .state('languages', {
-                'url': '/programming-languages',
-                'templateUrl': '/static/app/templates/base/content/languages/languages.html'
-            })
-            .state('skills', {
-                'url': '/other-skills',
-                'templateUrl': '/static/app/templates/base/content/skills/skills.html'
-            })
-            .state('projects', {
-                'url': '/side-projects',
-                'templateUrl': '/static/app/templates/base/content/projects/projects.html'
-            })
+            // .state('languages', {
+            //     'url': '/programming-languages',
+            //     'templateUrl': '/static/app/templates/base/content/languages/languages.html'
+            // })
+            // .state('skills', {
+            //     'url': '/other-skills',
+            //     'templateUrl': '/static/app/templates/base/content/skills/skills.html'
+            // })
+            // .state('projects', {
+            //     'url': '/side-projects',
+            //     'templateUrl': '/static/app/templates/base/content/projects/projects.html'
+            // })
             .state('resume', {
                 'url': '/resume',
                 'template': '<resume></resume>'

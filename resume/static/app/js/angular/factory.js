@@ -6,6 +6,7 @@
 
     function navigationFactory() {
         var isSideVisible = true;
+        var windowSize;
         var service = {
             side: {
                 expand: expandSideNav,
@@ -13,10 +14,24 @@
                 toggle: toggleSideNav,
                 isVisible: isSideNavVisible,
                 setVisibility: setSideNavVisibility
+            },
+            window: {
+                size: {
+                    set: setWindowSize,
+                    get: getWindowSize
+                }
             }
         };
 
         return service;
+
+        function getWindowSize() {
+            return windowSize;
+        }
+
+        function setWindowSize(size) {
+            windowSize = size;
+        }
 
         function expandSideNav() {
             isSideVisible = true;

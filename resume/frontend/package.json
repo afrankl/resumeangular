@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Frontend application packages",
   "main": "main.js",
-  "dependencies": {},
+  "dependencies": {
+    "pump": "^1.0.1"
+  },
   "devDependencies": {
     "gulp-bower-files": "^0.2.7",
     "gulp-concat": "^2.6.0",

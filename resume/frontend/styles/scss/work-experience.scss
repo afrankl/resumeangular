@@ -1,0 +1,46 @@
+@import "mixins";
+@import "_sizes/base-sizes";
+@import "_sizes/pm-sizes";
+
+#track-revenue-work-image {
+    border-radius: 10%;
+}
+
+#college-track-work-image {
+    border-radius: 50%;
+}
+
+#lbnl-work-image {
+    border-radius: 10%;
+}
+
+.work-image {
+    @include img-dimensions(100px, 100px);
+    // border-radius: 10%;
+    float: left;
+    clear: both;
+    margin-bottom: map-get($pm-sizes, 'md');
+}
+
+.work-experience-box {
+    box-shadow: 0px 5px 5px #888, 0px -5px 5px #888 !important;
+    p {
+        padding-left: map-get($pm-sizes, 'md') !important;
+        padding-right: map-get($pm-sizes, 'md') !important; 
+    }
+    .resume-box {
+        h4 {
+            margin-bottom: 0px !important;
+        }
+       .work-occupation-name {
+            width: 45%;
+            display: inline-block;
+        }
+        .work-occupation-date {
+            width: 45%;
+            display: inline-block;
+            text-align: right;
+            float: right;
+        } 
+    }
+}

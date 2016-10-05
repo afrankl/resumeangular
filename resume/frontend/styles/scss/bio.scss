@@ -1,0 +1,35 @@
+@import 'colors';
+
+$photo-size: 200px;
+$container-padding: 10px;
+
+#bio-living {
+    max-width: 700px;
+}
+
+#phi-delt-picture-bio {
+    border-radius: 5px;
+}
+#resume-bio-content {
+    color: $stylish-color;
+}
+
+#image-container {
+    display: block;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#bio-image {
+    border-radius: 5px;
+    min-height: $photo-size;
+    min-width: $photo-size;
+    max-height: $photo-size;
+    max-width: $photo-size;
+}
+
+#bio-side-image-content {
+    display: block;
+    padding: 20px !important;
+}

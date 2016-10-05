@@ -2,7 +2,7 @@
 @import 'colors';
 
 
-body {
+body, html {
     background-color: $body-background-color;
     overflow: hidden;
     font-size: 17px;

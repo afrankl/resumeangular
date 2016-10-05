@@ -25,6 +25,7 @@
         //vars
         var vm = this;
         vm.navigation = navigation;
+        vm.currentState = $state.current.name;
         vm.activeSection = 0;
         vm.activeItem = 0;
         vm.navItems = [
@@ -48,20 +49,20 @@
                     sref: 'work'
                 }
             ],
-            [
-                {
-                    title: "Programming Languages",
-                    sref: 'languages'
-                },
-                {
-                    title: "Other Skills",
-                    sref: 'skills'
-                },
-                {
-                    title: "Side Projects",
-                    sref: 'projects'
-                }
-            ],
+            // [
+            //     {
+            //         title: "Programming Languages",
+            //         sref: 'languages'
+            //     },
+            //     {
+            //         title: "Other Skills",
+            //         sref: 'skills'
+            //     },
+            //     {
+            //         title: "Side Projects",
+            //         sref: 'projects'
+            //     }
+            // ],
             [
                 {
                     title: "Resume",
@@ -72,11 +73,24 @@
 
         //functions
         vm.setActiveItem = setActiveItem;
+        initActiveItem();
+        function initActiveItem() {
+            for (var i = 0; i < vm.navItems.length; i++) {
+                var section = vm.navItems[i];
+                for (var j = 0; j < section.length; j++) {
+                    var navObj = section[j];
+                    if (navObj.sref == vm.currentState) {
+                        vm.activeSection = i;
+                        vm.activeItem = j;
+                        return;
+                    }
+                }
+            }
+        }
 
         function setActiveItem(sectionIndex, index, sref){
             vm.activeSection = sectionIndex;
             vm.activeItem = index;
-            // $state.go(sref);
         }
 
     }
