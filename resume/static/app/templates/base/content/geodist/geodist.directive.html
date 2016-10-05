@@ -1,0 +1,11 @@
+<div class="city-input-container">
+    <input class="city-input">
+    <button type="button" class="btn btn-success city-add-btn">Add</button>
+</div>
+<div class="city-container">
+    <div ng-repeat="city in vm.cityItems track by $index"
+        class="city-item">
+        {{city}} <span ng-click="vm.onExitCityItem($index)"
+            class="city-item-x">X</span>
+    </div>
+</div>

@@ -1,11 +1,11 @@
-(function() {
-    angular.module('services', []);
-})();
 (function () {
 
     "use-strict";
 
     angular.module('layout', []);
+})();
+(function() {
+    angular.module('services', []);
 })();
 (function () {
 
@@ -14,11 +14,12 @@
     angular.module('app.content', [
             'app.content.bio',
             'app.content.education',
-            'app.content.skills',
+            // 'app.content.skills',
             'app.content.home',
-            'app.content.languages',
-            'app.content.projects',
-            'app.content.work'
+            // 'app.content.languages',
+            // 'app.content.projects',
+            'app.content.work',
+            'app.content.geodist'
         ])
         .config(contentConfig);
 
@@ -57,6 +58,10 @@
             .state('resume', {
                 'url': '/resume',
                 'template': '<resume></resume>'
+            })
+            .state('geodist', {
+                'url': '/geodist',
+                'template': '<geographic-distance></geographic-distance>'
             })
     }
 })();

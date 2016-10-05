@@ -68,6 +68,12 @@
                     title: "Resume",
                     sref: 'resume'
                 }
+            ],
+            [
+                {
+                    title: "Geographic Distance",
+                    sref: 'geodist'
+                }
             ]
         ]
 
