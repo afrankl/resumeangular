@@ -1,11 +1,19 @@
 <div class="city-input-container">
-    <input class="city-input">
-    <button type="button" class="btn btn-success city-add-btn">Add</button>
+    <input class="city-input" 
+        vs-google-autocomplete
+        ng-model="vm.current.fullname"
+        vs-city="vm.current.name"
+        vs-latitude="vm.current.latitude"
+        vs-longitude="vm.current.longitude">
+    <button type="button"
+        class="btn btn-success city-add-btn"
+        ng-click="vm.addCityByInput()">Add</button>
 </div>
 <div class="city-container">
     <div ng-repeat="city in vm.cityItems track by $index"
         class="city-item">
-        {{city}} <span ng-click="vm.onExitCityItem($index)"
+        {{city.name}} <span ng-click="vm.removeCity($index)"
             class="city-item-x">X</span>
     </div>
 </div>
+

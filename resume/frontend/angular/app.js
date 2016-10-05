@@ -3,6 +3,7 @@
         'ui.router',
         'ngAnimate',
         'ui.bootstrap',
+        'vsGoogleAutocomplete',
 
         'layout',
         'resume',

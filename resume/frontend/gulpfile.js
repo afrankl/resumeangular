@@ -86,7 +86,8 @@ gulp.task('bower-fonts', function() {
 gulp.task('bower-js', function() {
     return gulp.src(mainBowerFiles())
         // .pipe(print())
-        .pipe(filter(['**/*.js', '!**/ui-bootstrap/index.js']))
+        .pipe(filter(['**/*.js',
+                      '!**/ui-bootstrap/index.js']))
         .pipe(concat(bowerJS.file))
         // .pipe(uglify())
         // .pipe(minify())

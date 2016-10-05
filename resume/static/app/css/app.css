@@ -224,7 +224,8 @@ a {
   margin-bottom: 5px; }
 
 .city-item-x {
-  color: grey; }
+  color: grey;
+  cursor: pointer; }
 
 ul.no-dot li {
   list-style-type: none; }
