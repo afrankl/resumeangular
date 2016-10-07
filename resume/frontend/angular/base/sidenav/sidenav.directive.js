@@ -19,9 +19,9 @@
         }
     }
 
-    resumeSideNavController.$inject = ['$state', '$rootScope', '$location', 'navigation'];
+    resumeSideNavController.$inject = ['$state', '$scope', '$rootScope', '$location', 'navigation'];
 
-    function resumeSideNavController($state, $rootScope, $location, navigation) {
+    function resumeSideNavController($state, $scope, $rootScope, $location, navigation) {
         //vars
         var vm = this;
         vm.navigation = navigation;
@@ -74,6 +74,8 @@
         //functions
         vm.setActiveItem = setActiveItem;
         initActiveItem();
+
+
         function initActiveItem() {
             for (var i = 0; i < vm.navItems.length; i++) {
                 var section = vm.navItems[i];
@@ -91,6 +93,10 @@
         function setActiveItem(sectionIndex, index, sref){
             vm.activeSection = sectionIndex;
             vm.activeItem = index;
+            if (navigation.side.overlaps()) {
+                navigation.side.collapse();
+                $scope.$apply();
+            }
         }
 
     }
