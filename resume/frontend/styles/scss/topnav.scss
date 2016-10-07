@@ -50,8 +50,11 @@ $dropdown-border-color: $stylish-color;
 
 .topbar-item:hover {
     .topbar-dropdown {
-        display: block;
+        display: inline-block;
         color: white;
+        div a {
+            white-space: nowrap;
+        }
     }
     color: orange;
 }

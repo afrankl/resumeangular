@@ -97,6 +97,9 @@
         function setActiveItem(sectionIndex, index, sref){
             vm.activeSection = sectionIndex;
             vm.activeItem = index;
+            if (navigation.side.overlaps()) {
+                navigation.side.collapse();
+            }
         }
 
     }
