@@ -95,7 +95,6 @@
             vm.activeItem = index;
             if (navigation.side.overlaps()) {
                 navigation.side.collapse();
-                $scope.$apply();
             }
         }
 

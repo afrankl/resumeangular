@@ -604,8 +604,10 @@ div.horizontal-line-top {
 .topbar-item:hover {
   color: orange; }
   .topbar-item:hover .topbar-dropdown {
-    display: block;
+    display: inline-block;
     color: white; }
+    .topbar-item:hover .topbar-dropdown div a {
+      white-space: nowrap; }
 
 #menu-icon {
   color: white; }

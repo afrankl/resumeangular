@@ -33,33 +33,6 @@
         }
     }
 })();
-(function () {
-
-    "use-strict";
-
-    angular.module('layout')
-        .directive('resumeBox', resumeBoxDirective);
-
-    resumeBoxDirective.$inject = [];
-
-    function resumeBoxDirective() {
-        return {
-            restrict: 'EA',
-            templateUrl: 'static/app/templates/layout/resumeBox/resumeBox.directive.html',
-            controllerAs: 'vm',
-            controller: resumeBoxController,
-            scope: {},
-            transclude: true,
-            bind: {},
-        };
-    }
-
-    resumeBoxController.$inject = [];
-    
-    function resumeBoxController() {
-        var vm = this;
-    }
-})();
 (function (){
     "use-strict";
 
@@ -185,7 +158,6 @@
             vm.activeItem = index;
             if (navigation.side.overlaps()) {
                 navigation.side.collapse();
-                $scope.$apply();
             }
         }
 
@@ -256,6 +228,33 @@
                 console.log(error);
             })
         }
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('layout')
+        .directive('resumeBox', resumeBoxDirective);
+
+    resumeBoxDirective.$inject = [];
+
+    function resumeBoxDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/layout/resumeBox/resumeBox.directive.html',
+            controllerAs: 'vm',
+            controller: resumeBoxController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeBoxController.$inject = [];
+    
+    function resumeBoxController() {
+        var vm = this;
     }
 })();
 (function () {
