@@ -1,13 +1,590 @@
-!function(){"use-strict";function e(){return{restrict:"EA",templateUrl:"static/app/templates/resume/resume.directive.html",controllerAs:"vm",controller:t,scope:{},transclude:!0,bind:{}}}function t(e){function t(t){e.go(t)}var r=this;r.redirectToSref=t,r.rating=5,r.max=5}angular.module("resume",[]).directive("resume",e),e.$inject=[],t.$inject=["$state"]}();
-!function(){"use-strict";function t(t,e,o){return{restrict:"EA",templateUrl:"static/app/templates/base/content/content.directive.html",controllerAs:"vm",controller:n,scope:{},transclude:!0,bind:{}}}function n(t,n,e){var o=this;o.loading=!1,o.navigation=e}angular.module("app.content").directive("resumeContent",t),t.$inject=["$rootScope","$window","navigation"],n.$inject=["$state","$rootScope","navigation"]}();
-!function(){"use-strict";function e(e,i){return{restrict:"EA",templateUrl:"static/app/templates/base/sidenav/sidenav.directive.html",controllerAs:"vm",controller:t,scope:{},transclude:!0,bind:{}}}function t(e,t,i,n){function r(){for(var e=0;e<o.navItems.length;e++)for(var t=o.navItems[e],i=0;i<t.length;i++){var n=t[i];if(n.sref==o.currentState)return o.activeSection=e,void(o.activeItem=i)}}function a(e,t,i){o.activeSection=e,o.activeItem=t,n.side.overlaps()&&n.side.collapse()}var o=this;o.navigation=n,o.currentState=e.current.name,o.activeSection=0,o.activeItem=0,o.navItems=[[{title:"Home",sref:"home"}],[{title:"Bio",sref:"bio"},{title:"Education",sref:"education"},{title:"Work Experience",sref:"work"}],[{title:"Resume",sref:"resume"}]],o.setActiveItem=a,r()}angular.module("app.sidenav",[]).directive("resumeSideNav",e),e.$inject=["$rootScope","$window"],t.$inject=["$state","$rootScope","$location","navigation"]}();
-!function(){"use-strict";function e(e,n){return{restrict:"EA",templateUrl:"/static/app/templates/base/topnav/topnav.directive.html",controllerAs:"vm",controller:t,scope:{},bind:{},transclude:!0}}function t(e,t,n,o,c){function i(){c.side.toggle()}function r(){s(a.resumeElement)}function s(e){var t=e[0].childNodes[0],c=document.getElementById("content"),i=!0;0==$("#my-content").length?(c.appendChild(t),i=!1):t=document.getElementById("my-content");var r=$("#my-content h1#adjusted-header");r.css("margin-top","-9px"),domtoimage.toBlob(t).then(function(e){saveAs(e,"Avi-Frankl-Resume.png"),r.css("margin-top","0px"),i||c.removeChild(t),a.resumeElement=n("<resume></resume>")(o)}).catch(function(e){console.log(e)})}var a=this;a.onMenuClicked=i,a.onDownloadResumeClicked=r,a.navigation=c,a.resumeElement=n("<resume></resume>")(o)}angular.module("app.topnav",[]).directive("resumeTopNav",e),e.$inject=["$rootScope","$window"],t.$inject=["$state","$rootScope","$compile","$scope","navigation"]}();
-!function(){"use-strict";function e(){return{restrict:"EA",templateUrl:"static/app/templates/layout/resumeBox/resumeBox.directive.html",controllerAs:"vm",controller:t,scope:{},transclude:!0,bind:{}}}function t(){}angular.module("layout").directive("resumeBox",e),e.$inject=[],t.$inject=[]}();
-!function(){"use-strict";function t(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/bio/bio.directive.html",controllerAs:"vm",controller:e,scope:{},transclude:!0,bind:{}}}function e(){}angular.module("app.content.bio",[]).directive("resumeBio",t),t.$inject=[],e.$inject=[]}();
-!function(){"use-strict";function t(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/education/education.directive.html",controllerAs:"vm",controller:e,scope:{},transclude:!0,bind:{}}}function e(t){function e(e){t.go(e)}var n=this;n.redirectToSref=e}angular.module("app.content.education",[]).directive("resumeEducation",t),t.$inject=[],e.$inject=["$state"]}();
-!function(){"use-strict";function t(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/geodist/geodist.directive.html",controllerAs:"vm",controller:e,scope:{},transclude:!0,bind:{}}}function e(t){function e(t){c.cityItems.remove(t)}function n(){c.current.name&&c.cityItems.push(c.current)}function o(t,e,n,o){return Math.sqrt(Math.pow(t-n,2)+Math.pow(e-o,2))}function i(){for(var t=999999999,e=0;e<c.cityItems.length-1;e++)for(var n=c.cityItems[e],i=n.name,r=n.latitude,a=n.longitude,s=e+1;s<c.cityItems.length;s++){var l=c.cityItems[s],u=l.name,g=l.latitude,m=l.longitude,p=o(r,a,g,m);if(p<t){t=p;var d=i,h=u}}c.minCityOne=d,c.minCityTwo=h}function r(e){var n=new google.maps.Geocoder;n.geocode({address:e},function(n,o){if(o==google.maps.GeocoderStatus.OK){var i=n[0].geometry.location.lat(),r=n[0].geometry.location.lng(),a={latitude:i,longitude:r,name:e};c.cityItems.push(a),t.$apply()}})}function a(){for(var t=["Los Angeles","San Francisco","Boston","New York","Washington","Seattle","Austin","Chicago","San Diego","Denver","London","Toronto","Sydney","Melbourne","Paris","Singapore"],e=0;e<t.length;e++)r(t[e])}var c=this;c.cityItems=[],c.current={},c.addCityByInput=n,c.removeCity=e,c.calculateClosest=i,Array.prototype.remove=function(t,e){var n=this.slice((e||t)+1||this.length);return this.length=t<0?this.length+t:t,this.push.apply(this,n)},a()}angular.module("app.content.geodist",[]).directive("geographicDistance",t),t.$inject=[],e.$inject=["$scope"]}();
-!function(){"use-strict";function e(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/home/home.directive.html",controllerAs:"vm",controller:t,scope:{},transclude:!0,bind:{}}}function t(){function e(e){$state.go(e)}var t=this;t.redirectToSref=e}angular.module("app.content.home",[]).directive("resumeHome",e),e.$inject=[],t.$inject=[]}();
-!function(){"use-strict";function e(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/languages/languages.directive.html",controllerAs:"vm",controller:t,scope:{},transclude:!0,bind:{}}}function t(){}angular.module("app.content.languages",[]).directive("resumeLanguages",e),e.$inject=[],t.$inject=[]}();
-!function(){"use-strict";function t(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/projects/projects.directive.html",controllerAs:"vm",controller:e,scope:{},transclude:!0,bind:{}}}function e(){}angular.module("app.content.projects",[]).directive("resumeProjects",t),t.$inject=[],e.$inject=[]}();
-!function(){"use-strict";function t(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/skills/skills.directive.html",controllerAs:"vm",controller:e,scope:{},transclude:!0,bind:{}}}function e(){}angular.module("app.content.skills",[]).directive("resumeSkills",t),t.$inject=[],e.$inject=[]}();
-!function(){"use-strict";function t(){return{restrict:"EA",templateUrl:"static/app/templates/base/content/work/work.directive.html",controllerAs:"vm",controller:e,scope:{},transclude:!0,bind:{}}}function e(){}angular.module("app.content.work",[]).directive("resumeWork",t),t.$inject=[],e.$inject=[]}();
+(function () {
+
+    "use-strict";
+
+    angular.module('resume', [])
+        .directive('resume', resumeDirective);
+
+    resumeDirective.$inject = [];
+
+    function resumeDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/resume/resume.directive.html',
+            controllerAs: 'vm',
+            controller: resumeController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeController.$inject = ['$state'];
+    
+    function resumeController($state) {
+        var vm = this;
+
+        vm.redirectToSref = redirectToSref;
+        vm.rating = 5;
+        vm.max = 5;
+
+        function redirectToSref(stateName) {
+            $state.go(stateName);
+        }
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('layout')
+        .directive('resumeBox', resumeBoxDirective);
+
+    resumeBoxDirective.$inject = [];
+
+    function resumeBoxDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/layout/resumeBox/resumeBox.directive.html',
+            controllerAs: 'vm',
+            controller: resumeBoxController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeBoxController.$inject = [];
+    
+    function resumeBoxController() {
+        var vm = this;
+    }
+})();
+(function (){
+    "use-strict";
+
+    angular.module('app.content')
+        .directive('resumeContent', resumeContentDirective);
+
+    resumeContentDirective.$inject = ['$rootScope', '$window', 'navigation'];
+
+    function resumeContentDirective($rootScope, $window, navigation) {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/content.directive.html',
+            controllerAs: 'vm',
+            controller: resumeContentController,
+            scope: {},
+            transclude: true,
+            bind: {}
+        };
+    }
+
+    resumeContentController.$inject = ['$state', '$rootScope', 'navigation'];
+    
+    function resumeContentController($state, $rootScope, navigation) {
+        var vm = this;
+        vm.loading = false;
+        vm.navigation = navigation;
+    }
+})();
+(function (){
+
+    "use-strict";
+
+    angular.module('app.sidenav', [])
+        .directive('resumeSideNav', resumeSideNavDirective);
+
+    resumeSideNavDirective.$inject = ['$rootScope', '$window'];
+
+    function resumeSideNavDirective($rootScope, $window) {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/sidenav/sidenav.directive.html',
+            controllerAs: 'vm',
+            controller: resumeSideNavController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        }
+    }
+
+    resumeSideNavController.$inject = ['$state', '$scope', '$rootScope', '$location', 'navigation'];
+
+    function resumeSideNavController($state, $scope, $rootScope, $location, navigation) {
+        //vars
+        var vm = this;
+        vm.navigation = navigation;
+        vm.currentState = $state.current.name;
+        vm.activeSection = 0;
+        vm.activeItem = 0;
+        vm.navItems = [
+            [
+                {
+                    title: "Home",
+                    sref: 'home'
+                }
+            ],
+            [
+                {
+                    title: "Bio",
+                    sref: 'bio'
+                },
+                {
+                    title: "Education",
+                    sref: 'education'
+                },
+                {
+                    title: "Work Experience",
+                    sref: 'work'
+                }
+            ],
+            // [
+            //     {
+            //         title: "Programming Languages",
+            //         sref: 'languages'
+            //     },
+            //     {
+            //         title: "Other Skills",
+            //         sref: 'skills'
+            //     },
+            //     {
+            //         title: "Side Projects",
+            //         sref: 'projects'
+            //     }
+            // ],
+            [
+                {
+                    title: "Resume",
+                    sref: 'resume'
+                }
+            ]
+            // [
+            //     {
+            //         title: "Geographic Distance",
+            //         sref: 'geodist'
+            //     }
+            // ]
+        ]
+
+        //functions
+        vm.setActiveItem = setActiveItem;
+        initActiveItem();
+
+
+        function initActiveItem() {
+            for (var i = 0; i < vm.navItems.length; i++) {
+                var section = vm.navItems[i];
+                for (var j = 0; j < section.length; j++) {
+                    var navObj = section[j];
+                    if (navObj.sref == vm.currentState) {
+                        vm.activeSection = i;
+                        vm.activeItem = j;
+                        return;
+                    }
+                }
+            }
+        }
+
+        function setActiveItem(sectionIndex, index, sref){
+            vm.activeSection = sectionIndex;
+            vm.activeItem = index;
+            if (navigation.side.overlaps()) {
+                navigation.side.collapse();
+            }
+        }
+
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.topnav', [])
+        .directive('resumeTopNav', resumeTopNavDirective);
+
+    resumeTopNavDirective.$inject = ['$rootScope', '$window'];
+
+    function resumeTopNavDirective($rootScope, $window){
+        return {
+            restrict: 'EA',
+            templateUrl: '/static/app/templates/base/topnav/topnav.directive.html',
+            controllerAs: 'vm',
+            controller: resumeTopNavController,
+            scope: {},
+            bind: {},
+            transclude: true
+        }
+    }
+
+    resumeTopNavController.$inject = ['$state', '$rootScope', '$compile', '$scope',
+                                      'navigation']
+
+    function resumeTopNavController($state, $rootScope, $compile, $scope,
+                                    navigation) {
+        //vars
+        var vm = this;
+        //functions
+        vm.onMenuClicked = onMenuClicked;
+        vm.onDownloadResumeClicked = onDownloadResumeClicked;
+        vm.navigation = navigation;
+        vm.resumeElement = $compile('<resume></resume>')($scope);
+
+        function onMenuClicked() {
+            navigation.side.toggle();
+        }
+
+        function onDownloadResumeClicked() {
+            resumeToPng(vm.resumeElement);
+        }
+
+        function resumeToPng(resumeElement) {
+            var resumeContent = resumeElement[0].childNodes[0];
+            var content = document.getElementById('content');
+            var exists = true;
+            if ($('#my-content').length == 0) {
+                content.appendChild(resumeContent);
+                exists = false;
+            } else {
+                resumeContent = document.getElementById('my-content');
+            }
+            var header = $('#my-content h1#adjusted-header');
+            header.css('margin-top', '-9px');
+            domtoimage.toBlob(resumeContent).then(function(blob) {
+                saveAs(blob, "Avi-Frankl-Resume.png");
+                header.css('margin-top', '0px');
+                if (!exists) {
+                    content.removeChild(resumeContent); 
+                }
+                vm.resumeElement = $compile('<resume></resume>')($scope);
+            }).catch(function (error) {
+                console.log(error);
+            })
+        }
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.bio', [])
+        .directive('resumeBio', resumeBioDirective);
+
+    resumeBioDirective.$inject = [];
+
+    function resumeBioDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/bio/bio.directive.html',
+            controllerAs: 'vm',
+            controller: resumeBioController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeBioController.$inject = [];
+    
+    function resumeBioController() {
+        var vm = this;
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.education', [])
+        .directive('resumeEducation', resumeEducationDirective);
+
+    resumeEducationDirective.$inject = [];
+
+    function resumeEducationDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/education/education.directive.html',
+            controllerAs: 'vm',
+            controller: resumeEducationController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeEducationController.$inject = ['$state'];
+    
+    function resumeEducationController($state) {
+        var vm = this;
+
+        vm.redirectToSref = redirectToSref;
+
+        function redirectToSref(stateName) {
+            $state.go(stateName);
+        }
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.geodist', [])
+        .directive('geographicDistance', geoDistDirective);
+
+    geoDistDirective.$inject = [];
+
+    function geoDistDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/geodist/geodist.directive.html',
+            controllerAs: 'vm',
+            controller: geoDistController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    geoDistController.$inject = ['$scope'];
+    
+    function geoDistController($scope) {
+        var vm = this;
+
+        vm.cityItems = [];
+        vm.current = {};
+        vm.addCityByInput = addCityByInput;
+        vm.removeCity = removeCity;
+        vm.calculateClosest = calculateClosest;
+
+
+        Array.prototype.remove = function(from, to) {
+          var rest = this.slice((to || from) + 1 || this.length);
+          this.length = from < 0 ? this.length + from : from;
+          return this.push.apply(this, rest);
+        };
+
+
+        init();
+
+        function removeCity(index) {
+            vm.cityItems.remove(index);
+        }
+
+        function addCityByInput() {
+            if (vm.current.name) {
+                vm.cityItems.push(vm.current);
+            }
+        }
+
+        function dist(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x1-x2, 2) + Math.pow(y1-y2, 2));
+        }
+
+        function calculateClosest() {
+            var max_dist = 999999999;
+            for (var i = 0; i < vm.cityItems.length - 1; i++) {
+                var city_i = vm.cityItems[i];
+                var name_i = city_i.name;
+                var lat_i = city_i.latitude;
+                var lon_i = city_i.longitude;
+                for (var j = i + 1; j < vm.cityItems.length; j++) {
+                    var city_j = vm.cityItems[j];
+                    var name_j = city_j.name;
+                    var lat_j = city_j.latitude;
+                    var lon_j = city_j.longitude;
+                    var check_dist = dist(lat_i, lon_i, lat_j, lon_j);
+                    if (check_dist < max_dist) {
+                        max_dist = check_dist;
+                        var min_city_i = name_i;
+                        var min_city_j = name_j;
+                    }
+                }
+            }
+            vm.minCityOne = min_city_i;
+            vm.minCityTwo = min_city_j;
+        }
+
+        function addCityByAddress(address) {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var latitude = results[0].geometry.location.lat();
+                    var longitude = results[0].geometry.location.lng();
+                    var cityItem = {
+                        latitude: latitude,
+                        longitude: longitude,
+                        name: address
+                    }
+                    vm.cityItems.push(cityItem);
+                    $scope.$apply();
+                }
+            });
+        }
+
+        function init() {
+            var startingCities = [
+                'Los Angeles',
+                'San Francisco',
+                'Boston',
+                'New York',
+                'Washington',
+                'Seattle',
+                'Austin',
+                'Chicago',
+                'San Diego',
+                'Denver',
+                'London',
+                'Toronto',
+                'Sydney',
+                'Melbourne',
+                'Paris',
+                'Singapore'
+            ];
+
+            for (var i = 0; i < startingCities.length; i++) {
+                addCityByAddress(startingCities[i]);
+            }
+        }
+    }
+})();
+
+
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.home', [])
+        .directive('resumeHome', resumeHomeDirective);
+
+    resumeHomeDirective.$inject = [];
+
+    function resumeHomeDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/home/home.directive.html',
+            controllerAs: 'vm',
+            controller: resumeHomeController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeHomeController.$inject = [];
+    
+    function resumeHomeController() {
+        var vm = this;
+        vm.redirectToSref = redirectToSref;
+
+        function redirectToSref(stateName) {
+            $state.go(stateName);
+        }
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.languages', [])
+        .directive('resumeLanguages', resumeLanguagesDirective);
+
+    resumeLanguagesDirective.$inject = [];
+
+    function resumeLanguagesDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/languages/languages.directive.html',
+            controllerAs: 'vm',
+            controller: resumeLanguagesController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeLanguagesController.$inject = [];
+    
+    function resumeLanguagesController() {
+        var vm = this;
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.projects', [])
+        .directive('resumeProjects', resumeProjectsDirective);
+
+    resumeProjectsDirective.$inject = [];
+
+    function resumeProjectsDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/projects/projects.directive.html',
+            controllerAs: 'vm',
+            controller: resumeProjectsController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeProjectsController.$inject = [];
+    
+    function resumeProjectsController() {
+        var vm = this;
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.skills', [])
+        .directive('resumeSkills', resumeSkillsDirective);
+
+    resumeSkillsDirective.$inject = [];
+
+    function resumeSkillsDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/skills/skills.directive.html',
+            controllerAs: 'vm',
+            controller: resumeSkillsController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeSkillsController.$inject = [];
+    
+    function resumeSkillsController() {
+        var vm = this;
+    }
+})();
+(function () {
+
+    "use-strict";
+
+    angular.module('app.content.work', [])
+        .directive('resumeWork', resumeWorkDirective);
+
+    resumeWorkDirective.$inject = [];
+
+    function resumeWorkDirective() {
+        return {
+            restrict: 'EA',
+            templateUrl: 'static/app/templates/base/content/work/work.directive.html',
+            controllerAs: 'vm',
+            controller: resumeWorkController,
+            scope: {},
+            transclude: true,
+            bind: {},
+        };
+    }
+
+    resumeWorkController.$inject = [];
+    
+    function resumeWorkController() {
+        var vm = this;
+    }
+})();

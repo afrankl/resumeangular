@@ -6,6 +6,7 @@
 
     function navigationFactory() {
         var isSideVisible = true;
+        var overlapSize = 768;
         var windowSize;
         var service = {
             side: {
@@ -13,7 +14,9 @@
                 collapse: collapseSideNav,
                 toggle: toggleSideNav,
                 isVisible: isSideNavVisible,
-                setVisibility: setSideNavVisibility
+                setVisibility: setSideNavVisibility,
+                overlaps: shouldSideNavOverlap,
+                overlapSize: getSideNavOverlapSize, 
             },
             window: {
                 size: {
@@ -24,6 +27,14 @@
         };
 
         return service;
+
+        function getSideNavOverlapSize() {
+            return overlapSize;
+        }
+
+        function shouldSideNavOverlap() {
+            return windowSize < overlapSize;
+        }
 
         function getWindowSize() {
             return windowSize;
