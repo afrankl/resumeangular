@@ -134,7 +134,7 @@ function createAngularTask(fileFilter, folderObj) {
         pump([
                 gulp.src(angularSrc),
                 filter(fileFilter),
-                // uglify(),
+                uglify(),
                 // minify(),
                 concat(folderObj.file),
                 gulp.dest(folderObj.directory)

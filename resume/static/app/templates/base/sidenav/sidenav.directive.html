@@ -1,0 +1,24 @@
+<div class="hide-side-nav" id="sidenav" ng-hide="!vm.navigation.side.isVisible()">
+    <div id="panel-head">
+        <img class="horizontal-center"
+        src="/static/app/assets/me_5_200x200.jpg">
+        <h4 
+            class="text-center">
+            <small>My goal is to improve my skills as a Software Engineer.  I am specifically interested in web or mobile development.</small>
+        </h4>
+    </div>
+    <div class="panel-items list-group no-border-radius remove-margin-bottom">
+        <div ng-repeat="section in vm.navItems track by $index"
+             ng-init="sectionIndex=$index;"
+             class="p-t-sm">
+            <a ng-repeat="navItem in section track by $index"
+               class="list-group-item list-group-item-action nav-item"
+               ng-class="{'active': vm.activeItem == $index && vm.activeSection == sectionIndex}"
+               ng-click="vm.setActiveItem(sectionIndex, $index, navItem.sref)"
+               href="#/{{navItem.sref}}"
+               ui-sref="{{navItem.sref}}">
+                   {{navItem.title}}
+            </a>
+        </div>
+    </div>
+</div>

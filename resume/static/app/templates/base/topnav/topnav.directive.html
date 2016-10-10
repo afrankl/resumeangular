@@ -1,0 +1,32 @@
+<div id="topnav">
+    <span id="menu-icon"
+        class="p-all-md pull-right glyphicon glyphicon-menu-hamburger font-lg"
+        ng-class="{'menu-icon-selected': vm.navigation.side.isVisible(), 'menu-icon-deselected': !vm.navigation.side.isVisible()}"
+        ng-click="vm.onMenuClicked()">    
+    </span>
+    <div 
+        class="pull-right p-lr-sm text-center topbar-item"> 
+        <span> Downloads </span>
+        <div class="topbar-dropdown"
+            > 
+            <div ng-click="vm.onDownloadResumeClicked()"> Resume.png </div>
+        </div> 
+    </div>
+    <div
+        class="pull-right p-lr-sm text-center topbar-item">
+        <span> Links </span>
+        <div class="topbar-dropdown">
+            <div>
+                <a href="https://www.github.com/afrankl/resumeangular">Source code</a>
+            </div>
+            <div>
+                <a href="https://www.github.com/afrankl">Github</a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/afrankl">
+                    Linkedin
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

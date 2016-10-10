@@ -19,7 +19,7 @@
 
     function navConfig($rootScope, $window, navigation) {
         navigation.window.size.set($window.innerWidth);
-        let overlapSize = navigation.side.overlapSize();
+        var overlapSize = navigation.side.overlapSize();
         if ($window.innerWidth >= overlapSize) {
             navigation.side.expand();
         } else {

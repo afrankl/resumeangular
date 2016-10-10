@@ -1,0 +1,27 @@
+<html>
+
+    <head>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'bower/css/bower.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'app/css/app.css' %}">
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=0.8, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <title>Avi Frankl</title>
+        <base href="">
+    </head>
+    
+
+    <body ng-app="app">
+        <resume-side-nav></resume-side-nav>
+        <resume-top-nav></resume-top-nav>
+        <resume-content></resume-content>
+    </body>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAiJPnDsP8Tn-W76FS020EmBB8aDNHWZXQ"></script>
+    <script src="{% static 'bower/js/bower.js' %}" type="text/javascript"></script>
+    <script src="{% static 'app/js/angular/app.js' %}" type="text/javascript"></script>
+    <script src="{% static 'app/js/angular/config.js' %}" type="text/javascript"></script>
+    <script src="{% static 'app/js/angular/module.js' %}" type="text/javascript"></script>
+    <script src="{% static 'app/js/angular/factory.js' %}" type="text/javascript"></script>
+    <script src="{% static 'app/js/angular/directive.js' %}" type="text/javascript"></script>
+</html>
