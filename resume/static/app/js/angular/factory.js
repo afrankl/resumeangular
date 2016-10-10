@@ -1,1 +1,67 @@
-!function(){"use-strict";function n(){function n(){return s}function i(n){s=n}function t(){r=!0}function e(){r=!1}function o(){r=!r}function u(){return r}function c(n){r=n}var s,r=!0,f={side:{expand:t,collapse:e,toggle:o,isVisible:u,setVisibility:c},window:{size:{set:i,get:n}}};return f}angular.module("services").factory("navigation",n)}();
+(function() {
+    'use-strict';
+
+    angular.module('services')
+        .factory('navigation', navigationFactory);
+
+    function navigationFactory() {
+        var isSideVisible = true;
+        var overlapSize = 768;
+        var windowSize;
+        var service = {
+            side: {
+                expand: expandSideNav,
+                collapse: collapseSideNav,
+                toggle: toggleSideNav,
+                isVisible: isSideNavVisible,
+                setVisibility: setSideNavVisibility,
+                overlaps: shouldSideNavOverlap,
+                overlapSize: getSideNavOverlapSize, 
+            },
+            window: {
+                size: {
+                    set: setWindowSize,
+                    get: getWindowSize
+                }
+            }
+        };
+
+        return service;
+
+        function getSideNavOverlapSize() {
+            return overlapSize;
+        }
+
+        function shouldSideNavOverlap() {
+            return windowSize < overlapSize;
+        }
+
+        function getWindowSize() {
+            return windowSize;
+        }
+
+        function setWindowSize(size) {
+            windowSize = size;
+        }
+
+        function expandSideNav() {
+            isSideVisible = true;
+        }
+
+        function collapseSideNav() {
+            isSideVisible = false;
+        }
+
+        function toggleSideNav() {
+            isSideVisible = !isSideVisible;
+        }
+
+        function isSideNavVisible() {
+            return isSideVisible;
+        }
+
+        function setSideNavVisibility(isVisible) {
+            isSideVisible = isVisible;
+        }
+    }
+})();

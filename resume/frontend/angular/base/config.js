@@ -18,8 +18,9 @@
     navConfig.$inject = ['$rootScope', '$window', 'navigation'];
 
     function navConfig($rootScope, $window, navigation) {
-        navigation.window.size.set($window.innerWidth)
-        if ($window.innerWidth >= 768) {
+        navigation.window.size.set($window.innerWidth);
+        let overlapSize = navigation.side.overlapSize();
+        if ($window.innerWidth >= overlapSize) {
             navigation.side.expand();
         } else {
             navigation.side.collapse();
@@ -28,8 +29,8 @@
             var oldWidth = navigation.window.size.get();
             var newWidth = $window.innerWidth;
             var visible = navigation.side.isVisible();
-            var windowShrinking = newWidth < 768 && visible && oldWidth > newWidth;
-            var windowExpanding = newWidth >= 768 && !visible && newWidth > oldWidth;
+            var windowShrinking = newWidth < overlapSize && visible && oldWidth > newWidth;
+            var windowExpanding = newWidth >= overlapSize && !visible && newWidth > oldWidth;
             if (windowShrinking || windowExpanding) {
                 navigation.side.setVisibility(!visible);
                 $rootScope.$apply();
