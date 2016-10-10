@@ -69,6 +69,12 @@
                     sref: 'resume'
                 }
             ]
+            // [
+            //     {
+            //         title: "Geographic Distance",
+            //         sref: 'geodist'
+            //     }
+            // ]
         ]
 
         //functions
