@@ -4,7 +4,8 @@
         <div ng-repeat="rowcell in vm.makeRange(0, vm.size)">
             <div ng-repeat="colcell in vm.makeRange(1, vm.size)"
                 class="sudoku-cell">
-                {{rowcell * 3 + colcell + 1}}
+                <input class="sudoku-input"
+                    ng-model="vm.board[rowset * 3 + colset][rowcell * 3 + colcell + 1]">
             </div>
         </div>
     </div>

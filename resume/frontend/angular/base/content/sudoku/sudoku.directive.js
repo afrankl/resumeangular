@@ -19,14 +19,14 @@
         };
     }
 
-    resumeSudokuController.$inject = [];
+    resumeSudokuController.$inject = ['$scope'];
     
-    function resumeSudokuController() {
+    function resumeSudokuController($scope) {
         var vm = this;
 
         vm.makeRange = makeRange;
         vm.size = 3;
-        vm.board = generateBoard()
+        generateBoard()
 
         function makeRange(start, end) {
             if (end == undefined) {
@@ -43,12 +43,17 @@
         }
 
         function generateBoard() {
-            vm.board = [];
-            // for (var i = 0; i < vm.size; i++) {
-            //     for (var i in makeRange(1, vm.size * vm.size)) {
+            vm.board = new Array(vm.size * vm.size);
+            for (var i = 0; i < vm.size * vm.size; i++) {
+                vm.board[i] = {};
+                for (var j in makeRange(1, vm.size * vm.size + 1)) {
+                    vm.board[i][j] = ' ';
+                }
+            }
+        }
 
-            //     }
-            // }
+        function generatePossibilities(all) {
+            
         }
     }
 })();
