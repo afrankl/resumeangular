@@ -10,7 +10,8 @@
             // 'app.content.languages',
             // 'app.content.projects',
             'app.content.work',
-            'app.content.geodist'
+            'app.content.geodist',
+            'app.content.sudoku'
         ])
         .config(contentConfig);
 
@@ -53,6 +54,10 @@
             .state('geodist', {
                 'url': '/geodist',
                 'template': '<geographic-distance></geographic-distance>'
+            })
+            .state('sudoku', {
+                'url': '/sudoku',
+                'template': '<sudoku></sudoku>'
             })
     }
 })();

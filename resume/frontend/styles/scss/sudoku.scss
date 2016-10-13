@@ -1,0 +1,17 @@
+@import 'colors';
+
+.sudoku-set {
+    border-style: solid;
+    border-width: 2px;
+    border-color: $stylish-color;
+    display: inline-block;
+
+}
+
+.sudoku-cell {
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: $special-color;
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+}

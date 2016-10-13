@@ -47,6 +47,10 @@
                 {
                     title: "Work Experience",
                     sref: 'work'
+                },
+                {
+                    title:"Sudoku",
+                    sref: 'sudoku'
                 }
             ],
             // [

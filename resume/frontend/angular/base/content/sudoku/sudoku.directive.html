@@ -1,0 +1,11 @@
+<div ng-repeat="rowset in vm.makeRange(vm.size)">
+    <div ng-repeat="colset in vm.makeRange(vm.size)"
+        class="sudoku-set">
+        <div ng-repeat="rowcell in vm.makeRange(0, vm.size)">
+            <div ng-repeat="colcell in vm.makeRange(1, vm.size)"
+                class="sudoku-cell">
+                {{rowcell * 3 + colcell + 1}}
+            </div>
+        </div>
+    </div>
+</div>
