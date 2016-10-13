@@ -32,7 +32,8 @@
             [
                 {
                     title: "Home",
-                    sref: 'home'
+                    sref: 'home',
+                    icon: 'fa fa-home'
                 }
             ],
             [
@@ -48,6 +49,10 @@
                     title: "Work Experience",
                     sref: 'work'
                 }
+                // {
+                //     title: "Projects and Challenges",
+                //     sref: 'projects'
+                // }
             ],
             // [
             //     {
@@ -58,16 +63,13 @@
             //         title: "Other Skills",
             //         sref: 'skills'
             //     },
-            //     {
-            //         title: "Side Projects",
-            //         sref: 'projects'
-            //     }
+                
             // ],
             [
                 {
                     title: "Resume",
                     sref: 'resume'
-                }
+                },
             ]
             // [
             //     {
