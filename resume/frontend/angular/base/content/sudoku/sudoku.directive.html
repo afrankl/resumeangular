@@ -2,11 +2,16 @@
     <div ng-repeat="colset in vm.makeRange(vm.size)"
         class="sudoku-set">
         <div ng-repeat="rowcell in vm.makeRange(0, vm.size)">
-            <div ng-repeat="colcell in vm.makeRange(1, vm.size)"
+            <div ng-repeat="colcell in vm.makeRange(0, vm.size)"
                 class="sudoku-cell">
                 <input class="sudoku-input"
-                    ng-model="vm.board[rowset * 3 + colset][rowcell * 3 + colcell + 1]">
+                    ng-model="vm.board[rowset * vm.size + colset][rowcell * vm.size + colcell]">
             </div>
         </div>
     </div>
 </div>
+
+<button class="m-all-sm" ng-click="vm.test()">
+Click Me</button>
+
+<pre>{{vm.board}}</pre>
